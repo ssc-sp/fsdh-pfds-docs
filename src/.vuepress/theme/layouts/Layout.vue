@@ -12,9 +12,6 @@
         <div class="back-to-notify">
           <ParentNavLink :item="{ link: backToLink, text: backToText }" v-if="backToText" />
         </div>
-        <div class="back-to-notify">
-          <ParentNavLink :item="{ link: anotherLink, text: anotherText }" v-if="anotherText" />
-        </div>
       </template>
     </ParentLayout>
   </div>
@@ -36,12 +33,6 @@ export default {
     },
     backToText() {
       return this.$themeLocaleConfig.backToNotifyText
-    },
-    anotherLink() {
-      return this.$themeLocaleConfig.backToGuidanceLink
-    },
-    anotherText() {
-      return this.$themeLocaleConfig.backToGuidanceText
     }
   }
 }

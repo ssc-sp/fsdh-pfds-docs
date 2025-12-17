@@ -1,0 +1,24 @@
+name: "Check page validity"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-pages:
+    name: Check pages exist in both locales and are mapped
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Run page validity check
+        run: |
+          node ./scripts/check-pages.js

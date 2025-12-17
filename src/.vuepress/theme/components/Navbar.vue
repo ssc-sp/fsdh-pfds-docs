@@ -6,23 +6,19 @@
       :to="$localePath"
       class="home-link"
     >
-      <img
-        v-if="logo"
-        class="logo"
-        :src="$withBase(logo)"
-        :alt="$siteTitle"
-      >
-      <div
-        v-if="$siteTitle"
-        ref="siteName"
-        class="site-name"
-        :class="{ 'can-hide': logo }"
-      >{{ $siteTitle }}</div>
-      <div
-        v-if="siteSubTitle"
-        ref="siteSubTitle"
-        class="site-subtitle"
-      >{{ siteSubTitle }}</div>
+      <div class="logo-and-title">
+        <img
+          v-if="logo"
+          class="logo"
+          :src="$withBase(logo)"
+          :alt="$siteTitle"
+        >
+        <div
+          v-if="$siteTitle"
+          ref="siteName"
+          class="site-name"
+        ><h2>{{ $siteTitle }}</h2></div>
+      </div>
     </RouterLink>
 
     <div

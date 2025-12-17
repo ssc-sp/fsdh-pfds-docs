@@ -32,18 +32,18 @@ module.exports = {
       gtag('config', 'G-R04KFLQCVQ', {anonymize_ip: true});
     `],
   ],
-  title: "GC Notify | Notification GC",
+  title: "Federal Science DataHub | Plateforme fédérale de données scientifiques",
   base: baseURL || null,
   locales: {
     '/en/': {
       lang: 'en-CA',
-      title: "GC Notify",
-      description: 'Integrate directly with the GC Notify API'
+      title: "Federal Science DataHub",
+      description: 'Learn how to use the FSDH platform'
     },
     '/fr/': {
       lang: 'fr-CA',
-      title: 'Notification GC',
-      description: 'Intégration directe à l`API Notification GC'
+      title: 'Plateforme fédérale de données scientifiques',
+      description: 'Apprenez à utiliser la plateforme PFDS'
     }
   },
   markdown: {
@@ -60,8 +60,8 @@ module.exports = {
    */
   themeConfig: {
     logo: 'https://assets.notification.canada.ca/static/gov-canada-en.svg',
-    editLinks: true,
-    lastUpdated: true,
+    editLinks: false,
+    lastUpdated: false,
     nextLinks: true,
     prevLinks: true,
     docsRepo: 'cds-snc/notification-documentation',
@@ -74,11 +74,9 @@ module.exports = {
         selectText: 'Languages',
         label: 'English',
         ariaLabel: 'Languages',
-        siteSubtitle: 'API documentation',
-        backToNotifyLink: 'https://notification.canada.ca',
-        backToNotifyText: 'Back to GC Notify',
-        backToGuidanceLink: 'https://notification.canada.ca/guidance',
-        backToGuidanceText: 'Visit Guidance',
+        siteSubtitle: 'Documentation',
+        backToNotifyLink: 'https://prd.fsdh-dhsf.science.cloud-nuage.canada.ca/',
+        backToNotifyText: 'Back to Federal Science DataHub',
         editLinkText: 'Edit this page on GitHub (opens in a new tab)',
         lastUpdated: 'Last updated',
         serviceWorker: {
@@ -90,20 +88,101 @@ module.exports = {
         nav: [
           { text: "Français", link: '/fr/' },
         ],
-        sidebarDepth: 1,
+        sidebarDepth: 0,
         sidebar: {
           '/en/': [
-            '/en/',
-            '/en/start',
-            '/en/send',
-            '/en/status',
-            '/en/testing',
-            '/en/keys',
-            '/en/limits',
-            '/en/callbacks',
-            '/en/architecture',
-            '/en/clients',
-            '/en/apispec'
+            '/en/', 
+            {
+              title: 'Managing Workspaces and Users',
+              path: '/en/managing-workspaces-and-users',
+              collapsable: true,
+              children: [
+                ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Getting-a-workspace.aspx', 'Getting a workspace (only available on the GC network)'],
+                ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx', 'Estimate costs (only available on the GC network)'],
+                '/en/managing-workspaces-and-users/Preregistration',
+                '/en/managing-workspaces-and-users/Complete-metadata',
+                '/en/managing-workspaces-and-users/Request-tools',
+                '/en/managing-workspaces-and-users/Change-a-user-role'
+              ]
+            },
+            {
+              title: 'Migrating to Production',
+              path: '/en/migration',
+              collapsable: true,
+              children: [
+                '/en/migration/Storage',
+                '/en/migration/Databricks',
+                '/en/migration/PostgreSQL',
+                '/en/migration/WebApp'
+              ]
+            },
+            {
+              title: 'User Guidance',
+              path: '/en/guidance',
+              collapsable: true,
+              children: [
+                '/en/guidance/Account-Management-and-Access-control-of-workspaces',
+                '/en/guidance/Backup-and-Recovery',
+                '/en/guidance/Components-within-a-workspace',
+                '/en/guidance/Github-and-code-repo-management.md',
+                '/en/guidance/Incident-Detection-and-Response.md',
+                '/en/guidance/Monitor-Usage.md',
+                '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
+                '/en/guidance/Personnel-security-clearance.md',
+                '/en/guidance/Roles-within-FSDH-workspace.md',
+                '/en/guidance/Source-code.md'
+              ]
+            },
+            {
+              title: 'Storage',
+              path: '/en/storage',
+              collapsable: true,
+              children: [
+                '/en/storage/Datahub-AzureStorage.md',
+                '/en/storage/Import-AWS-Storage.md',
+                '/en/storage/Import-Azure-Storage.md',
+                '/en/storage/Import-GCP-Storage.md',
+                '/en/storage/Import-Storage.md',
+                '/en/storage/Use-AzCopy.md'
+              ]
+            },
+            {
+              title: 'Databricks',
+              path: '/en/databricks',
+              collapsable: true,
+              children: [
+                '/en/databricks/Databricks-101',
+                '/en/databricks/Cluster-Policies',
+                '/en/databricks/Git-Integration',
+                '/en/databricks/vscode_extension',
+                '/en/databricks/Conda-Packages',
+                '/en/databricks/Connecting-Google-API',
+                '/en/databricks/Dashboarding',
+                '/en/databricks/Dashboarding-Tool-Comparison',
+                '/en/databricks/Experiments-Automl',
+                '/en/databricks/Workflows',
+                '/en/databricks/Databricks-FAQ'
+              ]
+            },
+            {
+              title: 'PostgreSQL',
+              path: '/en/postgresql',
+              collapsable: true,
+              children: [
+                '/en/postgresql/Postgres',
+                '/en/postgresql/Postgres-Add-User',
+                '/en/postgresql/psql-databricks-comparison'
+              ]
+            },
+            {
+              title: 'Web Applications',
+              path: '/en/apps',
+              collapsable: true,
+              children: [
+                '/en/apps/WebApps'
+              ]
+            },
+            '/en/POC-Terms-And-Conditions'
           ]
         }
       },
@@ -112,11 +191,9 @@ module.exports = {
         selectText: 'Langues',
         label: 'Français',
         ariaLabel: 'Langues',
-        siteSubtitle: 'Documentation API',
-        backToNotifyLink: 'https://notification.canada.ca?lang=fr',
-        backToNotifyText: 'Retour à Notification GC',
-        backToGuidanceLink: 'https://notification.canada.ca/guides-reference',
-        backToGuidanceText: 'Guides de référence',
+        siteSubtitle: 'Documentation',
+        backToNotifyLink: 'https://prd.fsdh-dhsf.science.cloud-nuage.canada.ca/',
+        backToNotifyText: 'Retour à la PFDS',
         editLinkText: 'Modifier cette page sur GitHub (ouvre dans un nouvel onglet)',
         lastUpdated: 'Dernière mise à jour ',
         serviceWorker: {
@@ -128,20 +205,101 @@ module.exports = {
         nav: [
           { text: "English", link: '/en/' },
         ],
-        sidebarDepth: 1,
+        sidebarDepth: 0,
         sidebar: {
           '/fr/': [
-            '/fr/',
-            '/fr/commencer',
-            '/fr/envoyer',
-            '/fr/etat',
-            '/fr/essai',
-            '/fr/cles',
-            '/fr/limites',
-            '/fr/rappel',
-            '/fr/architecture',
-            '/fr/clients',
-            '/fr/apispec'
+            '/fr/', 
+            {
+              title: 'Gérer les espaces de travail et les utilisateurs',
+              path: '/fr/gerer-espaces-et-utilisateurs',
+              collapsable: true,
+              children: [
+                ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Getting-a-workspace.aspx', 'Obtenir un espace de travail (uniquement disponible sur le réseau GC)'],
+                ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx', 'Estimer les coûts (uniquement disponible sur le réseau GC)'],
+                '/fr/gerer-espaces-et-utilisateurs/Preregistration',
+                '/fr/gerer-espaces-et-utilisateurs/Complete-metadata',
+                '/fr/gerer-espaces-et-utilisateurs/Demande-outils',
+                '/fr/gerer-espaces-et-utilisateurs/Change-a-user-role'
+              ]
+            },
+            {
+              title: 'Migration vers la production',
+              path: '/fr/migration',
+              collapsable: true,
+              children: [
+                '/fr/migration/Stockage',
+                '/fr/migration/Databricks',
+                '/fr/migration/PostgreSQL',
+                '/fr/migration/AppWeb'
+              ]
+            },
+            {
+              title: 'Conseils aux utilisateurs',
+              path: '/fr/guidance',
+              collapsable: true,
+              children: [
+                '/fr/guidance/Attestation-de-securite-du-personnel',
+                '/fr/guidance/Code-source',
+                '/fr/guidance/Composants-dun-espace-de-travail',
+                '/fr/guidance/Controle-dusage',
+                '/fr/guidance/Controle-et-audit-dun-espace-de-travail',
+                '/fr/guidance/Detection-et-response-aux-incidents',
+                '/fr/guidance/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
+                '/fr/guidance/Github-et-gestion-des-repos',
+                '/fr/guidance/Roles-dans-un-espace-de-travail',
+                '/fr/guidance/Sauvegarde-et-recuperation'
+              ]
+            },
+            {
+              title: 'Stockage',
+              path: '/fr/stockage',
+              collapsable: true,
+              children: [
+                '/fr/stockage/Datahub-AzureStorage',
+                '/fr/stockage/Importer-le-stockage',
+                '/fr/stockage/Importer-le-stockage-AWS',
+                '/fr/stockage/Importer-Azure-Storage',
+                '/fr/stockage/Importer-le-stockage-GCP',
+                '/fr/stockage/Utilisez-AzCopy'
+              ]
+            },
+            {
+              title: 'Databricks',
+              path: '/fr/databricks',
+              collapsable: true,
+              children: [
+                '/fr/databricks/Databricks-101',
+                '/fr/databricks/Politiques-des-clusters',
+                '/fr/databricks/Intégration-de-Git',
+                '/fr/databricks/extension-vscode',
+                '/fr/databricks/Paquets-Conda',
+                '/fr/databricks/Connexion-à-l\'API-Google',
+                '/fr/databricks/Tableau-de-bord',
+                '/fr/databricks/Comparaison-des-outils-de-tableau-de-bord',
+                '/fr/databricks/Expériences-Automl',
+                '/fr/databricks/Flux-de-travail',
+                '/fr/databricks/FAQ-Databricks'
+              ]
+            },
+            {
+              title: 'PostgreSQL',
+              path: '/fr/postgresql',
+              collapsable: true,
+              children: [
+                '/fr/postgresql/Postgres',
+                '/fr/postgresql/Postgres-Ajouter-Utilisateur',
+                '/fr/postgresql/Comparaison-des-bases-de-données-psql'
+              ]
+            },
+            {
+              title: 'Applications Web',
+              path: '/fr/apps',
+              collapsable: true,
+              children: [
+                '/fr/apps/WebApps'
+              ]
+            },
+            '/fr/Conditions-générales-de-POC'
           ]
         }
       },

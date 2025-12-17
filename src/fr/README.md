@@ -1,5 +1,11 @@
-# Intégrer l’API
+# Survol
 
-Cette documentation s’adresse aux développeurs et développeuses qui souhaitent intégrer l’interface de programmation d’application (API) de [Notification GC](https://notification.canada.ca/?lang=fr) à l’application Web ou au système administratif de leur ministère. Si vous n’êtes pas développeur ou développeuse ou si vous souhaitez apprendre à utiliser Notification GC en dehors de l’API, consultez [les guides de référence](https://notification.canada.ca/guides-reference).
+Cette documentation technique est destinée aux scientifiques qui utilisent la [Plateforme fédérale de données scientifiques (PFDS)](https://plateforme-federale-donnees-scientifiques.canada.ca/) pour gérer et analyser des données scientifiques. Elle comprend des guides sur l'utilisation de diverses fonctionnalités:
 
-L’intégration de l’API Notification GC vous permet d’envoyer automatiquement des courriels ou des messages texte. Vous pouvez le faire si vous disposez d’un système qui suit un processus opérationnel, de sorte qu’à chaque fois qu’il y a une modification d’état, vos clients peuvent recevoir une notification à propos de la mise à jour.
+* Configuration et gestion des espaces de travail et des utilisateurs
+* Utilisation de conteneurs de stockage avec la PFDS, y compris les options de stockage personnalisées
+* Utilisation d'Azure Databricks pour le traitement et l'analyse des données
+* Hébergement d'applications web sur la PFDS
+* Utilisation de bases de données PostgreSQL dans la PFDS
+
+Si vous découvrez la PFDS, nous vous invitons à commencer par consulter nos [pages Canada.ca](https://www.canada.ca/en/shared-services/services/tools-to-equip-gc-workers/tools-science/plateforme-federale-de-données-scientifiques.html) qui donnent un aperçu général de la plateforme. Pour les utilisateurs du gouvernement du Canada, nous vous invitons également à visiter le [site la PFDS GCÉchange](https://gcxgce.sharepoint.com/teams/10002160/SitePages/Home.aspx) pour obtenir des ressources et des informations supplémentaires.
