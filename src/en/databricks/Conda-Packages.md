@@ -44,7 +44,7 @@ docker push ghcr.io/ssc-sp/fsdh-sample:latest
 2. Create a cluster with access mode "No Isolation Shared"
 3. Choose a runtime of 10.4-LTS, 9.1-LTS or 7.3-LTS
 4. Under Advance -> Docker, use image `ghcr.io/ssc-sp/fsdh-sample:latest`
-![image](./img/Conda-Packages-1.bmp)
+![image](./img/Conda-Packages-1.jpg)
 
 ## Step 4. Validate the Cluster
 
