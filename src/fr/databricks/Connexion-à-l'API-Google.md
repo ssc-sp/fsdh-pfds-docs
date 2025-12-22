@@ -28,40 +28,36 @@ Suivez le lien pour savoir comment créer un projet Google Cloud.
 
 Une fois votre projet créé et sélectionné, dans la barre de navigation, cliquez sur "APIs & Services" :
 
-![341182784_1883945795306857_7440166856820153159_n](https://user-images.githubusercontent.com/56747050/233416304-13b98718-337e-42eb-b6ae-0e1888404fea.png)
+![341182784_1883945795306857_7440166856820153159_n](./img/google-1.png)
 
 Cliquez ensuite sur "Enable APIs & Services" :
 
-![341291789_178018718053904_5458837908367107510_n](https://user-images.githubusercontent.com/56747050/233416401-5de8b538-6c2a-4e89-a578-6810736eb484.png)
-
+![341291789_178018718053904_5458837908367107510_n](./img/google-2.png)
 Recherchez les services dont vous pourriez avoir besoin, tels que "BigQuery API", "BigTable API", "Earth Engine API", etc. Il devrait alors apparaître dans les résultats de la recherche. Cliquez dessus, puis cliquez sur "Enable".
 
 ## 3. Créez un compte de service et obtenez une clé privée.
 
 Une fois que vous avez activé les API dont vous avez besoin dans votre projet, ouvrez le menu de navigation et cliquez sur "IAM & Admin" :
 
-![341174751_558854192793790_2404372516710887907_n](https://user-images.githubusercontent.com/56747050/233416480-e9e68e01-6d9f-4db2-9235-9fd68c03a500.png)
+![341174751_558854192793790_2404372516710887907_n](./img/google-3.png)
 
 Cliquez ensuite sur "Comptes de service" :
 
-![342383092_889586648769272_4903323285442570884_n](https://user-images.githubusercontent.com/56747050/233416581-b959909c-d8f2-42ef-a304-f2734e7aaeb3.png)
-
+![342383092_889586648769272_4903323285442570884_n](./img/google-4.png)
 Créez ensuite un nouveau compte de service :
 
-![341223863_914125263146363_524864849766701058_n](https://user-images.githubusercontent.com/56747050/233416627-8c378c19-e2cc-44d9-8b18-8e64735ecc7b.png)
+![341223863_914125263146363_524864849766701058_n](./img/google-5.png)
 
 Saisissez les informations nécessaires (nom, ID, description) dans la première étape, puis dans la deuxième étape, sélectionnez les rôles nécessaires pour votre compte de service. En fonction du service que vous utilisez, vous devrez sélectionner les rôles appropriés : par exemple, si vous utilisez l'API Earth Engine, vous devez sélectionner les rôles admin, viewer ou writer, en fonction de vos besoins :
 
-![341285054_594648945966990_3340994669833248652_n](https://user-images.githubusercontent.com/56747050/233417210-10045800-9b95-4aab-b1e8-0ac86752c586.png)
-
+![341285054_594648945966990_3340994669833248652_n](./img/google-6.png)
 Ensuite, sautez la troisième étape et créez votre compte de service en cliquant sur "Terminé". Cela devrait vous ramener à la liste de tous les comptes de service et vous devriez voir le compte de service que vous venez de créer listé. Cliquez dessus, puis cliquez sur l'onglet "Clés" :
 
-![328758927_2692944394192271_6807215753292084072_n](https://user-images.githubusercontent.com/56747050/233417265-fd030087-8034-44c7-8177-786af4b02e7d.png)
+![328758927_2692944394192271_6807215753292084072_n](./img/google-7.png)
 
 Cliquez sur "Add Key" et "Create new key", et sélectionnez le format JSON pour votre clé :
 
-![341264731_1182567819100669_7664721525011167448_n](https://user-images.githubusercontent.com/56747050/233417303-b47f9007-d15f-4211-a049-cc6cddcd0b21.png)
-
+![341264731_1182567819100669_7664721525011167448_n](./img/google-8.png)
 Cela créera automatiquement une clé et la téléchargera. Veillez à conserver cette clé.
 
 ## 4. Enregistrez votre projet cloud
@@ -90,12 +86,11 @@ Il y a deux façons d'installer un paquetage. Pour installer un paquetage Python
 
 Si vous réussissez à exécuter cette ligne, passez à l'étape suivante. Si vous souhaitez plutôt installer le package sur le cluster, ouvrez la barre de navigation sur Databricks, et cliquez sur "Compute". Sélectionnez le cluster sur lequel vous souhaitez installer le paquet, puis cliquez sur "libraries" :
 
-![341180939_1322586438321309_3468577516645542908_n](https://user-images.githubusercontent.com/56747050/233418201-52d806c7-9d0d-4e2f-a839-ff7d39d161af.png)
+![341180939_1322586438321309_3468577516645542908_n](./img/google-9.png)
 
 Cliquez ensuite sur "Installer nouveau" :
 
-![341112662_216410727698121_7329229316469598703_n](https://user-images.githubusercontent.com/56747050/233419405-8c2d008d-1e6a-4f00-94b5-1528a17fac58.png)
-
+![341112662_216410727698121_7329229316469598703_n](./img/google-10.png)
 Dans le menu contextuel, sélectionnez PyPI, et dans le champ "package name", entrez le nom de votre paquet (pour nous : `earthengine-api`), puis cliquez sur "Install". Une fois que vous aurez démarré votre cluster, il installera la bibliothèque et elle sera disponible sur tous les notebooks qui sont attachés à ce cluster.
 
 ## 6. Utilisation de votre API Google

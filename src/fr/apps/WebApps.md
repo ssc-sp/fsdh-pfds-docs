@@ -34,7 +34,7 @@ Pour héberger une application web sur le DataHub, vous devrez créer un dépôt
 
 Pour déployer votre application sur le DataHub, vous devez configurer l'App Service dans votre espace de travail. Vous pouvez le faire en naviguant vers l'App Service dans votre espace de travail et en cliquant sur "Configurer".
 
-![Accès au menu de configuration du service d'application](/api/docs/UserGuide/WebApps/configure.png)
+![Accès au menu de configuration du service d'application](./img/configure.png)
 
 Dans l'écran de configuration, vous devrez fournir les informations suivantes :
 
@@ -43,7 +43,7 @@ Dans l'écran de configuration, vous devrez fournir les informations suivantes :
 * **Path** : Le chemin vers le fichier `docker-compose.yml` dans votre référentiel.
 * (si privé) **Token** : Un jeton permettant d'accéder au référentiel.
 
-![Menu de configuration d'un service applicatif](/api/docs/UserGuide/WebApps/configure-2.png)
+![Menu de configuration d'un service applicatif](./img/configure-2.png)
 
 Après avoir fourni ces informations, cliquez sur `Save` pour déployer votre application sur le DataHub.
 
@@ -53,7 +53,7 @@ Une fois que votre application est déployée sur le DataHub, vous pouvez démar
 
 Une fois le service démarré, vous pouvez accéder à votre application web en cliquant sur le lien `Proxy URL` dans l'App Service.
 
-[Accès à l'URL du proxy pour votre application web](/api/docs/UserGuide/WebApps/access.png)
+[Accès à l'URL du proxy pour votre application web](./img/access.png)
 
 > **Note:** Après avoir démarré le service, l'application peut prendre quelques minutes pour être accessible via l'URL du proxy. Si vous rencontrez des problèmes, veuillez contacter l'équipe de support de DataHub pour obtenir de l'aide.
 

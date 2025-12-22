@@ -22,7 +22,7 @@ Pour approvisionner un espace de travail Databricks :
 
 Après quelques minutes, l'espace de travail Databricks sera provisionné et ajouté à votre espace de travail DataHub.
 
-![Ajouter Databricks à l'espace de travail](/api/docs/UserGuide/Databricks/databricks-101-1.png)
+![Ajouter Databricks à l'espace de travail](./img/databricks-101-1.png)
 
 ### Accéder à Databricks à partir du DataHub
 
@@ -32,7 +32,7 @@ Une fois l'espace de travail Databricks provisionné, vous pouvez y accéder dep
 
 **Note:** Il vous sera demandé de vous connecter à nouveau en utilisant vos identifiants M365 (les mêmes que ceux utilisés pour se connecter au portail DataHub).
 
-[Ouvrir Databricks](/api/docs/UserGuide/Databricks/databricks-101-2.png)
+[Ouvrir Databricks](./img/databricks-101-2.png)
 
 ## Gestion des clusters Databricks
 
@@ -53,7 +53,7 @@ Le nouveau cluster sera créé et prêt à être utilisé.
 
 **Note:** Nous fournissons un guide détaillé sur les différents clusters. Vous pouvez vous référer au guide [Politiques de clusters](./Cluster-Policies.md) pour plus d'informations.
 
-![Créer un cluster Databricks](/api/docs/UserGuide/Databricks/databricks-101-3.png)
+![Créer un cluster Databricks](./img/databricks-101-3.png)
 
 ### Démarrage et arrêt d'un cluster Databricks
 
@@ -89,7 +89,7 @@ Les carnets sont divisés en différentes cellules. Vous pouvez exécuter chaque
 
 Vous pouvez également inclure des cellules de texte avec Markdown. Cela vous permet de documenter votre code, d'expliquer votre processus de réflexion et d'ajouter des visualisations à votre carnet.
 
-![Un exemple de carnet de notes Databricks](/api/docs/UserGuide/Databricks/databricks-101-4.png)
+![Un exemple de carnet de notes Databricks](./img/databricks-101-4.png)
 
 ### Accès à votre compte de stockage dans Databricks
 

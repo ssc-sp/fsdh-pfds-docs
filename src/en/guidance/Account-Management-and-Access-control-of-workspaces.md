@@ -1,6 +1,6 @@
 # Account Management and Access control of workspaces  
 
-The account management and access control and ongoing maintenance of workspaces are the responsibility of the departments using the Federal Science Data Hub (FSDH). Within the department, the role of access control, account management and ongoing maintenance is the responsibility of the Workspace lead. A departmental user requesting access to the FSDH portal is assigned the role of Workspace lead and their responsibilities, and each user's responsibilities are detailed below:  
+The account management and access control and ongoing maintenance of workspaces are the responsibility of the departments using the Federal Science DataHub (FSDH). Within the department, the role of access control, account management and ongoing maintenance is the responsibility of the Workspace lead. A departmental user requesting access to the FSDH portal is assigned the role of Workspace lead and their responsibilities, and each user's responsibilities are detailed below:  
 
 The following are roles and responsibilities for components within the workspace. 
 

@@ -37,18 +37,17 @@ La première étape de l'utilisation d'AutoML consiste à télécharger vos donn
 Une fois que vous avez téléchargé vos données, vous pouvez créer une nouvelle expérience en cliquant sur l'onglet "Expériences" sur le côté gauche de l'écran. Si vous utilisez l'ancienne interface utilisateur, vous devez sélectionner "Machine Learning" dans le menu déroulant en haut à gauche.
 
 Ancienne interface utilisateur :
-![Alt text](/api/docs/UserGuide/Databricks/OldUIExp.png)
+![Alt text](./img/Experiments-OldUIExp.png)
 
 Nouvelle interface utilisateur :
-![Alt text](/api/docs/UserGuide/Databricks/NewUIExp.png)
+![Alt text](./img/Experiments-NewUIExp.png)
 
 Une fois que vous avez accédé à la page des expériences, vous pouvez cliquer sur le bouton "Nouvelle expérience" pour créer une nouvelle expérience :
 
-![Texte Alt](/api/docs/UserGuide/Databricks/CreateExp.png)
-
+![Texte Alt](./img/Experiments-CreateExp.png)
 Le menu de création d'expériences s'ouvre alors :
 
-![Alt text](/api/docs/UserGuide/Databricks/ExpMenu.png)
+![Alt text](./img/Experiments-ExpMenu.png)
 
 À partir de là, vous pouvez configurer votre expérience. Certaines configurations ne sont disponibles que pour certains types de problèmes de ML. Les configurations sont les suivantes :
 
@@ -60,7 +59,7 @@ Le menu de création d'expériences s'ouvre alors :
 
 Il existe également des configurations avancées dans lesquelles vous pouvez spécifier les éléments suivants :
 
-![Alt text](/api/docs/UserGuide/Databricks/AdvancedConfig.png)
+![Alt text](./img/Experiments-AdvancedConfig.png)
 
 - Métrique d'évaluation** : la métrique que vous souhaitez utiliser pour évaluer votre modèle. Elle sera utilisée pour comparer les modèles et sélectionner le meilleur. La métrique choisie doit être disponible pour le type de problème sélectionné.
 - **Cadres de formation** : les cadres que vous souhaitez utiliser pour la formation. En fonction de votre type de problème, vous pourrez choisir dans la liste ci-dessus. Notez que vous pouvez sélectionner plusieurs cadres à la fois.
@@ -70,24 +69,23 @@ Ainsi que d'autres configurations.
 
 Une fois que vous avez configuré votre expérience, vous pouvez cliquer sur le bouton "Démarrer AutoML" pour la créer. Vous accéderez alors à la page d'aperçu, où vous pourrez voir la progression de votre expérience :
 
-![Alt text](/api/docs/UserGuide/Databricks/ExpOverview.png)
+![Alt text](./img/Experiments-ExpOverview.png)
 
 En haut, vous pouvez voir des informations générales sur votre expérience, un carnet d'exploration des données généré automatiquement et le carnet du meilleur modèle. Vous pouvez également voir le statut de votre expérience et le nombre de modèles qui ont été formés jusqu'à présent. En bas, vous pouvez voir plus d'informations sur les modèles qui ont été formés, y compris le nom du modèle, le cadre utilisé, le temps de formation, la valeur métrique et le statut.
 
 Une fois votre expérience terminée, vos modèles seront triés en fonction de la métrique d'erreur que vous avez choisie, et vous pourrez alors sélectionner le meilleur modèle dans la liste. En cliquant dessus, vous pouvez enregistrer le modèle :
 
-![Alt text](/api/docs/UserGuide/Databricks/RegisterModel.png)
+![Alt text](./img/Experiments-RegisterModel.png)
 
 Vous serez invité à choisir un nom pour votre modèle, puis vous pourrez cliquer sur `Create`.
 
 À partir de ce moment, le modèle que vous avez créé sera accessible à toute personne à laquelle vous aurez donné des autorisations dans l'onglet "Modèles" sur le côté gauche de l'écran :
 
-![Alt text](/api/docs/UserGuide/Databricks/ModelTab.png)
+![Alt text](./img/Experiments-ModelTab.png)
 
 En cliquant sur un modèle enregistré, vous pourrez en voir les détails :
 
-![Alt text](/api/docs/UserGuide/Databricks/RegisteredModel.png)
-
+![Alt text](./img/Experiments-RegisteredModel.png)
 A partir de là, vous pouvez définir son stade, comme `Production`, `Staging` ou `Archivé`. Vous pouvez aussi voir l'historique des versions du modèle, qui vous montrera les différentes versions du modèle qui ont été créées. Vous pouvez également voir la lignée du modèle, qui vous montrera les différentes expériences qui ont été utilisées pour créer le modèle.
 
 En outre, vous pouvez cliquer sur "Utiliser le modèle pour l'inférence" pour générer automatiquement des carnets de notes qui peuvent être utilisés pour utiliser le modèle pour inférer ou appliquer automatiquement le modèle à tous les ensembles de données disponibles.
@@ -134,12 +132,11 @@ En ouvrant le contexte `mlflow.start_run`, vous pouvez enregistrer les paramètr
 
 L'exécution de ce code créera automatiquement une expérience pour vous, à laquelle vous pouvez accéder dans l'onglet `Expériences` sur le côté gauche de l'écran, et chaque exécution que vous créez sera ajoutée à cette expérience. Vous pouvez également visualiser toutes les expériences que vous avez créées dans un carnet en cliquant sur l'icône `Expériences MLFlow` sur le côté droit de l'écran :
 
-![Texte Alt](/api/docs/UserGuide/Databricks/ExpIcon.png)
+![Texte Alt](./img/Experiments-ExpIcon.png)
 
 À partir de là, vous pouvez visualiser vos séries, les modèles qui leur sont associés, les paramètres enregistrés et les mesures :
 
-![Alt text](/api/docs/UserGuide/Databricks/LoggedRuns.png)
-
+![Alt text](./img/Experiments-LoggedRuns.png)
 Une fois encore, n'oubliez pas de consulter le [cahier d'exemples de ML de bout en bout] (https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/end-to-end-example) ainsi que la [documentation de l'API MLFlow] (https://docs.databricks.com/api/azure/workspace/experiments) pour en savoir plus sur la manière d'exécuter des expériences à partir des cahiers d'expériences.
 
 ## En savoir plus

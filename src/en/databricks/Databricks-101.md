@@ -22,7 +22,7 @@ To provision a Databricks workspace:
 
 After a few minutes, the Databricks workspace will be provisioned and added to your DataHub workspace.
 
-![Add Databricks to Workspace](/api/docs/UserGuide/Databricks/databricks-101-1.png)
+![Add Databricks to Workspace](./img/databricks-101-1.png)
 
 ### Accessing Databricks from the DataHub
 
@@ -32,7 +32,7 @@ Once the Databricks workspace is provisioned, you can access it from the DataHub
 
 > **Note:** You will be prompted to sign in again using your M365 credentials (the same credentials used to sign in to the DataHub portal).
 
-![Open Databricks](/api/docs/UserGuide/Databricks/databricks-101-2.png)
+![Open Databricks](./img/databricks-101-2.png)
 
 ## Managing Databricks Clusters
 
@@ -53,7 +53,7 @@ The new cluster will be created and ready for use.
 
 > **Note:** We provide a detailed guide on different clusters. You can refer to the [Databricks Cluster Policies](./Cluster-Policies.md) guide for more information.
 
-![Create Databricks Cluster](/api/docs/UserGuide/Databricks/databricks-101-3.png)
+![Create Databricks Cluster](./img/databricks-101-3.png)
 
 ### Starting and Terminating a Databricks Cluster
 
@@ -89,7 +89,7 @@ Notebooks are split into different cells. You can run each cell individually or 
 
 You can also include text cells with Markdown. This allows you to document your code, explain your thought process, and add visualizations to your notebook.
 
-![A sample Databricks Notebook](/api/docs/UserGuide/Databricks/databricks-101-4.png)
+![A sample Databricks Notebook](./img/databricks-101-4.png)
 
 ### Accessing your Storage Account in Databricks
 

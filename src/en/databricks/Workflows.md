@@ -4,7 +4,7 @@ Workflows in Databricks are a way to orchestrate notebooks in your environment. 
 
 In Databricks Workflows, you create _jobs_. _Jobs_ are a list of _tasks_ that you customize the order and linearity of. Here is an example _job_ that contains 4 _tasks_, two of which are run in parallel:
 
-![Alt text](ExWorkflow.png)
+![Alt text](./img/Workflow-ExWorkflow.png)
 
 _Tasks_ are the building blocks of jobs, they can be of any of the following type:
 
@@ -21,27 +21,25 @@ _Tasks_ are the building blocks of jobs, they can be of any of the following typ
 
 To create a job, make sure you are in "Data Science & Engineering" mode, then click on the `Workflows` icon on the navigation tab on the left, and then click on `Create Job`:
 
-![Alt text](TabWorkflow.png)
+![Alt text](./img/Workflow-TabWorkflow.png)
 
-![Alt text](CreateWorkflow.png)
+![Alt text](./img/Workflow-CreateWorkflow.png)
 
 This will bring you to the Job creation page, where you will be setting up your first task:
 
-![Alt text](TaskWorkflow.png)
-
+![Alt text](./img/Workflow-TaskWorkflow.png)
 You can define the name, type and cluster of the task. This is a great feature as this allows you to optimize your cluster usage. Once you have created your first task, you will be given the opportunity to create new tasks:
 
-![Alt text](NewTaskWorkflow.png)
+![Alt text](./img/Workflow-NewTaskWorkflow.png)
 
 Once you have created a second task, you will be given the opportunity to define which other tasks it depends on:
 
-![Alt text](DependencyWorkflow.png)
-
+![Alt text](./img/Workflow-DependencyWorkflow.png)
 Tasks run only when all tasks it depends on are done running. Several tasks can depend on a single task, which creates parallel workflows, and a single task can depend on several tasks.
 
 Once you are done designing your job, you can test out your job, by clicking "Run now" and clicking on "Runs" in the top left:
 
-![Alt text](RunWorkflow.png)
+![Alt text](./img/Workflow-RunWorkflow.png)
 
 This will trigger your job, and from the "runs" screen, you will be able to monitor each run of your job as well as each task of your runs.
 
@@ -49,7 +47,7 @@ This will trigger your job, and from the "runs" screen, you will be able to moni
 
 From the "Runs" menu, you can easily monitor each run and each task of your jobs:
 
-![Alt text](MonitorWorkflow.png)
+![Alt text](./img/Workflow-MonitorWorkflow.png)
 
 The bar diagrams correspond to each run and their size corresponds to the time taken. Under each bar is a list of squares which corresponds to the individual tasks if your jobs. For each element, the colors indicate the state: green for completed, red for failure and grey for canceled.
 
@@ -59,7 +57,7 @@ In the table at the bottom, you can see and inspect every previous and ongoing r
 
 While a job is open, from either of the "runs" tab or the "tasks" tab, you can open the right side panel, which makes many configurations available to you:
 
-![Alt text](ConfigWorkflow.png)
+![Alt text](./img/Workflow-ConfigWorkflow.png)
 
 From this panel, you can:
 
@@ -78,14 +76,13 @@ Using these configurations, you can customize your jobs however you like and nee
 
 As part of Databricks Workflows, you can also easily schedule a notebook. In order to do so, navigate to the notebook of your choice, and click "Schedule":
 
-![Alt text](ScheduleWorkflow.png)
+![Alt text](./img/Workflow-ScheduleWorkflow.png)
 
 This will pop up a menu that will allow you to schedule this notebook to be run as a single-task job:
 
-![Alt text](NotebookWorkflow.png)
-
+![Alt text](./img/Workflow-NotebookWorkflow.png)
 From there, you can easily configure a schedule as well as alerts for your notebook runs. Once your job is created, you can access it from the Workflows menu as any other job:
 
-![Alt text](NbJobWorkflow.png)
+![Alt text](./img/Workflow-NbJobWorkflow.png)
 
 ## **[Learn more about Databricks Workflows](https://docs.databricks.com/workflows/index.html)**

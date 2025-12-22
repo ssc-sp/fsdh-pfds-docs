@@ -18,7 +18,7 @@ Les workflows dans Databricks sont un moyen d'orchestrer les notebooks dans votr
 
 Dans les Databricks Workflows, vous créez des _jobs_. Les _jobs_ sont une liste de _tâches_ dont vous personnalisez l'ordre et la linéarité. Voici un exemple de _job_ contenant 4 _tasks_, dont deux sont exécutées en parallèle :
 
-![Alt text](ExWorkflow.png)
+![Alt text](./img/Workflow-ExWorkflow.png)
 
 Les tâches sont les éléments constitutifs des emplois. Elles peuvent être de l'un des types suivants :
 
@@ -35,27 +35,25 @@ Les tâches sont les éléments constitutifs des emplois. Elles peuvent être de
 
 Pour créer un travail, assurez-vous d'être en mode "Data Science & Engineering", puis cliquez sur l'icône "Workflows" dans l'onglet de navigation à gauche, et enfin sur "Create Job" :
 
-![Alt text](TabWorkflow.png)
+![Alt text](./img/Workflow-TabWorkflow.png)
 
-![Alt text](CreateWorkflow.png)
+![Alt text](./img/Workflow-CreateWorkflow.png)
 
 Vous accéderez à la page de création d'emploi, où vous configurerez votre première tâche :
 
-![Alt text](TaskWorkflow.png)
-
+![Alt text](./img/Workflow-TaskWorkflow.png)
 Vous pouvez définir le nom, le type et la grappe de la tâche. Il s'agit d'une fonctionnalité intéressante qui vous permet d'optimiser l'utilisation de votre cluster. Une fois que vous avez créé votre première tâche, vous avez la possibilité d'en créer de nouvelles :
 
-![Alt text](NewTaskWorkflow.png)
+![Alt text](./img/Workflow-NewTaskWorkflow.png)
 
 Une fois que vous avez créé une deuxième tâche, vous avez la possibilité de définir de quelles autres tâches elle dépend :
 
-![Alt text](DependencyWorkflow.png)
-
+![Alt text](./img/Workflow-DependencyWorkflow.png)
 Les tâches ne s'exécutent que lorsque toutes les tâches dont elles dépendent ont fini de s'exécuter. Plusieurs tâches peuvent dépendre d'une seule tâche, ce qui crée des flux de travail parallèles, et une seule tâche peut dépendre de plusieurs tâches.
 
 Une fois que vous avez terminé la conception de votre travail, vous pouvez le tester en cliquant sur "Exécuter maintenant" et en cliquant sur "Exécutions" en haut à gauche :
 
-![Alt text](RunWorkflow.png)
+![Alt text](./img/Workflow-RunWorkflow.png)
 
 Cela déclenchera votre travail et, à partir de l'écran "runs", vous pourrez contrôler chaque exécution de votre travail ainsi que chaque tâche de vos exécutions.
 
@@ -63,7 +61,7 @@ Cela déclenchera votre travail et, à partir de l'écran "runs", vous pourrez c
 
 À partir du menu "Exécutions", vous pouvez facilement contrôler chaque exécution et chaque tâche de vos travaux :
 
-![Alt text](MonitorWorkflow.png)
+![Alt text](./img/Workflow-MonitorWorkflow.png)
 
 Les diagrammes à barres correspondent à chaque exécution et leur taille correspond au temps nécessaire. Sous chaque barre se trouve une liste de carrés correspondant aux tâches individuelles de vos travaux. Pour chaque élément, les couleurs indiquent l'état : vert pour terminé, rouge pour échec et gris pour annulé.
 
@@ -73,7 +71,7 @@ Dans le tableau du bas, vous pouvez voir et inspecter toutes les exécutions pr�
 
 Lorsqu'un travail est ouvert, à partir de l'onglet "runs" ou de l'onglet "tasks", vous pouvez ouvrir le panneau latéral droit, qui met à votre disposition de nombreuses configurations :
 
-![Alt text](ConfigWorkflow.png)
+![Alt text](./img/Workflow-ConfigWorkflow.png)
 
 À partir de ce panneau, vous pouvez
 
@@ -92,14 +90,13 @@ Grâce à ces configurations, vous pouvez personnaliser vos travaux comme vous l
 
 Dans le cadre de Databricks Workflows, vous pouvez également planifier facilement un carnet de notes. Pour ce faire, naviguez jusqu'au carnet de notes de votre choix et cliquez sur "Schedule" :
 
-![Alt text](ScheduleWorkflow.png)
+![Alt text](./img/Workflow-ScheduleWorkflow.png)
 
 Un menu apparaît qui vous permet de planifier l'exécution de ce carnet en tant que tâche unique :
 
-![Alt text](NotebookWorkflow.png)
-
+![Alt text](./img/Workflow-NotebookWorkflow.png)
 À partir de là, vous pouvez facilement configurer un calendrier ainsi que des alertes pour l'exécution de vos carnets. Une fois votre tâche créée, vous pouvez y accéder à partir du menu Workflows comme n'importe quelle autre tâche :
 
-![Alt text](NbJobWorkflow.png)
+![Alt text](./img/Workflow-NbJobWorkflow.png)
 
 ## **[En savoir plus sur Databricks Workflows](https://docs.databricks.com/workflows/index.html)**

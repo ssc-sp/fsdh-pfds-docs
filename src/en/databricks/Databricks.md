@@ -32,7 +32,3 @@ See the following links for a list of resources for working with Databricks, Pyt
 - [Spark Sql](https://docs.databricks.com/spark/latest/spark-sql/index.html) - although you may not be handling big data, the spark API might come in handy for data wrangling tasks 
 - [Spark SQL Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 - [Intro to Spark](https://www.kdnuggets.com/2018/10/apache-spark-introduction-beginners.html)
-
-
-
-
