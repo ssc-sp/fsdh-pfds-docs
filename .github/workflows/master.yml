@@ -36,8 +36,5 @@ jobs:
           user_email: 'actions@github.com'
           force_orphan: true
 
-      - name: Notify Slack channel if this job failed
-        if: ${{ failure() }}
-        run: |
-          json='{"text":"<!here> CI is failing in <https://github.com/cds-snc/notification-documentation/actions/runs/'${{ github.run_id }}'|notification-documentation> !"}'
-          curl -X POST -H 'Content-type: application/json' --data "$json"  ${{ secrets.SLACK_WEBHOOK }}
+      - name: Post deployment message
+        run: echo "Documentation deployed to GitHub Pages"
