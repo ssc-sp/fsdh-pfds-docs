@@ -32,7 +32,7 @@ Replace `<database_name>` with the name of the database you want to grant access
 
 3. In the `General` tab, enter the desired username in the `Name` field.
 
-![Preview 1](/api/docs/UserGuide/Database/create-user-1.png)
+![Preview 1](./img/database-create-user-1.png)
 
 4. In the `Definition` tab, enter the desired password in the `Password` field.
 
