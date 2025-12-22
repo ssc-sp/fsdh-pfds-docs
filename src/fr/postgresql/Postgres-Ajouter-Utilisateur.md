@@ -32,7 +32,7 @@ Remplacez `<nom_de_la_base_de_données>` par le nom de la base de données à la
 
 3. Dans l'onglet `General`, entrez le nom d'utilisateur désiré dans le champ `Name`.
 
-![Ecran 1](./img/create-user-1.png)
+![Ecran 1](./img/database-create-user-1.png)
 
 4. Dans l'onglet `Definition`, entrez le mot de passe souhaité dans le champ `Password`.
 
