@@ -1,3 +1,7 @@
+---
+next: ./gerer-espaces-et-utilisateurs/Preregistration.md
+---
+
 # Survol
 
 Cette documentation technique est destinée aux scientifiques qui utilisent la [Plateforme fédérale de données scientifiques (PFDS)](https://plateforme-federale-donnees-scientifiques.canada.ca/) pour gérer et analyser des données scientifiques. Elle comprend des guides sur l'utilisation de diverses fonctionnalités:
