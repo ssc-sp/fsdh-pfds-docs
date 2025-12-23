@@ -107,18 +107,24 @@ export default {
         {"en": '/en/apps/', "fr": '/fr/apps/'},
         {"en": '/en/apps/WebApps', "fr": '/fr/apps/WebApps'},
       ]
+
       const currentUrl = this.$page.path.split(".html")[0]
-      const lang = currentUrl.split('/')[1]
-      // Workaround: During building, VuePress checks NavLinks against known routes
-      // In this method we depend on /en/ or /fr/ to exist in the url. This is not the case
-      // for the root "/". Once the app is running, "/" redirects to either '/en/' or '/fr/'
-      // this "context" isn't available during the build process, similar to how the window object
-      // is not available during a build and hence will fail if we used it here to get the current url.
-      if (lang == '') return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
+      const lang = currentUrl.split('/')[1] || 'en' // Default to 'en' if no language is found
+
+      if (!['en', 'fr'].includes(lang)) {
+        return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
+      }
+
       const otherLang = {"en": "fr", "fr": "en"}[lang]
-      const url = mappings.find(url => url[lang] == currentUrl)
-      const txt = lang == 'fr' ? "English" : "Français"
+      const url = mappings.find(url => url[lang] === currentUrl)
+
+      if (!url) {
+        return [] // Return an empty array if no matching URL is found
+      }
+
+      const txt = lang === 'fr' ? "English" : "Français"
       const link = url[otherLang]
+
       return [{"text": txt, "link": link, "type": "link", "items": []}]
     },
 
