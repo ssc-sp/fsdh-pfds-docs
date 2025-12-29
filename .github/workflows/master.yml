@@ -25,7 +25,7 @@ jobs:
         run: npm run lint-links
 
       - name: Build website
-        run: PUBLIC_URL="/notification-documentation/" npm run build
+        run: PUBLIC_URL="/fsdh-pfds-docs/" npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7 # v3.9.2

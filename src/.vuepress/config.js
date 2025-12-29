@@ -60,11 +60,11 @@ module.exports = {
    */
   themeConfig: {
     logo: 'https://assets.notification.canada.ca/static/gov-canada-en.svg',
-    editLinks: false,
-    lastUpdated: false,
+    editLinks: true,
+    lastUpdated: true,
     nextLinks: true,
     prevLinks: true,
-    docsRepo: 'cds-snc/notification-documentation',
+    docsRepo: 'ssc-sp/fsdh-pfds-docs',
     docsDir: 'src',
     docsBranch: 'main',
     smoothScroll: true,

@@ -1,3 +1,7 @@
+---
+next: ./managing-workspaces-and-users/Preregistration
+---
+
 # Overview
 
 This technical documentation is for scientists who are working with the [Federal Science DataHub (FSDH)](https://federal-science-datahub.canada.ca/) to manage and analyze scientific data. It includes guides on how to use various features:
