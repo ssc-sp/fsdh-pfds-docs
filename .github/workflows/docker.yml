@@ -1,17 +1,15 @@
-name: Build, push to AWS ECR, and deploy
+name: Build, push to GitHub Container Registry, and deploy
 on:
   push:
     branches:
       - main
 
 env:
-  AWS_REGION: ca-central-1
-  DOCKER_ORG: public.ecr.aws/cds-snc
-  DOCKER_SLUG: public.ecr.aws/cds-snc/notify-documentation
+  DOCKER_SLUG: ghcr.io/ssc-sp/fsdh-pfds-docs
 
 permissions:
-  id-token: write   # This is required for requesting the OIDC JWT
-  contents: read    # This is required for actions/checkout
+  contents: read    # required for actions/checkout
+  packages: write   # required to push to GitHub Container Registry (ghcr.io)
 
 jobs:
   deploy:
@@ -19,82 +17,28 @@ jobs:
     name: Build and push
     steps:
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-    - name: Install AWS CLI
-      run: |
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip -q awscliv2.zip
-        sudo ./aws/install --update
-        aws --version
 
-    - name: Configure credentials to CDS public ECR using OIDC
-      uses: aws-actions/configure-aws-credentials@5fd3084fc36e372ff1fff382a39b10d03659f355 # v2.2.0
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
       with:
-        role-to-assume: arn:aws:iam::283582579564:role/notification-documentation-apply
-        role-session-name: NotifyDocumentationGitHubActions
-        aws-region: "us-east-1"
-    - name: Login to ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@261a7de32bda11ba01f4d75c4ed6caf3739e54be # v1.5.3
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push image to ghcr.io
+      uses: docker/build-push-action@v4
       with:
-        registry-type: public
-
-    - name: Build
-      run: |
-        docker pull $DOCKER_SLUG:latest
-        docker build \
-          --cache-from $DOCKER_SLUG:latest \
-          -t $DOCKER_SLUG:latest \
-          -t $DOCKER_SLUG:${GITHUB_SHA::7} \
-          -f Dockerfile .
-    - name: Publish
-      run: |
-        docker push $DOCKER_SLUG:latest && docker push $DOCKER_SLUG:${GITHUB_SHA::7}
-
-    - name: Configure credentials to Notify account using OIDC
-      uses: aws-actions/configure-aws-credentials@5fd3084fc36e372ff1fff382a39b10d03659f355 # v2.2.0
-      with:
-        role-to-assume: arn:aws:iam::239043911459:role/notification-documentation-apply
-        role-session-name: NotifyDocumentationGitHubActions
-        aws-region: "ca-central-1"                       
-
-    - name: Set Docker Tag
-      run: echo "DOCKER_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
-      env:
-        GITHUB_SHA: ${{ github.sha }}
-
-    - name: Update images in staging (Helm)
-      run: |
-        curl -L \
-        -X POST \
-          -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer ${{ secrets.MANIFESTS_WORKFLOW_TOKEN }}" \
-          -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/repos/cds-snc/notification-manifests/dispatches \
-          -d '{"event_type":"update-docker-image","client_payload":{"component":"DOCUMENTATION","docker_tag":"${{ env.DOCKER_TAG }}"}}'
-
-    - name: my-app-install token
-      id: notify-pr-bot
-      uses: getsentry/action-github-app-token@38a3ce582e170ddfe8789f509597c6944f2292a9 # v1.0.6
-      with:
-        app_id: ${{ secrets.NOTIFY_PR_BOT_APP_ID }}
-        private_key: ${{ secrets.NOTIFY_PR_BOT_PRIVATE_KEY }}
-
-    - uses: cds-snc/notification-pr-bot@main
-      env:
-        TOKEN: ${{ steps.notify-pr-bot.outputs.token }} 
-
-    - name: Generate docker SBOM
-      uses: cds-snc/security-tools/.github/actions/generate-sbom@34794baf2af592913bb5b51d8df4f8d0acc49b6f # v3.2.0
-      env:
-        TRIVY_DB_REPOSITORY: ${{ vars.TRIVY_DB_REPOSITORY }}
-      with:
-        docker_image: "${{ env.DOCKER_SLUG }}:latest"
-        dockerfile_path: "Dockerfile"
-        sbom_name: "notification-documentation"
-        token: "${{ secrets.GITHUB_TOKEN }}"
-
-    - name: Notify Slack channel if this job failed
-      if: ${{ failure() }}
-      run: |
-        json='{"text":"<!here> CI is failing in <https://github.com/cds-snc/notification-documentation/actions/runs/'${{ github.run_id }}'|notification-documentation> !"}'
-        curl -X POST -H 'Content-type: application/json' --data "$json"  ${{ secrets.SLACK_WEBHOOK }}
+        context: .
+        file: Dockerfile
+        push: true
+        tags: |
+          ghcr.io/ssc-sp/fsdh-pfds-docs:latest
+          ghcr.io/ssc-sp/fsdh-pfds-docs:${{ github.sha }}
+        cache-from: type=registry,ref=ghcr.io/ssc-sp/fsdh-pfds-docs:latest
+        cache-to: type=inline
