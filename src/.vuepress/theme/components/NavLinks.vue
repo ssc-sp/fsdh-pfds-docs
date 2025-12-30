@@ -55,6 +55,7 @@ export default {
       const mappings = [
         {"en": "/", "fr": "/"},
         {"en": "/en/", "fr": "/fr/"},
+        {"en": "/en/Terms-And-Conditions", "fr": "/fr/Conditions-generales"},
         {"en": '/en/managing-workspaces-and-users/', "fr": '/fr/gerer-espaces-et-utilisateurs/'},
         {"en": '/en/managing-workspaces-and-users/Preregistration', "fr": '/fr/gerer-espaces-et-utilisateurs/Preregistration'},
         {"en": '/en/managing-workspaces-and-users/Complete-metadata', "fr": '/fr/gerer-espaces-et-utilisateurs/Complete-metadata'},

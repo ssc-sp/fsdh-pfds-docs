@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/en/POC-Terms-And-Conditions.md
-      - src/fr/Conditions-générales-de-POC.md
+      - src/en/Terms-And-Conditions.md
+      - src/fr/Conditions-generales.md
 
 permissions:
   contents: write

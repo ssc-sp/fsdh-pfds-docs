@@ -182,7 +182,7 @@ module.exports = {
                 '/en/apps/WebApps'
               ]
             },
-            '/en/POC-Terms-And-Conditions'
+            '/en/Terms-And-Conditions'
           ]
         }
       },
@@ -299,7 +299,7 @@ module.exports = {
                 '/fr/apps/WebApps'
               ]
             },
-            '/fr/Conditions-générales-de-POC'
+            '/fr/Conditions-generales'
           ]
         }
       },
