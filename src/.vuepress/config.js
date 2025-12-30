@@ -116,23 +116,6 @@ module.exports = {
               ]
             },
             {
-              title: 'User Guidance',
-              path: '/en/guidance',
-              collapsable: true,
-              children: [
-                '/en/guidance/Account-Management-and-Access-control-of-workspaces',
-                '/en/guidance/Backup-and-Recovery',
-                '/en/guidance/Components-within-a-workspace',
-                '/en/guidance/Github-and-code-repo-management.md',
-                '/en/guidance/Incident-Detection-and-Response.md',
-                '/en/guidance/Monitor-Usage.md',
-                '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
-                '/en/guidance/Personnel-security-clearance.md',
-                '/en/guidance/Roles-within-FSDH-workspace.md',
-                '/en/guidance/Source-code.md'
-              ]
-            },
-            {
               title: 'Storage',
               path: '/en/storage',
               collapsable: true,
@@ -179,6 +162,20 @@ module.exports = {
               collapsable: true,
               children: [
                 '/en/apps/WebApps'
+              ]
+            },
+            {
+              title: 'User Guidance',
+              path: '/en/guidance',
+              collapsable: true,
+              children: [
+                '/en/guidance/Account-Management-and-Access-control-of-workspaces',
+                '/en/guidance/Backup-and-Recovery',
+                '/en/guidance/Github-and-code-repo-management.md',
+                '/en/guidance/Incident-Detection-and-Response.md',
+                '/en/guidance/Monitor-Usage.md',
+                '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
+                '/en/guidance/Source-code.md'
               ]
             },
             '/en/Terms-And-Conditions'
@@ -232,23 +229,6 @@ module.exports = {
               ]
             },
             {
-              title: 'Conseils aux utilisateurs',
-              path: '/fr/conseils',
-              collapsable: true,
-              children: [
-                '/fr/conseils/Attestation-de-securite-du-personnel',
-                '/fr/conseils/Code-source',
-                '/fr/conseils/Composants-dun-espace-de-travail',
-                '/fr/conseils/Controle-dusage',
-                '/fr/conseils/Controle-et-audit-dun-espace-de-travail',
-                '/fr/conseils/Detection-et-response-aux-incidents',
-                '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
-                '/fr/conseils/Github-et-gestion-des-repos',
-                '/fr/conseils/Roles-dans-un-espace-de-travail',
-                '/fr/conseils/Sauvegarde-et-recuperation'
-              ]
-            },
-            {
               title: 'Stockage',
               path: '/fr/stockage',
               collapsable: true,
@@ -295,6 +275,20 @@ module.exports = {
               collapsable: true,
               children: [
                 '/fr/apps/WebApps'
+              ]
+            },
+            {
+              title: 'Conseils aux utilisateurs',
+              path: '/fr/conseils',
+              collapsable: true,
+              children: [
+                '/fr/conseils/Code-source',
+                '/fr/conseils/Controle-dusage',
+                '/fr/conseils/Controle-et-audit-dun-espace-de-travail',
+                '/fr/conseils/Detection-et-response-aux-incidents',
+                '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
+                '/fr/conseils/Github-et-gestion-des-repos',
+                '/fr/conseils/Sauvegarde-et-recuperation'
               ]
             },
             '/fr/Conditions-generales'
