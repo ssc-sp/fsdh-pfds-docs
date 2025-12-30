@@ -76,7 +76,7 @@ module.exports = {
         ariaLabel: 'Languages',
         siteSubtitle: 'Documentation',
         backToNotifyLink: 'https://prd.fsdh-dhsf.science.cloud-nuage.canada.ca/',
-        backToNotifyText: 'Back to Federal Science DataHub',
+        backToNotifyText: 'Back to the FSDH',
         editLinkText: 'Edit this page on GitHub (opens in a new tab)',
         lastUpdated: 'Last updated',
         serviceWorker: {
