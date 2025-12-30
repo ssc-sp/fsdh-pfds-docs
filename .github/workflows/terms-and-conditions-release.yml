@@ -1,0 +1,57 @@
+name: Update to the Terms and Conditions
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - src/en/POC-Terms-And-Conditions.md
+      - src/fr/Conditions-générales-de-POC.md
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Make tag name
+        id: mk
+        run: |
+          TAG="$(date -u +%Y.%m.%d)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.mk.outputs.tag }}
+          name: FSDH Terms & Conditions - Updated ${{ steps.mk.outputs.tag }}
+          body: |
+            Automated release triggered by file changes in commit ${{ github.sha }}.
+
+            **Commit message:** ${{ github.event.head_commit.message }}
+          files: |
+            UserGuide/POC-Terms-And-Conditions.md
+            fr/UserGuide/Conditions-générales-de-POC.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  update-last-updated:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Update LAST_UPDATED.md
+        run: |
+          echo "$(date -u +'%Y-%m-%d')" > LAST_UPDATED.md
+
+      - name: Commit and push LAST_UPDATED.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add LAST_UPDATED.md
+          git commit -m "Update LAST_UPDATED.md to date of release"
+          git push
