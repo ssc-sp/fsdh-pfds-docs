@@ -13,13 +13,13 @@ Après avoir accédé à la boîte à outils :
 
 Lorsque vous accédez à la boîte à outils pour la première fois, l'écran suivant s'affiche:
 
-![Boîte à outils](/api/docs/fr/UserGuide/GettingStarted/toolbox-select.png)
+![Boîte à outils](./img/toolbox-select.png)
 
 La première étape pour demander de nouveaux outils consiste à sélectionner les outils que vous souhaitez ajouter à votre espace de travail.
 
 Le catalogue d'outils répertorie tous nos outils disponibles et à venir. Chaque outil est classé dans une catégorie. En cliquant sur le nom de l'outil, vous accédez à la fiche d'informations de l'outil:
 
-![Informations sur l'outil](/api/docs/fr/UserGuide/GettingStarted/toolbox-info-sheet.png)
+![Informations sur l'outil](./img/toolbox-info-sheet.png)
 
 Cette fiche contient des informations utiles sur l'outil, telles que son coût, son utilisation et ses dépendances.
 
@@ -27,18 +27,18 @@ Une fois que vous avez décidé d'ajouter un outil, cliquez sur le bouton « Ajo
 
 votre demande et le supprimera du catalogue. Vous verrez l'outil apparaître dans la section « Ajouter » de votre résumé :
 
-![Résumé de l'outil](/api/docs/fr/UserGuide/GettingStarted/toolbox-add-tool-1.png)
+![Résumé de l'outil](./img/toolbox-add-tool-1.png)
 
-![Résumé de l'outil](/api/docs/fr/UserGuide/GettingStarted/toolbox-add-tool-2.png)
+![Résumé de l'outil](./img/toolbox-add-tool-2.png)
 
 > __Remarque__ : lorsque vous ajoutez un outil, toutes ses dépendances sont automatiquement ajoutées à votre demande. Par exemple, dans les captures d'écran ci-dessus
 > l'outil « Azure Storage Blob » a été ajouté, et sa dépendance « Azure Workspace Essentials » a également été ajoutée à la demande.
 
 Vous pouvez également annuler votre sélection en cliquant sur les icônes « X » à côté du nom de l'outil. Cela supprimera l'outil de votre demande et le rajoutera au catalogue:
 
-![Annuler la sélection](/api/docs/fr/UserGuide/GettingStarted/toolbox-undo-1.png)
+![Annuler la sélection](./img/toolbox-undo-1.png)
 
-![Annuler la sélection](/api/docs/fr/UserGuide/GettingStarted/toolbox-select.png)
+![Annuler la sélection](./img/toolbox-select.png)
 
 > __Remarque__ : si vous annulez la sélection d'un outil qui est la dépendance d'un autre outil, l'outil dépendant sera également supprimé de votre demande.
 > De plus, si vous supprimez un outil, ses dépendances ne sont __pas__ automatiquement supprimées de votre demande.
@@ -47,7 +47,7 @@ Vous pouvez également annuler votre sélection en cliquant sur les icônes « X
 
 Si vous avez déjà demandé des outils dans votre espace de travail, vous verrez l'écran suivant :
 
-![Gérer](/api/docs/fr/UserGuide/GettingStarted/toolbox-manage-1.png)
+![Gérer](./img/toolbox-manage-1.png)
 
 En plus de pouvoir ajouter de nouveaux outils, vous pouvez également gérer certains outils existants. Vous pouvez également voir un petit résumé des coûts de votre espace de travail au bas de la section « Résumé ». Ce résumé des coûts décrit l'état actuel de votre espace de travail.
 
@@ -64,7 +64,7 @@ Une fois que vous avez sélectionné les outils que vous souhaitez ajouter, conf
 
 Si vous ajoutez un outil qui dispose d'options de configuration ou si vous configurez un outil existant, vous verrez l'étape « Configurer » de la demande :
 
-![Configurer](/api/docs/fr/UserGuide/GettingStarted/toolbox-configure.png)
+![Configurer](./img/toolbox-configure.png)
 
 Cette étape vous permet d'effectuer certains choix de configuration matérielle spécifiques à l'outil. Les options sélectionnées par défaut sont les configurations par défaut que nous proposons. Vous pouvez modifier la configuration de chaque outil en remplissant leurs formulaires de configuration individuels. Les options disponibles dépendent de l'outil que vous configurez.
 
@@ -80,8 +80,8 @@ Vérifiez les informations affichées à l'écran et, si vous êtes satisfait de
 
 Cela lancera le processus de soumission, qui vérifie la validité de votre demande, puis l'envoie au système automatisé pour traitement :
 
-![Révision](/api/docs/fr/UserGuide/GettingStarted/toolbox-review.png)
-![Soumettre](/api/docs/fr/UserGuide/GettingStarted/toolbox-submit.png)
+![Révision](./img/toolbox-review.png)
+![Soumettre](./img/toolbox-submit.png)
 
 Une fois le processus de soumission terminé, vous serez redirigé vers le tableau de bord de votre espace de travail.
 

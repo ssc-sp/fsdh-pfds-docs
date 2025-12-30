@@ -100,7 +100,6 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Getting-a-workspace.aspx', 'Getting a workspace (only available on the GC network)'],
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx', 'Estimate costs (only available on the GC network)'],
                 '/en/managing-workspaces-and-users/Preregistration',
-                '/en/managing-workspaces-and-users/Complete-metadata',
                 '/en/managing-workspaces-and-users/Request-tools',
                 '/en/managing-workspaces-and-users/Change-a-user-role'
               ]
@@ -217,9 +216,8 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Getting-a-workspace.aspx', 'Obtenir un espace de travail (uniquement disponible sur le réseau GC)'],
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx', 'Estimer les coûts (uniquement disponible sur le réseau GC)'],
                 '/fr/gerer-espaces-et-utilisateurs/Preregistration',
-                '/fr/gerer-espaces-et-utilisateurs/Complete-metadata',
                 '/fr/gerer-espaces-et-utilisateurs/Demande-outils',
-                '/fr/gerer-espaces-et-utilisateurs/Change-a-user-role'
+                '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur'
               ]
             },
             {
@@ -235,19 +233,19 @@ module.exports = {
             },
             {
               title: 'Conseils aux utilisateurs',
-              path: '/fr/guidance',
+              path: '/fr/conseils',
               collapsable: true,
               children: [
-                '/fr/guidance/Attestation-de-securite-du-personnel',
-                '/fr/guidance/Code-source',
-                '/fr/guidance/Composants-dun-espace-de-travail',
-                '/fr/guidance/Controle-dusage',
-                '/fr/guidance/Controle-et-audit-dun-espace-de-travail',
-                '/fr/guidance/Detection-et-response-aux-incidents',
-                '/fr/guidance/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
-                '/fr/guidance/Github-et-gestion-des-repos',
-                '/fr/guidance/Roles-dans-un-espace-de-travail',
-                '/fr/guidance/Sauvegarde-et-recuperation'
+                '/fr/conseils/Attestation-de-securite-du-personnel',
+                '/fr/conseils/Code-source',
+                '/fr/conseils/Composants-dun-espace-de-travail',
+                '/fr/conseils/Controle-dusage',
+                '/fr/conseils/Controle-et-audit-dun-espace-de-travail',
+                '/fr/conseils/Detection-et-response-aux-incidents',
+                '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
+                '/fr/conseils/Github-et-gestion-des-repos',
+                '/fr/conseils/Roles-dans-un-espace-de-travail',
+                '/fr/conseils/Sauvegarde-et-recuperation'
               ]
             },
             {
