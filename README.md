@@ -4,7 +4,7 @@
 
 ![The Federal Science DataHub](./fsdh-2.jpg)
 
-![MIT Licence](https://img.shields.io/badge/licence-mit-blue) ![GitHub contributors](https://img.shields.io/github/contributors/ssc-sp/fsdh-pfds-docs) ![GitHub Repo stars](https://img.shields.io/github/stars/ssc-sp/fsdh-pfds-docs) ![GitHub Release](https://img.shields.io/github/v/release/ssc-sp/fsdh-pfds-docs) ![GitHub branch status](https://img.shields.io/github/checks-status/ssc-sp/fsdh-pfds-docs/main?label=build)
+![MIT Licence](https://img.shields.io/badge/licence-mit-blue) ![GitHub contributors](https://img.shields.io/github/contributors/ssc-sp/fsdh-pfds-docs) ![GitHub Repo stars](https://img.shields.io/github/stars/ssc-sp/fsdh-pfds-docs) ![GitHub Release](https://img.shields.io/github/v/release/ssc-sp/fsdh-pfds-docs) ![GitHub branch check runs](https://img.shields.io/github/check-runs/ssc-sp/fsdh-pfds-docs/main)
 
 </div>
 
@@ -72,9 +72,7 @@ docker run -p 8000:80 ssc-sp/fsdh-pfds-docs:0.1
 
 ![Plateforme fédérale de données scientifiques](./fsdh-fr.png)
 
-![Licence MIT](https://img.shields.io/badge/licence-mit-blue) ![GitHub contributors](https://img.shields.io/github/contributors/ssc-sp/fsdh-pfds-docs?label=contributeurs) ![GitHub Repo stars](https://img.shields.io/github/stars/ssc-sp/fsdh-pfds-docs?label=%C3%89toiles) ![GitHub Release](https://img.shields.io/github/v/release/ssc-sp/fsdh-pfds-docs?label=version) ![GitHub branch status](https://img.shields.io/github/checks-status/ssc-sp/fsdh-pfds-docs/main?label=compilation)
-
-[Documentation](https://github.com/ssc-sp/datahub-docs) | [Consignes pour les développeurs](developer-guidelines.md) | [Contribution](CONTRIBUTING.md) | [Sécurité](SECURITY.md)
+![Licence MIT](https://img.shields.io/badge/licence-mit-blue) ![GitHub contributors](https://img.shields.io/github/contributors/ssc-sp/fsdh-pfds-docs?label=contributeurs) ![GitHub Repo stars](https://img.shields.io/github/stars/ssc-sp/fsdh-pfds-docs?label=%C3%89toiles) ![GitHub branch check runs](https://img.shields.io/github/check-runs/ssc-sp/fsdh-pfds-docs/main?label=compilation)
 
 </div>
 
