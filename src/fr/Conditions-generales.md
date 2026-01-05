@@ -1,3 +1,9 @@
+---
+editLink: false
+prev: false
+next: false
+---
+
 # Conditions générales
 
 **ENTRE: SPC et les MOVS participants.**

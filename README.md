@@ -52,7 +52,7 @@ A [`Dockerfile`](Dockerfile) is provided to anyone that wants to leverage Docker
 1. Launch a terminal and navigate to the notification-documentation project root directory
 2. Build the container with a tag, an example is listed below
 ```commandline
-docker build -t cds/notification-documentation:0.1 .
+docker build -t ssc-sp/fsdh-pfds-docs:0.1 .
 ```
 3. Check that the image has been built successfully
 ```commandline
@@ -60,7 +60,7 @@ docker images
 ```
 4. Launch the image on your local machine, the example below serves the pages at port 8000
 ```commandline
-docker run -p 8000:80 cds/notification-documentation:0.1
+docker run -p 8000:80 ssc-sp/fsdh-pfds-docs:0.1
 ```
 5. Open up a web browser and navigate to http://localhost:8000 to view the content
 
@@ -122,7 +122,7 @@ Un [`Dockerfile`](Dockerfile) est fourni à toute personne souhaitant utiliser D
 1. Lancez un terminal et naviguez jusqu'au répertoire racine du projet notification-documentation
 2. Construisez le conteneur avec une étiquette, un exemple est indiqué ci-dessous
 ```commandline
-docker build -t cds/notification-documentation:0.1 .
+docker build -t ssc-sp/fsdh-pfds-docs:0.1 .
 ```
 3. Vérifiez que l'image a été construite avec succès
 ```commandline
@@ -130,6 +130,6 @@ docker images
 ```
 4. Lancez l'image sur votre machine locale, l'exemple ci-dessous sert les pages au port 8000
 ```commandline
-docker run -p 8000:80 cds/notification-documentation:0.1
+docker run -p 8000:80 ssc-sp/fsdh-pfds-docs:0.1
 ```
 5. Ouvrez un navigateur web et naviguez vers http://localhost:8000 pour voir le contenu

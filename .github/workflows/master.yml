@@ -27,6 +27,9 @@ jobs:
       - name: Build website
         run: PUBLIC_URL="/" npm run build
 
+      - name: Add CNAME for GitHub Pages
+        run: echo "documentation.sds.canada.ca" > ./src/.vuepress/dist/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7 # v3.9.2
         with:

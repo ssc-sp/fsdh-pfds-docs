@@ -76,7 +76,7 @@ module.exports = {
         ariaLabel: 'Languages',
         siteSubtitle: 'Documentation',
         backToNotifyLink: 'https://prd.fsdh-dhsf.science.cloud-nuage.canada.ca/',
-        backToNotifyText: 'Back to Federal Science DataHub',
+        backToNotifyText: 'Back to the FSDH',
         editLinkText: 'Edit this page on GitHub (opens in a new tab)',
         lastUpdated: 'Last updated',
         serviceWorker: {
@@ -100,7 +100,6 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Getting-a-workspace.aspx', 'Getting a workspace (only available on the GC network)'],
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx', 'Estimate costs (only available on the GC network)'],
                 '/en/managing-workspaces-and-users/Preregistration',
-                '/en/managing-workspaces-and-users/Complete-metadata',
                 '/en/managing-workspaces-and-users/Request-tools',
                 '/en/managing-workspaces-and-users/Change-a-user-role'
               ]
@@ -114,23 +113,6 @@ module.exports = {
                 '/en/migration/Databricks',
                 '/en/migration/PostgreSQL',
                 '/en/migration/WebApp'
-              ]
-            },
-            {
-              title: 'User Guidance',
-              path: '/en/guidance',
-              collapsable: true,
-              children: [
-                '/en/guidance/Account-Management-and-Access-control-of-workspaces',
-                '/en/guidance/Backup-and-Recovery',
-                '/en/guidance/Components-within-a-workspace',
-                '/en/guidance/Github-and-code-repo-management.md',
-                '/en/guidance/Incident-Detection-and-Response.md',
-                '/en/guidance/Monitor-Usage.md',
-                '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
-                '/en/guidance/Personnel-security-clearance.md',
-                '/en/guidance/Roles-within-FSDH-workspace.md',
-                '/en/guidance/Source-code.md'
               ]
             },
             {
@@ -182,7 +164,21 @@ module.exports = {
                 '/en/apps/WebApps'
               ]
             },
-            '/en/POC-Terms-And-Conditions'
+            {
+              title: 'User Guidance',
+              path: '/en/guidance',
+              collapsable: true,
+              children: [
+                '/en/guidance/Account-Management-and-Access-control-of-workspaces',
+                '/en/guidance/Backup-and-Recovery',
+                '/en/guidance/Github-and-code-repo-management.md',
+                '/en/guidance/Incident-Detection-and-Response.md',
+                '/en/guidance/Monitor-Usage.md',
+                '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
+                '/en/guidance/Source-code.md'
+              ]
+            },
+            '/en/Terms-And-Conditions'
           ]
         }
       },
@@ -217,9 +213,8 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Getting-a-workspace.aspx', 'Obtenir un espace de travail (uniquement disponible sur le réseau GC)'],
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx', 'Estimer les coûts (uniquement disponible sur le réseau GC)'],
                 '/fr/gerer-espaces-et-utilisateurs/Preregistration',
-                '/fr/gerer-espaces-et-utilisateurs/Complete-metadata',
                 '/fr/gerer-espaces-et-utilisateurs/Demande-outils',
-                '/fr/gerer-espaces-et-utilisateurs/Change-a-user-role'
+                '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur'
               ]
             },
             {
@@ -231,23 +226,6 @@ module.exports = {
                 '/fr/migration/Databricks',
                 '/fr/migration/PostgreSQL',
                 '/fr/migration/AppWeb'
-              ]
-            },
-            {
-              title: 'Conseils aux utilisateurs',
-              path: '/fr/guidance',
-              collapsable: true,
-              children: [
-                '/fr/guidance/Attestation-de-securite-du-personnel',
-                '/fr/guidance/Code-source',
-                '/fr/guidance/Composants-dun-espace-de-travail',
-                '/fr/guidance/Controle-dusage',
-                '/fr/guidance/Controle-et-audit-dun-espace-de-travail',
-                '/fr/guidance/Detection-et-response-aux-incidents',
-                '/fr/guidance/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
-                '/fr/guidance/Github-et-gestion-des-repos',
-                '/fr/guidance/Roles-dans-un-espace-de-travail',
-                '/fr/guidance/Sauvegarde-et-recuperation'
               ]
             },
             {
@@ -299,7 +277,21 @@ module.exports = {
                 '/fr/apps/WebApps'
               ]
             },
-            '/fr/Conditions-générales-de-POC'
+            {
+              title: 'Conseils aux utilisateurs',
+              path: '/fr/conseils',
+              collapsable: true,
+              children: [
+                '/fr/conseils/Code-source',
+                '/fr/conseils/Controle-dusage',
+                '/fr/conseils/Controle-et-audit-dun-espace-de-travail',
+                '/fr/conseils/Detection-et-response-aux-incidents',
+                '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
+                '/fr/conseils/Github-et-gestion-des-repos',
+                '/fr/conseils/Sauvegarde-et-recuperation'
+              ]
+            },
+            '/fr/Conditions-generales'
           ]
         }
       },

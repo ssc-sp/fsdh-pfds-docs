@@ -1,3 +1,9 @@
+---
+editLink: false
+prev: false
+next: false
+---
+
 # Terms and Conditions
 
 **BETWEEN: SSC and Participating Science-Based Departments and Agencies.**
