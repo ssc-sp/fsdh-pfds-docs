@@ -88,6 +88,7 @@ export default {
         {"en": '/en/storage/Import-GCP-Storage', "fr": '/fr/stockage/Importer-le-stockage-GCP'},
         {"en": '/en/storage/Import-Storage', "fr": '/fr/stockage/Importer-le-stockage'},
         {"en": '/en/storage/Use-AzCopy', "fr": '/fr/stockage/Utiliser-AzCopy'},
+        {"en": '/en/storage/Desktop-Uploader', "fr": '/fr/stockage/Chargeur-de-bureau'},
         {"en": '/en/databricks/', "fr": '/fr/databricks/'},
         {"en": '/en/databricks/Databricks-101', "fr": '/fr/databricks/Databricks-101'},
         {"en": '/en/databricks/Cluster-Policies', "fr": '/fr/databricks/Politiques-des-clusters'},
