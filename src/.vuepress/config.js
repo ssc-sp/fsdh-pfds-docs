@@ -238,7 +238,7 @@ module.exports = {
                 '/fr/stockage/Importer-le-stockage-AWS',
                 '/fr/stockage/Importer-Azure-Storage',
                 '/fr/stockage/Importer-le-stockage-GCP',
-                '/fr/stockage/Utilisez-AzCopy'
+                '/fr/stockage/Utiliser-AzCopy'
               ]
             },
             {
