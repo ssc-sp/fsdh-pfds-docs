@@ -6,24 +6,24 @@ This guide will cover how to invite a user to your workspace.
 
 1. Navigate to your workspace
 1. Click on the `View Members` link in the top right corner of the page
-    ![view members](/api/docs/UserGuide/GettingStarted/view-members.png)
+    ![view members](./img/view-members.png)
 1. Click on the `Invite New User` button
-    ![invite new user](/api/docs/UserGuide/GettingStarted/invite-new-user.png)
+    ![invite new user](./img/invite-new-user.png)
 1. Enter the Government of Canada email address of the user you want to invite and click on the dropdown.
-    ![click add new user](/api/docs/UserGuide/GettingStarted/click-add-new-user.png)
+    ![click add new user](./img/click-add-new-user.png)
 
     > *Note:* If the user already has an FSDH account they will show up in the dropdown and you can select them.
 
-1. Click on the `Add New Users` button once you have entered all the users you want to invite.
-    ![add new users ](/api/docs/UserGuide/GettingStarted/add-new-users.png)
+1. Select a role for the new user. Click on the `Add New Users` button once you have entered all the users you want to invite.
+    ![add new users ](./img/add-new-users.png)
 
     > *Note:* If you want to invite more users, you can always click on the `Invite New User` button again and repeat the process.
 
-1. Click on the dropdown role of the user you will be inviting into your workspace.
-    ![invite role dropdown](/api/docs/UserGuide/GettingStarted/invite-role-dropdown.png)
+1. If you want to change the role of a user you just invited, click on the dropdown role of the user you will be inviting into your workspace.
+    ![invite role dropdown](./img/invite-role-dropdown.png)
 
 1. Select the new role from the dropdown
-    ![select role](/api/docs/UserGuide/GettingStarted/select-role.png)
+    ![select role](./img/select-role.png)
 
 1. Click `Save Changes` at the top of the page
-    ![invite save changes](/api/docs/UserGuide/GettingStarted/invite-save-changes.png)
+    ![invite save changes](./img/invite-save-changes.png)

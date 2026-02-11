@@ -101,6 +101,7 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx', 'Estimate costs (only available on the GC network)'],
                 '/en/managing-workspaces-and-users/Preregistration',
                 '/en/managing-workspaces-and-users/Request-tools',
+                '/en/managing-workspaces-and-users/Invite-a-user',
                 '/en/managing-workspaces-and-users/Change-a-user-role'
               ]
             },
@@ -214,6 +215,7 @@ module.exports = {
                 ['https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx', 'Estimer les coûts (uniquement disponible sur le réseau GC)'],
                 '/fr/gerer-espaces-et-utilisateurs/Preregistration',
                 '/fr/gerer-espaces-et-utilisateurs/Demande-outils',
+                '/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur',
                 '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur'
               ]
             },
