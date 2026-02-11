@@ -8,6 +8,12 @@ draft: true
 
 L'importation de votre propre compte Azure Storage dans l'interface de l'explorateur de fichiers de Datahub est assez simple. Vous avez seulement besoin du nom du compte et d'une clé d'accès pour le configurer. Pour obtenir ces informations, suivez les étapes suivantes.
 
+1. Naviguez jusqu'à votre stockage dans la PFDS et cliquez sur le menu déroulant Conteneur actuel:
+![Menu déroulant Conteneur actuel](./img/storage-dropdown.png)
+
+2. Sous "Ajouter un compte", cliquez sur "Azure" pour ouvrir ce menu:
+![Ajouter un stockage Azure](./img/storage-add-azure.png)
+
 1. Naviguez jusqu'au compte de stockage dans votre portail Azure et sélectionnez **Clé d'accès** dans la section **Sécurité + réseau** du menu de gauche.  
 ![Touches d'accès au menu](./img/import_azure-01.png)
 

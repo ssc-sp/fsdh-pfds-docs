@@ -2,6 +2,12 @@
 
 Importing your own Azure Storage account in Datahub's File Explorer interface is quite simple. You only need the account name and an access key to set it up. To get this information, use the following steps.
 
+1. Navigate to your FSDH storage and click the Current Container dropdown:
+![Current container dropdown](./img/storage-dropdown.png)
+
+2. Under "Add Account", click "Azure" to open this menu:
+![Add Azure storage](./img/storage-add-azure.png)
+
 1. Navigate to the storage account in your Azure Portal, and select **Access keys** under the **Security + networking** section in the left menu.  
 ![Access keys in menu](./img/import_azure-01.png)
 
