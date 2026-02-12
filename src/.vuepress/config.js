@@ -102,7 +102,8 @@ module.exports = {
                 '/en/managing-workspaces-and-users/Preregistration',
                 '/en/managing-workspaces-and-users/Request-tools',
                 '/en/managing-workspaces-and-users/Invite-a-user',
-                '/en/managing-workspaces-and-users/Change-a-user-role'
+                '/en/managing-workspaces-and-users/Change-a-user-role',
+                '/en/managing-workspaces-and-users/CBR-management'
               ]
             },
             {
@@ -216,7 +217,8 @@ module.exports = {
                 '/fr/gerer-espaces-et-utilisateurs/Preregistration',
                 '/fr/gerer-espaces-et-utilisateurs/Demande-outils',
                 '/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur',
-                '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur'
+                '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur',
+                '/fr/gerer-espaces-et-utilisateurs/Gestion-BOI'
               ]
             },
             {

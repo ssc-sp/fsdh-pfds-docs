@@ -62,6 +62,7 @@ export default {
         {"en": '/en/managing-workspaces-and-users/Request-tools', "fr": '/fr/gerer-espaces-et-utilisateurs/Demande-outils'},
         {"en": '/en/managing-workspaces-and-users/Invite-a-user', "fr": '/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur'},
         {"en": '/en/managing-workspaces-and-users/Change-a-user-role', "fr": '/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur'},
+        {"en": '/en/managing-workspaces-and-users/CBR-management', "fr": '/fr/gerer-espaces-et-utilisateurs/Gestion-BOI'},
         {"en": '/en/migration/', "fr": '/fr/migration/'},
         {"en": '/en/migration/Overview', "fr": '/fr/migration/Survol'},
         {"en": '/en/migration/Storage', "fr": '/fr/migration/Stockage'},
