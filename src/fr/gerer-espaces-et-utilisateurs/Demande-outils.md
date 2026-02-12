@@ -31,7 +31,7 @@ votre demande et le supprimera du catalogue. Vous verrez l'outil apparaître dan
 
 ![Résumé de l'outil](./img/toolbox-add-tool-2.png)
 
-> __Remarque__ : lorsque vous ajoutez un outil, toutes ses dépendances sont automatiquement ajoutées à votre demande. Par exemple, dans les captures d'écran ci-dessus
+> __Remarque__: lorsque vous ajoutez un outil, toutes ses dépendances sont automatiquement ajoutées à votre demande. Par exemple, dans les captures d'écran ci-dessus
 > l'outil « Azure Storage Blob » a été ajouté, et sa dépendance « Azure Workspace Essentials » a également été ajoutée à la demande.
 
 Vous pouvez également annuler votre sélection en cliquant sur les icônes « X » à côté du nom de l'outil. Cela supprimera l'outil de votre demande et le rajoutera au catalogue:
@@ -40,7 +40,7 @@ Vous pouvez également annuler votre sélection en cliquant sur les icônes « X
 
 ![Annuler la sélection](./img/toolbox-select.png)
 
-> __Remarque__ : si vous annulez la sélection d'un outil qui est la dépendance d'un autre outil, l'outil dépendant sera également supprimé de votre demande.
+> __Remarque__: si vous annulez la sélection d'un outil qui est la dépendance d'un autre outil, l'outil dépendant sera également supprimé de votre demande.
 > De plus, si vous supprimez un outil, ses dépendances ne sont __pas__ automatiquement supprimées de votre demande.
 
 ### 1.2 Gérer les outils existants
@@ -51,7 +51,7 @@ Si vous avez déjà demandé des outils dans votre espace de travail, vous verre
 
 En plus de pouvoir ajouter de nouveaux outils, vous pouvez également gérer certains outils existants. Vous pouvez également voir un petit résumé des coûts de votre espace de travail au bas de la section « Résumé ». Ce résumé des coûts décrit l'état actuel de votre espace de travail.
 
-> __Remarque__ : tous les outils ne peuvent pas être autogérés. Certains outils peuvent être configurés, d'autres peuvent être supprimés, mais ils peuvent tous être
+> __Remarque__: tous les outils ne peuvent pas être autogérés. Certains outils peuvent être configurés, d'autres peuvent être supprimés, mais ils peuvent tous être
 > finalement gérés ou supprimés en contactant l'équipe de la PFDS.
 
 Vous pouvez sélectionner les outils à configurer en appuyant sur leur bouton « Configurer » et, de la même manière, vous pouvez les supprimer en appuyant sur le bouton « Supprimer ».
@@ -60,7 +60,7 @@ Ils seront alors ajoutés à votre demande dans la section correspondante. Tout 
 
 Une fois que vous avez sélectionné les outils que vous souhaitez ajouter, configurer ou supprimer, passez à l'étape suivante.
 
-## 2. Facultatif : configurer les outils
+## 2. Facultatif: configurer les outils
 
 Si vous ajoutez un outil qui dispose d'options de configuration ou si vous configurez un outil existant, vous verrez l'étape « Configurer » de la demande :
 
@@ -85,6 +85,6 @@ Cela lancera le processus de soumission, qui vérifie la validité de votre dema
 
 Une fois le processus de soumission terminé, vous serez redirigé vers le tableau de bord de votre espace de travail.
 
->__Remarque__ : si le processus de soumission échoue, veuillez contacter l'équipe de la PFDS à l'aide d'une demande d'assistance.
+>__Remarque__: si le processus de soumission échoue, veuillez contacter l'équipe de la PFDS à l'aide d'une demande d'assistance.
 
 Selon les outils que vous avez demandés et la file d'attente actuelle, le temps de traitement peut varier. Si un outil n'est pas disponible dans votre espace de travail dans les 2 heures, veuillez envoyer une demande d'assistance à l'équipe de la PFDS.
