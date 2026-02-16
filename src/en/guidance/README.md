@@ -10,3 +10,4 @@ Learn about:
 * Monitor Usage: [Monitor Usage](/en/guidance/Monitor-Usage)
 * Monitoring and Auditing a Workspace: [Monitoring and Auditing a Workspace](/en/guidance/Monitoring-and-Auditing-a-Workspace)
 * Source code: [Source code](/en/guidance/Source-code)
+* Restricted File Types on FSDH Storage: [Restricted File Types on FSDH Storage](/en/guidance/File-Restrictions)

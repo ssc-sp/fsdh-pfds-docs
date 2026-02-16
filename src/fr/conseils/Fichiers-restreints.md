@@ -1,0 +1,52 @@
+# Types de fichiers restreints sur le stockage PFDS
+
+Les types de fichiers suivants sont restreints sur le stockage PFDS afin de garantir la sécurité et l'intégrité de la plateforme. Ces types de fichiers sont généralement associés à du code exécutable, des scripts ou du contenu potentiellement dangereux.
+
+* `.ace`
+* `.ade`
+* `.adp`
+* `.ani`
+* `.app`
+* `.apk`
+* `.bas`
+* `.bat`
+* `.chm`
+* `.cmd`
+* `.com`
+* `.cpl`
+* `.crt`
+* `.docm`
+* `.dll`
+* `.exe`
+* `.hlp`
+* `.ht`
+* `.hta`
+* `.inf`
+* `.ins`
+* `.isp`
+* `.jar`
+* `.job`
+* `.js`
+* `.jse`
+* `.lnk`
+* `.mda`
+* `.mdb`
+* `.mde`
+* `.mdz`
+* `.msc`
+* `.msi`
+* `.msp`
+* `.mst`
+* `.pcd`
+* `.pif`
+* `.reg`
+* `.scr`
+* `.sct`
+* `.shs`
+* `.url`
+* `.vb`
+* `.vbe`
+* `.vbs`
+* `.wsc`
+* `.wsf`
+* `.wsh`

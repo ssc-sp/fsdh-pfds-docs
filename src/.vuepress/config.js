@@ -177,7 +177,8 @@ module.exports = {
                 '/en/guidance/Incident-Detection-and-Response.md',
                 '/en/guidance/Monitor-Usage.md',
                 '/en/guidance/Monitoring-and-Auditing-a-Workspace.md',
-                '/en/guidance/Source-code.md'
+                '/en/guidance/Source-code.md',
+                '/en/guidance/File-Restrictions.md',
               ]
             },
             '/en/Terms-And-Conditions'
@@ -292,7 +293,8 @@ module.exports = {
                 '/fr/conseils/Detection-et-response-aux-incidents',
                 '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail',
                 '/fr/conseils/Github-et-gestion-des-repos',
-                '/fr/conseils/Sauvegarde-et-recuperation'
+                '/fr/conseils/Sauvegarde-et-recuperation',
+                '/fr/conseils/Fichiers-restreints'
               ]
             },
             '/fr/Conditions-generales'

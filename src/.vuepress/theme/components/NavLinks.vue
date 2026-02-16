@@ -84,6 +84,7 @@ export default {
         {"en": '/en/guidance/Personnel-security-clearance', "fr": '/fr/conseils/Attestation-de-securite-du-personnel'},
         {"en": '/en/guidance/Roles-within-FSDH-workspace', "fr": '/fr/conseils/Roles-dans-un-espace-de-travail'},
         {"en": '/en/guidance/Source-code', "fr": '/fr/conseils/Source-code'},
+        {"en": '/en/guidance/File-Restrictions', "fr": '/fr/conseils/Fichiers-restreints'},
         {"en": '/en/storage/', "fr": '/fr/stockage/'},
         {"en": '/en/storage/Datahub-AzureStorage', "fr": '/fr/stockage/Datahub-AzureStorage'},
         {"en": '/en/storage/Import-AWS-Storage', "fr": '/fr/stockage/Importer-le-stockage-AWS'},

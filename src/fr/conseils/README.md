@@ -10,3 +10,4 @@ Apprenez:
 * Surveillance de l'utilisation : [Surveillance de l'utilisation](/fr/guidance/Controle-dusage)
 * Surveillance et audit d'un espace de travail : [Surveillance et audit d'un espace de travail](/fr/guidance/Controle-et-audit-dun-espace-de-travail)
 * Code source: [Code source](/fr/guidance/Code-source)
+* Types de fichiers restreints sur le stockage PFDS: [Types de fichiers restreints sur le stockage PFDS](/fr/guidance/Fichiers-restreints)

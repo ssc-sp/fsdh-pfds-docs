@@ -1,0 +1,52 @@
+# Restricted File Types on FSDH Storage
+
+The following file types are restricted on FSDH storage to ensure the security and integrity of the platform. These file types are commonly associated with executable code, scripts, or potentially harmful content.
+
+* `.ace`
+* `.ade`
+* `.adp`
+* `.ani`
+* `.app`
+* `.apk`
+* `.bas`
+* `.bat`
+* `.chm`
+* `.cmd`
+* `.com`
+* `.cpl`
+* `.crt`
+* `.docm`
+* `.dll`
+* `.exe`
+* `.hlp`
+* `.ht`
+* `.hta`
+* `.inf`
+* `.ins`
+* `.isp`
+* `.jar`
+* `.job`
+* `.js`
+* `.jse`
+* `.lnk`
+* `.mda`
+* `.mdb`
+* `.mde`
+* `.mdz`
+* `.msc`
+* `.msi`
+* `.msp`
+* `.mst`
+* `.pcd`
+* `.pif`
+* `.reg`
+* `.scr`
+* `.sct`
+* `.shs`
+* `.url`
+* `.vb`
+* `.vbe`
+* `.vbs`
+* `.wsc`
+* `.wsf`
+* `.wsh`
