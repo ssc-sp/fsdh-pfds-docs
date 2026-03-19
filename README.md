@@ -20,6 +20,7 @@ This is the repository holding the user documentation for the FSDH. The document
 This repository holds documentation in various Markdown files:
 - in English in [`src/en`](src/en)
 - in French in [`src/fr`](src/fr)
+- in Spanish in [`src/sp`](src/sp)
 
 ## VuePress theme
 The VuePress configuration is in [`src/.vuepress/config.js`](src/.vuepress/config.js). We use the default theme and the associated documentation [can be seen online](https://vuepress.vuejs.org/theme/default-theme-config.html).
