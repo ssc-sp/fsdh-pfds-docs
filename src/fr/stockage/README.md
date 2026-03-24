@@ -19,3 +19,4 @@ Vous pouvez apprendre:
 * Importer votre propre compte de stockage Azure: [Importer votre propre compte de stockage Azure](/fr/storage/Importer-Azure-Storage)
 * Importer votre propre compartiment AWS S3: [Importer votre propre compartiment AWS S3](/fr/storage/Importer-le-stockage-AWS)
 * Importer votre propre compartiment Google Cloud Storage: [Importer votre propre stockage GCP](/fr/storage/Importer-le-stockage-GCP)
+* Accéder à votre stockage depuis Databricks: [Accéder au stockage dans Databricks](/fr/storage/Importer-le-stockage)

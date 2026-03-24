@@ -19,3 +19,4 @@ You can learn:
 * Import your own Azure Storage account: [Importing your own Azure Storage account](/en/storage/Import-Azure-Storage)
 * Import your own AWS S3 bucket: [Importing your own AWS S3 bucket](/en/storage/Import-AWS-Storage)
 * Import your own Google Cloud Storage bucket: [Importing your own GCP storage](/en/storage/Import-GCP-Storage)
+* Access your storage from Databricks: [Access Storage in Databricks](/en/storage/Import-Storage)

@@ -7,4 +7,6 @@ Apprenez à:
 * Obtenir un espace de travail: [Obtenir un espace de travail PFDS (uniquement disponible sur le réseau GC)](https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Getting-a-workspace.aspx)
 * Inscription: [Préregistration](/fr/gerer-espaces-et-utilisateurs/Preregistration)
 * Demander des outils pour votre espace de travail: [Demander, configurer et supprimer des outils dans votre espace de travail](/fr/gerer-espaces-et-utilisateurs/Demande-outils)
+* Inviter des utilisateurs à votre espace de travail: [Inviter un utilisateur](/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur)
 * Changer le rôle d'un utilisateur dans votre espace de travail: [Changer le rôle d'un utilisateur](/fr/gerer-espaces-et-utilisateurs/Change-a-user-role)
+* Gérer votre BOI et les budgets de votre espace de travail: [Gestion du BOI](/fr/gerer-espaces-et-utilisateurs/Gestion-BOI)
