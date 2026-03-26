@@ -2,7 +2,7 @@ name: Update to the Terms and Conditions
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - docs/en/Terms-And-Conditions.md
       - docs/fr/Conditions-generales.md

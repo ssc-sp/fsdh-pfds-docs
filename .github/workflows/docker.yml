@@ -2,7 +2,7 @@ name: Build, push to GitHub Container Registry, and deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   DOCKER_SLUG: ghcr.io/Sean-Stilwell/docs-test
