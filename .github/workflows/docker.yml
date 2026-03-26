@@ -2,10 +2,10 @@ name: Build, push to GitHub Container Registry, and deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
-  DOCKER_SLUG: ghcr.io/ssc-sp/fsdh-pfds-docs
+  DOCKER_SLUG: ghcr.io/Sean-Stilwell/docs-test
 
 permissions:
   contents: read    # required for actions/checkout
@@ -38,7 +38,7 @@ jobs:
         file: Dockerfile
         push: true
         tags: |
-          ghcr.io/ssc-sp/fsdh-pfds-docs:latest
-          ghcr.io/ssc-sp/fsdh-pfds-docs:${{ github.sha }}
-        cache-from: type=registry,ref=ghcr.io/ssc-sp/fsdh-pfds-docs:latest
+          ghcr.io/Sean-Stilwell/docs-test:latest
+          ghcr.io/Sean-Stilwell/docs-test:${{ github.sha }}
+        cache-from: type=registry,ref=ghcr.io/Sean-Stilwell/docs-test:latest
         cache-to: type=inline

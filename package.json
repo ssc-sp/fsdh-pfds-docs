@@ -1,28 +1,24 @@
 {
-  "name": "notify-docs",
+  "name": "gc-documentation",
+  "description": "Sample GC documentation site",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "authors": {
-    "name": "GC Notify | Notification GC",
-    "email": "cds-snc@tbs-sct.gc.ca"
-  },
-  "repository": "cds-snc/notification-documentation/notify-docs",
-  "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "lint-links": "remark --frail --use remark-validate-links src/**/*.md"
-  },
   "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:update-package": "npx vp-update"
+  },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.7.1",
-    "@vuepress/plugin-google-analytics": "^1.8.0",
-    "remark": "^13.0.0",
-    "remark-cli": "^9.0.0",
-    "remark-validate-links": "^10.0.2",
-    "vuepress": "^1.9.10"
+    "@vuepress/bundler-vite": "2.0.0-rc.20",
+    "@vuepress/theme-default": "2.0.0-rc.88",
+    "sass-embedded": "^1.86.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.20"
   },
   "dependencies": {
-    "swagger-ui-dist": "^5.21.0"
+    "@gcds-core/components-vue": "^1.0.0",
+    "@gcds-core/css-shortcuts": "^1.1.0"
   }
 }

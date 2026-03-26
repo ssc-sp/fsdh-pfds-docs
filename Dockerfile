@@ -9,9 +9,9 @@ WORKDIR /app
 COPY package.json package-lock.json /app/
 RUN npm install
 
-COPY src ./src
+COPY docs ./docs
 RUN set -ex && npm run build
 
-RUN mv src/.vuepress/dist/* /usr/share/nginx/html
+RUN mv docs/.vuepress/dist/* /usr/share/nginx/html
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

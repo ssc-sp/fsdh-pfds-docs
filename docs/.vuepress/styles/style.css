@@ -1,0 +1,60 @@
+:root {
+    --vp-c-accent: var(--gcds-color-blue-600);
+    --vp-c-accent-bg: var(--gcds-color-blue-700);
+    --back-to-top-c-accent-hover: var(--gcds-color-blue-300);
+}
+
+.vp-site-logo, .vp-site-name {
+    height: 1.4rem !important;
+    vertical-align: middle !important;
+    margin-right: 2rem;
+}
+.gc-footer {
+    display: flex;
+    justify-content: end;
+    padding-right: 2rem;
+    margin-top: 4rem;
+}
+
+a:focus {
+    color: var(--gcds-link-focus-text) !important;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: 600;
+    color: var(--gcds-text-primary) !important;
+}
+
+h1 {
+    /* font-size: var(--gcds-font-sizes-h1) !important; */
+}
+
+h2 {
+    /* font-size: var(--gcds-font-sizes-h2) !important; */
+    border-bottom: none !important;
+}
+
+li {
+    list-style: disc !important;
+}
+
+.vp-back-to-top-button {
+    bottom: 6rem !important;
+}
+
+.vp-sidebar-item {
+    color: var(--gcds-color-blue-700) !important;
+}
+
+.vp-navbar-dropdown-title {
+    display: none !important;
+}
+
+/* .vp-page [vp-content] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+} */
+
+.vp-hero {
+    text-align: start !important;
+}
