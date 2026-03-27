@@ -41,13 +41,9 @@ Remplacez `<username>` par votre nom d'utilisateur PostgreSQL, `<database_name>`
 
 2. Cliquez avec le bouton droit sur la base de données que vous souhaitez sauvegarder et sélectionnez `Sauvegarde...`.
 
-![Preview 1](/api/docs/UserGuide/Migration/postgres-pgadmin-1.png)
-
 3. Dans l'onglet `Options de sauvegarde`, sélectionnez le format du fichier de sauvegarde (par exemple, `Plain`).
 
 4. Dans le champ `Nom de fichier`, spécifiez l'emplacement et le nom du fichier de sauvegarde.
-
-![Preview 2](/api/docs/UserGuide/Migration/postgres-pgadmin-2.png)
 
 5. Cliquez sur `Sauvegarder` pour créer le fichier de sauvegarde.
 

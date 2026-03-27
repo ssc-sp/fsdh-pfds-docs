@@ -10,7 +10,7 @@ COPY package.json package-lock.json /app/
 RUN npm install
 
 COPY docs ./docs
-RUN set -ex && npm run build
+RUN set -ex && npm run docs:build
 
 RUN mv docs/.vuepress/dist/* /usr/share/nginx/html
 
