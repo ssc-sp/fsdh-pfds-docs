@@ -1,18 +1,14 @@
 <template>
   <header class="navbar" :lang="currentLang">
-    <GcdsLangToggle :key="`${currentLang}:${langToggleHref}`" :href="langToggleHref" />
+    <!-- <GcdsLangToggle :key="`${currentLang}:${langToggleHref}`" :href="langToggleHref" /> -->
+    <gcds-lang-toggle :href="langToggleHref" :lang="currentLang" />
   </header>
 </template>
 
 <script>
-import { GcdsLangToggle } from '@gcds-core/components-vue';
 
 export default {
   name: 'Language',
-
-  components: {
-    GcdsLangToggle
-  },
 
   computed: {
     currentLang() {

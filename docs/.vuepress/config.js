@@ -3,6 +3,13 @@ import { defineUserConfig } from "vuepress";
 import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
+  head: [
+    // Import the GCDS stylesheet and javascript files from the node_modules directory
+    ['link', { rel: 'stylesheet', href: '/node_modules/@gcds-core/components/dist/gcds/gcds.css' }],
+    ['link', { rel: 'stylesheet', href: '/node_modules/@gcds-core/css-shortcuts/dist/gcds-css-shortcuts.min.css' }],
+    ['script', { src: '/node_modules/@gcds-core/components/dist/gcds/gcds.js' }],
+    ["link", { rel: "shortcut icon", href: "https://notification.canada.ca/static/images/favicon.ico",}],
+  ],
   lang: "en-CA",
   title: "Federal Science DataHub | Plateforme fédérale de données scientifiques",
   description: "User documentation for the Federal Science DataHub",
@@ -220,16 +227,6 @@ export default defineUserConfig({
     },
   }),
 
-  head: [
-    [
-      "link",
-      {
-        rel: "shortcut icon",
-        href: "https://notification.canada.ca/static/images/favicon.ico",
-      },
-    ],
-  ],
-
   locales: {
     "/en/": {
       lang: "en-CA",
@@ -244,5 +241,15 @@ export default defineUserConfig({
     },
   },
 
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      vue: {
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag.startsWith('gcds-'),
+          },
+        },
+      },
+    },
+  }),
 });
