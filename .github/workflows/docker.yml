@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  DOCKER_SLUG: ghcr.io/Sean-Stilwell/docs-test
+  DOCKER_SLUG: ghcr.io/ssc-sp/fsdh-pfds-docs
 
 permissions:
   contents: read    # required for actions/checkout
@@ -38,7 +38,7 @@ jobs:
         file: Dockerfile
         push: true
         tags: |
-          ghcr.io/Sean-Stilwell/docs-test:latest
-          ghcr.io/Sean-Stilwell/docs-test:${{ github.sha }}
-        cache-from: type=registry,ref=ghcr.io/Sean-Stilwell/docs-test:latest
+          ghcr.io/ssc-sp/fsdh-pfds-docs:latest
+          ghcr.io/ssc-sp/fsdh-pfds-docs:${{ github.sha }}
+        cache-from: type=registry,ref=ghcr.io/ssc-sp/fsdh-pfds-docs:latest
         cache-to: type=inline
