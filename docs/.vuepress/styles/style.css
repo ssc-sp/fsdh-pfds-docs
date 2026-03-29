@@ -44,6 +44,8 @@ li {
 
 .vp-sidebar-item {
     color: var(--gcds-color-blue-700) !important;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
 }
 
 .vp-navbar-dropdown-title {
@@ -57,4 +59,8 @@ li {
 
 .vp-hero {
     text-align: start !important;
+}
+
+ul {
+    padding-bottom: 1.5rem;
 }

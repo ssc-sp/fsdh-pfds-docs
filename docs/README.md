@@ -1,6 +1,7 @@
 ---
 # home: true
 title: Home | Accueil
+editLink: false
 # heroImage: https://vuejs.press/images/hero.png
 # actions:
 #   - text: English
