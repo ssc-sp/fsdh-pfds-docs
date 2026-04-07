@@ -17,7 +17,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: "https://assets.notification.canada.ca/static/gov-canada-en.svg",
     // navbar: ["/", "/get-started"],
-    lastUpdated: false,
+    lastUpdated: true,
     contributors: false,
     colorModeSwitch: false,
     docsRepo: "https://github.com/Sean-Stilwell/docs-test",
@@ -33,6 +33,7 @@ export default defineUserConfig({
         prev: "Previous",
         logo: "https://assets.notification.canada.ca/static/gov-canada-en.svg",
         editLinkText: "Edit this page on GitHub",
+        lastUpdatedText: "Last Updated",
       },
       "/fr/": {
         home: "/fr/",
@@ -41,6 +42,7 @@ export default defineUserConfig({
         prev: "Précédent",
         logo: "https://assets.notification.canada.ca/static/gov-canada-fr.svg",
         editLinkText: "Modifier cette page sur GitHub",
+        lastUpdatedText: "Dernière mise à jour",
       }
     },
     sidebar: {
