@@ -1,6 +1,6 @@
 {
-  "name": "gc-documentation",
-  "description": "Sample GC documentation site",
+  "name": "fsdh-user-docs",
+  "description": "User documentation for the Federal Science DataHub platform",
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
