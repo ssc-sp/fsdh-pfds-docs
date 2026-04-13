@@ -2,19 +2,23 @@
 
 ## Description
 
-Please provide a summary of the changes made to the documentation.
+<!-- Please provide a summary of the changes made to the documentation. -->
 
 ## Related Issue(s)
 
-If applicable, please link to the issue(s) this pull request addresses.
+<!-- If applicable, please link to the issue(s) this pull request addresses. -->
 
 ## Type of Change
+
+<!-- Identify the type of change made in this pull request. -->
 
 - [ ] New documentation
 - [ ] Update to existing documentation
 - [ ] Other (please describe):
 
 ## Checklist
+
+<!-- Please ensure the following items are completed before submitting the pull request. -->
 
 - [ ] I have reviewed the documentation for accuracy.
 - [ ] I have checked for spelling and grammar errors.
@@ -24,9 +28,11 @@ If applicable, please link to the issue(s) this pull request addresses.
 
 ### For New Documentation
 
+<!-- Please ensure the following items are completed for new documentation. -->
+
 - [ ] I have added the new documentation to `src\.vuepress\config.js`.
 - [ ] I have added the English-French mapping in `src\.vuepress\theme\components\NavLinks.vue`.
 
 ## Additional Notes
 
-Add any extra information or context here.
+<!-- Add any extra information or context here. -->

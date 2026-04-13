@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/en/Terms-And-Conditions.md
-      - src/fr/Conditions-generales.md
+      - docs/en/Terms-And-Conditions.md
+      - docs/fr/Conditions-generales.md
 
 permissions:
   contents: write
@@ -33,8 +33,8 @@ jobs:
 
             **Commit message:** ${{ github.event.head_commit.message }}
           files: |
-            UserGuide/POC-Terms-And-Conditions.md
-            fr/UserGuide/Conditions-générales-de-POC.md
+            docs/en/Terms-And-Conditions.md
+            docs/fr/Conditions-generales.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
