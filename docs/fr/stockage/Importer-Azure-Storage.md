@@ -4,7 +4,7 @@ source: /UserGuide/Storage/Import-Azure-Storage.md
 draft: true
 ---
 
-# Importer du stockage Azure existant
+# Importer du stockage Azure
 
 L'importation de votre propre compte Azure Storage dans l'interface de l'explorateur de fichiers de Datahub est assez simple. Vous avez seulement besoin du nom du compte et d'une clé d'accès pour le configurer. Pour obtenir ces informations, suivez les étapes suivantes.
 

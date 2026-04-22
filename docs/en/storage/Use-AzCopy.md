@@ -1,4 +1,4 @@
-# Use AzCopy to Interact with Azure Storage Account
+# Use AzCopy to Interact with Storage
 
 ## Useful commands
 

@@ -72,9 +72,15 @@ export default defineUserConfig({
           collapsible: true,
           children: [
             "/en/storage/Datahub-AzureStorage.md",
-            "/en/storage/Import-AWS-Storage.md",
-            "/en/storage/Import-Azure-Storage.md",
-            "/en/storage/Import-GCP-Storage.md",
+            {
+              "text": "Bring Your Own Storage",
+              collapsible: true,
+              children: [
+                "/en/storage/Import-AWS-Storage.md",
+                "/en/storage/Import-Azure-Storage.md",
+                "/en/storage/Import-GCP-Storage.md",
+              ],
+            },
             "/en/storage/Import-Storage.md",
             "/en/storage/Use-AzCopy.md",
           ],
@@ -85,15 +91,26 @@ export default defineUserConfig({
           children: [
             "/en/databricks/Databricks-101",
             "/en/databricks/Cluster-Policies",
-            "/en/databricks/Git-Integration",
-            "/en/databricks/vscode_extension",
-            "/en/databricks/Conda-Packages",
-            "/en/databricks/Connecting-Google-API",
-            "/en/databricks/Dashboarding",
-            "/en/databricks/Dashboarding-Tool-Comparison",
             "/en/databricks/Experiments-Automl",
             "/en/databricks/Workflows",
-            "/en/databricks/Databricks-FAQ",
+            {
+              text: "Dashboarding",
+              collapsible: true,
+              children: [
+                "/en/databricks/Dashboarding",
+                "/en/databricks/Dashboarding-Tool-Comparison",
+              ]
+            },
+            {
+              text: "External Extensions",
+              collapsible: true,
+              children: [
+                "/en/databricks/Git-Integration",
+                "/en/databricks/vscode_extension",
+                "/en/databricks/Conda-Packages",
+                "/en/databricks/Connecting-Google-API",
+              ]
+            },
           ],
         },
         {
@@ -162,10 +179,16 @@ export default defineUserConfig({
           collapsible: true,
           children: [
             "/fr/stockage/Datahub-AzureStorage",
+            {
+              "text": "Apporter votre propre stockage",
+              collapsible: true,
+              children: [
+                "/fr/stockage/Importer-le-stockage-AWS",
+                "/fr/stockage/Importer-Azure-Storage",
+                "/fr/stockage/Importer-le-stockage-GCP",
+              ],
+            },
             "/fr/stockage/Importer-le-stockage",
-            "/fr/stockage/Importer-le-stockage-AWS",
-            "/fr/stockage/Importer-Azure-Storage",
-            "/fr/stockage/Importer-le-stockage-GCP",
             "/fr/stockage/Utiliser-AzCopy",
           ],
         },
@@ -175,15 +198,26 @@ export default defineUserConfig({
           children: [
             "/fr/databricks/Databricks-101",
             "/fr/databricks/Politiques-des-clusters",
-            "/fr/databricks/Intégration-de-Git",
-            "/fr/databricks/extension-vscode",
-            "/fr/databricks/Paquets-Conda",
-            "/fr/databricks/Connexion-à-l'API-Google",
-            "/fr/databricks/Tableau-de-bord",
-            "/fr/databricks/Comparaison-des-outils-de-tableau-de-bord",
             "/fr/databricks/Expériences-Automl",
             "/fr/databricks/Flux-de-travail",
-            "/fr/databricks/FAQ-Databricks",
+            {
+              text: "Tableau de bord",
+              collapsible: true,
+              children: [
+                "/fr/databricks/Tableau-de-bord",
+                "/fr/databricks/Comparaison-des-outils-de-tableau-de-bord",
+              ]
+            },
+            {
+              text: "Extensions externes",
+              collapsible: true,
+              children: [
+                "/fr/databricks/Intégration-de-Git",
+                "/fr/databricks/extension-vscode",
+                "/fr/databricks/Paquets-Conda",
+                "/fr/databricks/Connexion-à-l'API-Google",
+              ]
+            },
           ],
         },
         {

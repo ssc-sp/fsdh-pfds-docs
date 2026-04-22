@@ -4,7 +4,7 @@ source: /UserGuide/Storage/Import-AWS-Storage.md
 draft: true
 ---
 
-# Importer du stockage AWS S3 existant
+# Importer du stockage AWS S3
 
 Pour importer un seau AWS S3, vous devez créer un utilisateur disposant des autorisations appropriées sur le seau et générer une clé d'accès pour cet utilisateur.
 

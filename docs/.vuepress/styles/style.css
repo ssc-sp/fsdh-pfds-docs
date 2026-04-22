@@ -64,3 +64,7 @@ li {
 ul {
     padding-bottom: 1.5rem;
 }
+
+.vp-sidebar-children li {
+    list-style: none !important;
+}
