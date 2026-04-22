@@ -1,4 +1,4 @@
-# Importing an Existing AWS S3 Bucket
+# Import AWS S3 Bucket
 
 To import an AWS S3 bucket, you will need to create a user with the appropriate permissions on the bucket, and generate an access key for that user.
 

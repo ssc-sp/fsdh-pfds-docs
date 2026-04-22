@@ -1,4 +1,4 @@
-# **Databricks MLFlow: AutoML and Experiments**
+# MLFlow: AutoML and Experiments
 
 <!---removed due to accessibility requirements
 <video width="600" height="350" controls>

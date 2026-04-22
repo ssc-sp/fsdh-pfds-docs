@@ -4,7 +4,7 @@ source: /UserGuide/Storage/Import-GCP-Storage.md
 draft: true
 ---
 
-# Importer un compte GCP existant
+# Importer un compte GCP
 
 Pour importer un compte de stockage GCP, vous devez créer un compte de service ayant accès au stockage et créer une paire de clés pour le compte.
 

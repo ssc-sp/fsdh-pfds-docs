@@ -1,4 +1,4 @@
-# Importing an Existing Google Cloud Platform Account
+# Import Google Cloud Platform Storage
 
 To import a GCP storage account, you will need to create a service account with access to the storage and create a key pair for the account.
 

@@ -4,7 +4,7 @@ source: /UserGuide/Storage/Use-AzCopy.md
 draft: true
 ---
 
-# Utiliser AzCopy pour intéragir avec le compte de stockage Azure
+# Utiliser AzCopy pour intéragir avec le stockage
 
 ## Commandes utiles
 

@@ -1,4 +1,4 @@
-# Importing an Existing Azure Storage Account
+# Import Azure Storage
 
 Importing your own Azure Storage account in Datahub's File Explorer interface is quite simple. You only need the account name and an access key to set it up. To get this information, use the following steps.
 
