@@ -1,3 +1,9 @@
-# Github and code repo management 
+# Code Management
+
+## Source code 
+
+The workspace lead must ensure that the open-source code, APIs, and libraries used within the workspace meet the appropriate licensing requirements and are protected from unauthorized modification. It is recommended that workspaces use external reputable Git repositories (such as GitHub) to save and safeguard the source code. 
+
+## Github and code repo management 
 
 Users are responsible for configuring and managing their source code and Git repositories.  FSDH allows users to connect to both private and public Github repositories.  It is the user's responsibility to manage the Github tokens, passwords and accessibility as appropriate and in accordance with their departmental policies.  In selecting their approach to developing, sharing, and managing code, users should follow the principles laid out in the [Digital Standards Playbook - Canada.ca](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) and [Directive on Service and Digital- Canada.ca](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601). 
