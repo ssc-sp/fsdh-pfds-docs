@@ -9,7 +9,7 @@ When your Databricks workspace is created for your project, an Azure Storage Acc
 
 ## Default DataHub Mount point
 
-The storage account has been mounted in Databricks to the default cluster (`main_cluster`) and can be accessed in your Noteobok just like a regular folder. Mounting storage in Databricks allows you to access objects in object storage as if they were on the local file system.
+The storage account has been mounted in Databricks to the default cluster (`main_cluster`) and can be accessed in your Notebook just like a regular folder. Mounting storage in Databricks allows you to access objects in object storage as if they were on the local file system.
 
 To access the mount point in the default cluster, consider the sample code below
 
