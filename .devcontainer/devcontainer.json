@@ -1,0 +1,8 @@
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {}
+  },
+  "postCreateCommand": "npm install"
+}
