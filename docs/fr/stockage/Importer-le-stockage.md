@@ -9,7 +9,7 @@ Lorsque votre espace de travail Databricks est créé pour votre projet, un comp
 
 ## Point de montage de la PFDS par défaut
 
-Le compte de stockage a été monté dans Databricks sur le cluster par défaut (`main_cluster`) et est accessible dans votre Noteobok comme un dossier normal. Le montage du stockage dans Databricks vous permet d'accéder aux objets dans le stockage d'objets comme s'ils se trouvaient sur le système de fichiers local.
+Le compte de stockage a été monté dans Databricks sur le cluster par défaut (`main_cluster`) et est accessible dans votre Notebook comme un dossier normal. Le montage du stockage dans Databricks vous permet d'accéder aux objets dans le stockage d'objets comme s'ils se trouvaient sur le système de fichiers local.
 
 Pour accéder au point de montage dans le cluster par défaut, consultez l'exemple de code ci-dessous
 
