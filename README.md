@@ -14,22 +14,20 @@ The **Federal Science DataHub (FSDH)** is a cloud-based platform tailored to sup
 
 This is the repository holding the user documentation for the FSDH. The documentation is built using [VuePress](https://vuepress.vuejs.org/) and will be hosted online website.
 
-> Note: This repository was originally forked from the [GC Notify Documentation](https://github.com/cds-snc/notification-documentation) repository. Some original content may still reference GC Notify.
-
 ## Documentation files
 This repository holds documentation in various Markdown files:
-- in English in [`src/en`](src/en)
-- in French in [`src/fr`](src/fr)
+- in English in [`docs/en`](docs/en)
+- in French in [`docs/fr`](docs/fr)
 
 ## VuePress theme
-The VuePress configuration is in [`src/.vuepress/config.js`](src/.vuepress/config.js). We use the default theme and the associated documentation [can be seen online](https://vuepress.vuejs.org/theme/default-theme-config.html).
+The VuePress configuration is in [`docs/.vuepress/config.js`](docs/.vuepress/config.js). We use the default theme and the associated documentation [can be seen online](https://vuepress.vuejs.org/guide/theme.html#default-theme).
 
 ## Sidebar
-The sidebar is defined in [`src/.vuepress/config.js`](src/.vuepress/config.js). A separate sidebar is defined for each language.
+The sidebar is defined in [`docs/.vuepress/config.js`](docs/.vuepress/config.js). A separate sidebar is defined for each language.
 
 If you want to add pages or groups of pages, you should tweak the `sidebar` object.
 
-Mappings between the English and French paths must be defined in [`src/.vuepress/theme/components/NavLinks.vue`](src/.vuepress/theme/components/NavLinks.vue) to enable switching between languages.
+Mappings between the English and French paths must be defined in [`docs/.vuepress/components/Language.vue`](docs/.vuepress/components/Language.vue) to enable switching between languages.
 
 ## Local deployment using VuePress
 For quick editing and hot reload a light-weight solution is to use VuePress. Listed below are instructions to run a local server for viewing the documentation content. 
@@ -39,7 +37,7 @@ npm install
 ```
 2. Run the VuePress
 ```commandline
-npm run dev
+npm run docs:dev
 ```
 
 ## Local deployment using Docker
@@ -82,22 +80,20 @@ La **Plateforme fédérale de données scientifiques (PFDS)** est une plateforme
 
 Ceci est le dépôt contenant la documentation utilisateur pour la PFDS. La documentation est construite à l'aide de [VuePress](https://vuepress.vuejs.org/) et sera hébergée en ligne.
 
-> Note : Ce dépôt a été initialement forké à partir du dépôt [GC Notify Documentation](https://github.com/cds-snc/notification-documentation). Certains contenus originaux peuvent encore faire référence à GC Notify.
-
 ## Fichiers de documentation
 Ce dépôt contient la documentation dans divers fichiers Markdown :
-- en anglais dans [`src/en`](src/en)
-- en français dans [`src/fr`](src/fr)
+- en anglais dans [`docs/en`](docs/en)
+- en français dans [`docs/fr`](docs/fr)
 
 ## Thème VuePress
-La configuration de VuePress se trouve dans [`src/.vuepress/config.js`](src/.vuepress/config.js). Nous utilisons le thème par défaut et la documentation associée [peut être consultée en ligne](https://vuepress.vuejs.org/theme/default-theme-config.html).
+La configuration de VuePress se trouve dans [`docs/.vuepress/config.js`](docs/.vuepress/config.js). Nous utilisons le thème par défaut et la documentation associée [peut être consultée en ligne](https://vuepress.vuejs.org/guide/theme.html#default-theme).
 
 ## Barre latérale
-La barre latérale est définie dans [`src/.vuepress/config.js`](src/.vuepress/config.js). Une barre latérale distincte est définie pour chaque langue.
+La barre latérale est définie dans [`docs/.vuepress/config.js`](docs/.vuepress/config.js). Une barre latérale distincte est définie pour chaque langue.
 
 Si vous souhaitez ajouter des pages ou des groupes de pages, vous devez modifier l'objet `sidebar`.
 
-Les correspondances entre les chemins anglais et français doivent être définies dans [`src/.vuepress/theme/components/NavLinks.vue`](src/.vuepress/theme/components/NavLinks.vue) pour permettre le changement de langue.
+Les correspondances entre les chemins anglais et français doivent être définies dans [`docs/.vuepress/components/Language.vue`](docs/.vuepress/components/Language.vue) pour permettre le changement de langue.
 
 ## Déploiement local à l'aide de VuePress
 Pour une édition rapide et un rechargement à chaud, une solution légère consiste à utiliser VuePress. Voici les instructions pour exécuter un serveur local pour visualiser le contenu de la documentation.
@@ -107,7 +103,7 @@ npm install
 ```
 2. Exécutez le VuePress
 ```commandline
-npm run dev
+npm run docs:dev
 ```
 
 ## Déploiement local à l'aide de Docker
