@@ -1,2 +1,6 @@
-/docs/en/Terms-And-Conditions.md   @skaza999
-/docs/fr/Conditions-generales.md    @skaza999
+# CODEOWNERS
+# This file defines who is responsible for reviewing changes in this repository.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# All files in the repository
+* @Sean-Stilwell @siovan-ssc
