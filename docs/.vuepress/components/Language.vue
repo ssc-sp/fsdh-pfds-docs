@@ -36,7 +36,7 @@ export default {
         {"en": '/en/migration/PostgreSQL', "fr": '/fr/migration/PostgreSQL'},
         {"en": '/en/migration/WebApp', "fr": '/fr/migration/AppWeb'},
         {"en": '/en/guidance/', "fr": '/fr/conseils/'},
-        {"en": '/en/guidance/Account-Management-and-Access-control-of-workspaces', "fr": '/fr/conseils/Gestion-des-comptes-et-controle-de-l\'acces-aux-espaces-de-travail'},
+        {"en": '/en/guidance/Account-Management-and-Access-control-of-workspaces', "fr": '/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail'},
         {"en": '/en/guidance/Backup-and-Recovery', "fr": '/fr/conseils/Sauvegarde-et-recuperation'},
         {"en": '/en/guidance/Code-Management', "fr": '/fr/conseils/Gestion-de-code'},
         {"en": '/en/guidance/Workspace-Monitoring', "fr": '/fr/conseils/Controle-despace-de-travail'},
