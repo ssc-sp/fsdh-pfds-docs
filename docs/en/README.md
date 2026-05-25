@@ -8,4 +8,4 @@ This technical documentation is for scientists who are working with the [Federal
 * Hosting web applications on FSDH
 * Using PostgreSQL databases within FSDH
 
-If you are new to the FSDH, we invite you to start with our [Canada.ca pages](https://www.canada.ca/fr/services-partages/services/outils-pour-personnes-travaillant-gc/outils-scientifique/plateforme-federale-donnees-scientifiques.html) that give a general overview of the platform. For Government of Canada users, we also invite you to visit the [FSDH GCXchange site](https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Home.aspx) for additional resources and information.
+If you are new to the FSDH, we invite you to start with our [Canada.ca pages](https://www.canada.ca/en/shared-services/services/tools-to-equip-gc-workers/tools-science/federal-science-datahub.html) that give a general overview of the platform. For Government of Canada users, we also invite you to visit the [FSDH GCXchange site](https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Home.aspx) for additional resources and information.

@@ -58,7 +58,7 @@ export default {
         {"en": '/en/databricks/Connecting-Google-API', "fr": '/fr/databricks/Connexion-à-l\'API-Google'},
         {"en": '/en/databricks/Dashboarding', "fr": '/fr/databricks/Tableau-de-bord'},
         {"en": '/en/databricks/Dashboarding-Tool-Comparison', "fr": '/fr/databricks/Comparaison-des-outils-de-tableau-de-bord'},
-        {"en": '/en/databricks/Experiments-Automl', "fr": '/fr/databricks/Expériences-Automl'},
+        {"en": '/en/databricks/Experiments-Automl', "fr": '/fr/databricks/Experiences-Automl'},
         {"en": '/en/databricks/Workflows', "fr": '/fr/databricks/Flux-de-travail'},
         {"en": '/en/databricks/Databricks-FAQ', "fr": '/fr/databricks/FAQ-Databricks'},
         {"en": '/en/postgresql/', "fr": '/fr/postgresql/'},

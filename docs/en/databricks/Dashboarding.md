@@ -99,4 +99,5 @@ Here is another fun example of a dashboard created using Databricks' built-in da
 
 This is a word cloud visualization of the most common words used in tweets containing the word "ChatGPT" on twitter on a given day. Data taken from [Kaggle datasets](https://www.kaggle.com/datasets/edomingo/chatgpt-1000-daily-tweets).
 
-## [More information on Databricks Dashboards](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/data-objects)
+## Learn more 
+For more information about Dashboards, refer to [Database Objects in Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/data-objects)

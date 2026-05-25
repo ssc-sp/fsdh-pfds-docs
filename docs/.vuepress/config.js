@@ -195,7 +195,7 @@ export default defineUserConfig({
           children: [
             "/fr/databricks/Databricks-101",
             "/fr/databricks/Politiques-des-clusters",
-            "/fr/databricks/Expériences-Automl",
+            "/fr/databricks/Experiences-Automl",
             "/fr/databricks/Flux-de-travail",
             {
               text: "Tableau de bord",

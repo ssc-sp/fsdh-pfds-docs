@@ -29,11 +29,11 @@ Les utilisateurs de la PFDS sont tenus de se conformer aux critères suivants:
 
 1. Classification de sécurité: Les espaces de travail de la PFDS sont autorisés pour un usage non classifié. Le terme "non classifié" désigne des données et des informations non sensibles qui ne portent pas atteinte aux intérêts personnels, industriels ou gouvernementaux si elles sont divulguées au public. Il incombe à chaque responsable d'espace de travail de s'assurer que toutes les données et informations contenues dans son espace de travail sont non classifiées avant de les télécharger sur la PFDS et pendant leur utilisation dans la PFDS. Veuillez vous référer aux importantes lignes directrices suivantes en matière de sécurité de l'information:
     - [Directive sur la gestion de la sécurité - Annexe J: Norme sur la catégorisation de sécurité](https://www.tbs-sct.gc.ca/pol/doc-fra.aspx?id=32614)
-    - https://www.canada.ca/content/dam/dnd-mdn/documents/ml-fd/2023/11-09-working-with-sensitive-information.pdf
+    - [Travailler avec des renseignements de nature délicate](https://www.canada.ca/fr/ministere-defense-nationale/feuille-derable/defense/2020/12/travailler-avec-renseignements-nature-delicate.html)
 
-    Le responsable de l'espace de travail doit élaborer un rapport de catégorisation de la sécurité afin de s'assurer que les données ou les informations stockées dans l'espace de travail relèvent de la classification de sécurité approuvée. Pour obtenir des conseils, veuillez consulter le site https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32614. Le responsable de l'espace de travail est chargé de consulter les équipes départementales chargées de la sécurité, de l'AIPRP et de la protection de la vie privée pour toutes les informations ou données publiées.
+    Le responsable de l'espace de travail doit élaborer un rapport de catégorisation de la sécurité afin de s'assurer que les données ou les informations stockées dans l'espace de travail relèvent de la classification de sécurité approuvée. Pour obtenir des conseils, veuillez consulter le site [Directive sur la gestion de la sécurité - Annexe J : Norme sur la catégorisation de sécurité](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32614). Le responsable de l'espace de travail est chargé de consulter les équipes départementales chargées de la sécurité, de l'AIPRP et de la protection de la vie privée pour toutes les informations ou données publiées.
 
-2. Classification de sécurité individuelle: Pour accéder à la plateforme PFDS, les participants (gouvernementaux et non gouvernementaux) doivent détenir une classification de sécurité valide du gouvernement du Canada (GC) d'au moins fiabilité. Le responsable de l'espace de travail est chargé de veiller à ce que toutes les personnes travaillant dans l'espace de travail soient au moins titulaires d'une classification de sécurité du gouvernement du Canada (GC) valide de niveau de fiabilité. Pour plus d'informations à ce sujet, veuillez consulter: https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html
+2. Classification de sécurité individuelle: Pour accéder à la plateforme PFDS, les participants (gouvernementaux et non gouvernementaux) doivent détenir une classification de sécurité valide du gouvernement du Canada (GC) d'au moins fiabilité. Le responsable de l'espace de travail est chargé de veiller à ce que toutes les personnes travaillant dans l'espace de travail soient au moins titulaires d'une classification de sécurité du gouvernement du Canada (GC) valide de niveau de fiabilité. Pour plus d'informations à ce sujet, veuillez consulter: [Niveaux de sécurité](https://www.canada.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats/protection-equipement-lieux-biens-renseignements/niveaux-securite.html)
 
 3. Rôles et responsabilités: Services partagés Canada (SSC) est le propriétaire du produit PFDS, et Environnement et Changement climatique Canada (ECCC) est le propriétaire de l'activité PFDS. SSC développera et maintiendra la plateforme PFDS et l'infrastructure associée. Les ministères et organismes à vocation scientifique (MOVS) participants doivent se conformer à toutes les lois, à tous les règlements et à toutes les politiques applicables concernant la sécurité et la gestion de l'information, des dossiers et des ressources du GC, ainsi qu'à d'autres politiques pertinentes, telles que la [Politique sur les services et le numérique](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32603). Les ministères participants doivent également se conformer aux rôles et responsabilités décrits dans le tableau des responsabilités, de l'obligation de rendre compte, de la consultation et de l'information (RACI) de l'annexe 1.
 
@@ -89,11 +89,11 @@ Le SPC se réserve le droit de désactiver un espace de travail/compte du PFDS q
 
 Politiques applicables
 
-1) Politique sur les services et le numérique: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32603
+1) [Politique sur les services et le numérique](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32603)
 
-2) Politique sur la sécurité du gouvernement: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=16578
+2) [Politique sur la sécurité du gouvernement](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=16578)
 
-3) Politique sur les langues officielles: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=26160
+3) [Politique sur les langues officielles](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=26160)
 
 ### Annexe 1 Rôles au sein de la PFDS
 
