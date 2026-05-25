@@ -5,8 +5,8 @@ import { useRoute } from 'vue-router'
 import '@gcds-core/components/dist/gcds/gcds.css';
 import '../styles/style.css'
 import '@gcds-core/css-shortcuts/dist/gcds-css-shortcuts.min.css';
-import Language from '../components/Language.vue';
-import Footer from '../components/Footer.vue';
+import LanguageMap from '../components/LanguageMap.vue';
+import GCFooter from '../components/GCFooter.vue';
 
 const route = useRoute()
 
@@ -19,10 +19,10 @@ const showLanguageToggle = computed(() => {
 <template>
   <ParentLayout>
     <template #navbar-before>
-      <Language v-if="showLanguageToggle" />
+      <LanguageMap v-if="showLanguageToggle" />
     </template>
     <template #page-bottom>
-      <Footer />
+      <GCFooter />
     </template>
   </ParentLayout>
 </template>

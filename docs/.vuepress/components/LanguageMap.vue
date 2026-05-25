@@ -1,14 +1,16 @@
 <template>
-  <header class="navbar" :lang="currentLang">
+  <header class="navbar"
+    :lang="currentLang">
     <!-- <GcdsLangToggle :key="`${currentLang}:${langToggleHref}`" :href="langToggleHref" /> -->
-    <gcds-lang-toggle :href="langToggleHref" :lang="currentLang" />
+    <gcds-lang-toggle :href="langToggleHref"
+      :lang="currentLang" />
   </header>
 </template>
 
 <script>
 
 export default {
-  name: 'Language',
+  name: 'LanguageMap',
 
   computed: {
     currentLang() {
