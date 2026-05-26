@@ -1,9 +1,7 @@
 {
   "version": "0.2",
   "language": "en,fr",
-  "import": [
-    "@cspell/dict-fr-fr/cspell-ext.json"
-  ],
+  "import": ["@cspell/dict-fr-fr/cspell-ext.json"],
   "ignorePaths": [
     "node_modules",
     "dist",
