@@ -2,7 +2,7 @@
 
 The Federal Science DataHub allows you to host web applications on the platform. This guide will walk you through the process of developing, building, and deploying web applications on the DataHub.
 
-> **Note:** This feature is intended for internal, experimental use by your workspace users only. Web apps are only accessible to your DataHub workspace users and only within the GC network.
+> **Note:** This feature is intended for internal, non-production use by your workspace users only. Web apps are only accessible to your DataHub workspace users.
 
 ## Prerequisites
 

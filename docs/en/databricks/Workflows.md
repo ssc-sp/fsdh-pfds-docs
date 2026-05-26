@@ -85,5 +85,5 @@ From there, you can easily configure a schedule as well as alerts for your noteb
 
 ![Alt text](./img/Workflow-NbJobWorkflow.png)
 
-## More Information
+## Learn More
 For more information about workflows, please refer to the **[Lakeflow Jobs Documentation](https://docs.databricks.com/workflows/index.html)**

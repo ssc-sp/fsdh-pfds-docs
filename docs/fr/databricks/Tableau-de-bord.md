@@ -105,4 +105,5 @@ Voici un autre exemple amusant de tableau de bord créé à l'aide de l'outil de
 
 Il s'agit d'un nuage de mots visualisant les mots les plus utilisés dans les tweets contenant le mot "ChatGPT" sur twitter un jour donné. Les données proviennent de [Kaggle datasets](https://www.kaggle.com/datasets/edomingo/chatgpt-1000-daily-tweets).
 
-## [Plus d'informations sur les tableaux de bord Databricks](https://learn.microsoft.com/fr-ca/azure/databricks/lakehouse/data-objects)
+## En Savoir Plus
+Pour plus d'informations sur les tableaux de bord, veuillez vous référer à la [Database Objects in Azure Databricks](https://learn.microsoft.com/fr-ca/azure/databricks/lakehouse/data-objects)

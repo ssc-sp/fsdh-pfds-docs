@@ -100,7 +100,7 @@ Commencez par télécharger la clé privée que nous avons créée à l'étape 3
 ### Utilisation d'une clé privée téléchargée via Databricks File Upload
 
 ```
-importation ee
+import ee
 
 # Entrez l'email associé à votre compte de service créé à l'étape 3 :
 compte_service = 'my-service-account@...gserviceaccount.com'
@@ -124,7 +124,7 @@ print(ee.Image("NASA/NASADEM_HGT/001").get("title").getInfo())
 ### Utilisation d'une clé privée téléchargée sur le stockage DHSF
 
 ```
-importation ee
+import ee
 import json
 
 # Entrez l'email associé à votre compte de service créé à l'étape 3 :

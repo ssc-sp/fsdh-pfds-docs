@@ -99,4 +99,5 @@ Un menu apparaît qui vous permet de planifier l'exécution de ce carnet en tant
 
 ![Alt text](./img/Workflow-NbJobWorkflow.png)
 
-**[En savoir plus sur Databricks Workflows](https://docs.databricks.com/workflows/index.html)**
+## En Savoir Plus
+Pour plus d'informations sur la Flux de travail, veuillez vous référer à "[Lakeflow Jobs Documentation](https://docs.databricks.com/workflows/index.html)"

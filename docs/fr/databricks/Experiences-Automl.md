@@ -126,7 +126,5 @@ L'exécution de ce code créera automatiquement une expérience pour vous, à la
 ![Alt text](./img/Experiments-LoggedRuns.png)
 Une fois encore, n'oubliez pas de consulter le [cahier d'exemples de ML de bout en bout](https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/end-to-end-example) ainsi que la [documentation de l'API MLFlow](https://docs.databricks.com/api/azure/workspace/experiments) pour en savoir plus sur la manière d'exécuter des expériences à partir des cahiers d'expériences.
 
-## En savoir plus
-
-- [Documentation Databricks MLFlow](https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/)
-- [Exemple d'expérience dans un carnet de notes](https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/end-to-end-example)
+## En Savoir Plus
+Pour plus d'informations sur AutoML et MLFlow, veuillez vous référer à la [Documentation Databricks MLFlow](https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/) et [Exemple d'expérience dans un carnet de notes](https://learn.microsoft.com/fr-ca/azure/databricks/mlflow/end-to-end-example)
