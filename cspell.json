@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en,fr",
+  "import": [
+    "@cspell/dict-fr-fr/cspell-ext.json"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".vuepress/.cache",
+    ".vuepress/.temp"
+  ],
+  "overrides": [
+    {
+      "filename": "docs/en/**/*.md",
+      "language": "en"
+    },
+    {
+      "filename": "docs/fr/**/*.md",
+      "language": "fr"
+    }
+  ],
+  "words": [
+    "AzCopy",
+    "Databricks",
+    "Datahub",
+    "PostgreSQL",
+    "Preregistration",
+    "VuePress"
+  ]
+}
