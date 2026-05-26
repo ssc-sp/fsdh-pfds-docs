@@ -80,9 +80,21 @@ jobs:
           FORCE_COLOR: "0"
           TERM: dumb
 
-      - name: Run CSpell
-        uses: streetsidesoftware/cspell-action@v8
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          config: cspell.json
-          files: |
-            docs/**/*.md
+          node-version: 22
+
+      - name: Install CSpell
+        run: |
+          npm install --no-audit --no-fund --no-save \
+            cspell \
+            @cspell/dict-fr-fr
+
+      - name: Run CSpell
+        run: |
+          npx cspell \
+            --config cspell.json \
+            --no-progress \
+            --show-suggestions \
+            "docs/**/*.md"
