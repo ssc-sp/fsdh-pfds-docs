@@ -41,7 +41,7 @@ jobs:
         run: echo "documentation.sds.canada.ca" > ./docs/.vuepress/dist/CNAME
 
       - name: Deploy Docs
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4
         with:
           # This is the branch where the docs are deployed to
           branch: gh-pages
