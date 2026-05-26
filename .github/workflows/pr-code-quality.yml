@@ -86,6 +86,7 @@ jobs:
 
     permissions:
       contents: read
+      issues: write
 
     steps:
       - name: Checkout code
@@ -132,10 +133,134 @@ jobs:
           fi
 
       - name: Run CSpell on changed Markdown files
+        id: cspell
         if: steps.changed_markdown.outputs.has_changed_markdown == 'true'
         run: |
+          set +e
+
           npx cspell \
             --config cspell.json \
             --no-progress \
             --show-suggestions \
-            --file-list changed-markdown-files.txt
+            --file-list changed-markdown-files.txt \
+            > cspell-output.txt 2>&1
+
+          cspell_exit_code="$?"
+
+          set -e
+
+          cat cspell-output.txt
+
+          echo "exit_code=${cspell_exit_code}" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update CSpell PR comment
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          HAS_CHANGED_MARKDOWN: ${{ steps.changed_markdown.outputs.has_changed_markdown }}
+          CSPELL_EXIT_CODE: ${{ steps.cspell.outputs.exit_code || '0' }}
+        run: |
+          set -euo pipefail
+
+          comment_marker="<!-- cspell-summary-identifier -->"
+
+          existing_comment_id="$(
+            gh api \
+              "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+              --paginate \
+              --jq ".[] | select(.user.type == \"Bot\") | select(.body | contains(\"${comment_marker}\")) | .id" \
+              | head -n 1
+          )"
+
+          if [ "${HAS_CHANGED_MARKDOWN}" != "true" ]; then
+            echo "No changed Markdown files found."
+
+            if [ -n "${existing_comment_id}" ]; then
+              echo "Deleting stale CSpell comment ${existing_comment_id}"
+
+              gh api \
+                --method DELETE \
+                "repos/${REPO}/issues/comments/${existing_comment_id}"
+            fi
+
+            exit 0
+          fi
+
+          if [ "${CSPELL_EXIT_CODE}" = "0" ]; then
+            result="Pass ✅"
+          else
+            result="Fail ❌"
+          fi
+
+          files_checked="$(
+            wc -l < changed-markdown-files.txt | tr -d ' '
+          )"
+
+          cspell_summary="$(
+            grep -E 'Files checked:|Issues found:' cspell-output.txt || true
+          )"
+
+          comment_body="$(mktemp)"
+
+          {
+            echo "${comment_marker}"
+            echo "# CSpell summary"
+            echo ""
+            echo "| Check | Validation result |"
+            echo "| --- | --- |"
+            echo "| MARKDOWN_SPELLING | ${result} |"
+            echo ""
+            echo "Files checked: ${files_checked}"
+            echo ""
+            if [ -n "${cspell_summary}" ]; then
+              echo "${cspell_summary}"
+              echo ""
+            fi
+
+            echo "<details>"
+            echo "<summary>Changed Markdown files</summary>"
+            echo ""
+            echo '```text'
+            cat changed-markdown-files.txt
+            echo '```'
+            echo ""
+            echo "</details>"
+            echo ""
+
+            echo "<details>"
+            echo "<summary>CSpell output</summary>"
+            echo ""
+            echo '```text'
+            sed -n '1,200p' cspell-output.txt
+            echo '```'
+            echo ""
+            echo "</details>"
+            echo ""
+            echo "Powered by CSpell"
+          } > "${comment_body}"
+
+          if [ -n "${existing_comment_id}" ]; then
+            echo "Updating existing CSpell comment ${existing_comment_id}"
+
+            jq -n --rawfile body "${comment_body}" '{body: $body}' \
+              | gh api \
+                  --method PATCH \
+                  "repos/${REPO}/issues/comments/${existing_comment_id}" \
+                  --input -
+          else
+            echo "Creating new CSpell comment"
+
+            jq -n --rawfile body "${comment_body}" '{body: $body}' \
+              | gh api \
+                  --method POST \
+                  "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+                  --input -
+          fi
+
+      - name: Fail if CSpell found issues
+        if: steps.changed_markdown.outputs.has_changed_markdown == 'true' && steps.cspell.outputs.exit_code != '0'
+        run: |
+          echo "CSpell found spelling issues."
+          exit 1
