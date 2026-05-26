@@ -91,10 +91,37 @@ jobs:
             cspell \
             @cspell/dict-fr-fr
 
-      - name: Run CSpell
+      - name: Find changed Markdown files
+        id: changed_markdown
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          set -euo pipefail
+
+          git fetch --no-tags --prune --depth=1 origin \
+            "+refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+
+          git diff \
+            --name-only \
+            --diff-filter=ACMR \
+            "origin/${BASE_REF}...HEAD" \
+            -- 'docs/**/*.md' \
+            > changed-markdown-files.txt
+
+          echo "Changed Markdown files:"
+          cat changed-markdown-files.txt
+
+          if [ -s changed-markdown-files.txt ]; then
+            echo "has_changed_markdown=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changed_markdown=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run CSpell on changed Markdown files
+        if: steps.changed_markdown.outputs.has_changed_markdown == 'true'
         run: |
           npx cspell \
             --config cspell.json \
             --no-progress \
             --show-suggestions \
-            "docs/**/*.md"
+            --file-list changed-markdown-files.txt
