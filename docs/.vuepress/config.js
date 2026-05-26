@@ -181,7 +181,7 @@ export default defineUserConfig({
               collapsible: true,
               children: [
                 "/fr/stockage/Importer-le-stockage-AWS",
-                "/fr/stockage/Importer-Azure-Storage",
+                "/fr/stockage/Importer-le-stockage-Azure",
                 "/fr/stockage/Importer-le-stockage-GCP",
               ],
             },
