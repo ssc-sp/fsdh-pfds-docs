@@ -41,17 +41,32 @@ jobs:
   update-last-updated:
     runs-on: ubuntu-latest
     steps:
+      - name: Create App token
+        id: create_token
+        uses: ssc-sp/.github/.github/actions/create-app-token@main
+        with:
+          app-id: ${{ vars.ORG_MEMBER_TEAM_ADMIN_ID }}
+          private-key: ${{ secrets.ORG_MEMBER_TEAM_ADMIN_KEY }}
+          owner: ${{ github.repository_owner }}
+
       - name: Check out
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          token: ${{ steps.create_token.outputs.token }}
 
       - name: Update LAST_UPDATED.md
         run: |
           echo "$(date -u +'%Y-%m-%d')" > LAST_UPDATED.md
 
-      - name: Commit and push LAST_UPDATED.md
+      - name: Commit and push updated JSON
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
+
+          git config user.name "Org Event Watcher App"
+          git config user.email "${{ vars.ORG_MEMBER_TEAM_ADMIN_ID }}[bot]@users.noreply.github.com"
+
           git add LAST_UPDATED.md
           git commit -m "Update LAST_UPDATED.md to date of release"
+
           git push
