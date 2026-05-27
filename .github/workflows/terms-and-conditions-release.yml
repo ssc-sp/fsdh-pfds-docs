@@ -73,7 +73,7 @@ jobs:
         run: |
           date -u +'%Y-%m-%d' > LAST_UPDATED.md
 
-      - name: Commit and push updated JSON
+      - name: Commit and push updated LAST_UPDATED.md
         shell: bash
         run: |
           set -euo pipefail
