@@ -53,6 +53,7 @@ jobs:
 
   update-last-updated:
     runs-on: ubuntu-latest
+    environment: notary
     steps:
       - name: Create App token
         id: create_token
