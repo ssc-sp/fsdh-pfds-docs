@@ -1,0 +1,110 @@
+{
+  "version": "0.2",
+  "language": "en,fr",
+  "import": ["@cspell/dict-fr-fr/cspell-ext.json"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".vuepress/.cache",
+    ".vuepress/.temp",
+    "package-lock.json"
+  ],
+  "patterns": [
+    {
+      "name": "markdown_code_block",
+      "pattern": "/^(\\s*`{3,}).*[\\s\\S]*?^\\1/gmx"
+    },
+    {
+      "name": "markdown_inline_code",
+      "pattern": "/`[^`]*`/g"
+    },
+    {
+      "name": "markdown_frontmatter",
+      "pattern": "/^---[\\s\\S]*?^---/gm"
+    },
+    {
+      "name": "markdown_links",
+      "pattern": "/\\[[^\\]]*\\]\\([^\\)]*\\)/g"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": "markdown",
+      "ignoreRegExpList": [
+        "markdown_code_block",
+        "markdown_inline_code",
+        "markdown_frontmatter",
+        "markdown_links"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "filename": "docs/en/**/*.md",
+      "language": "en"
+    },
+    {
+      "filename": "docs/fr/**/*.md",
+      "language": "fr"
+    }
+  ],
+  "words": [
+    "AIPRP",
+    "ARIMA",
+    "ATIP",
+    "AzCopy",
+    "CBR",
+    "CCCS",
+    "CRAN",
+    "Databricks",
+    "Datahub",
+    "DBFS",
+    "ECCC",
+    "FSDH",
+    "IRBV",
+    "ITSM",
+    "Kaggle",
+    "Lakehouse",
+    "Matplotlib",
+    "MLflow",
+    "NASADEM",
+    "PFDS",
+    "Plotly",
+    "PostgreSQL",
+    "Preregistration",
+    "RACI",
+    "SBDAs",
+    "Sklearn",
+    "Spark",
+    "Spyder",
+    "VuePress",
+    "Xchange",
+    "abfss",
+    "appinstaller",
+    "azcopy",
+    "azurebfs",
+    "bioconda",
+    "cloudpickle",
+    "creds",
+    "dashboarding",
+    "dbfs",
+    "dbutils",
+    "earthengine",
+    "fsdh",
+    "hifiasm",
+    "hyperparameters",
+    "ipython",
+    "mlflow",
+    "mountpoint",
+    "msix",
+    "noaa",
+    "nomkl",
+    "numpy",
+    "pyarrow",
+    "pyfunc",
+    "scikit",
+    "toolsets",
+    "traitlets",
+    "wasbs"
+  ]
+}
