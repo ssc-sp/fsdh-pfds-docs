@@ -45,8 +45,8 @@ jobs:
         id: create_token
         uses: ssc-sp/.github/.github/actions/create-app-token@main
         with:
-          app-id: ${{ vars.ORG_MEMBER_TEAM_ADMIN_ID }}
-          private-key: ${{ secrets.ORG_MEMBER_TEAM_ADMIN_KEY }}
+          app-id: ${{ vars.TERMS_CONDITIONS_NOTARY_ID }}
+          private-key: ${{ secrets.TERMS_CONDITIONS_NOTARY_KEY }}
           owner: ${{ github.repository_owner }}
 
       - name: Check out
@@ -64,7 +64,7 @@ jobs:
           set -euo pipefail
 
           git config user.name "Org Event Watcher App"
-          git config user.email "${{ vars.ORG_MEMBER_TEAM_ADMIN_ID }}[bot]@users.noreply.github.com"
+          git config user.email "${{ vars.TERMS_CONDITIONS_NOTARY_ID }}[bot]@users.noreply.github.com"
 
           git add LAST_UPDATED.md
           git commit -m "Update LAST_UPDATED.md to date of release"
