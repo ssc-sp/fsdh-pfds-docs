@@ -5,7 +5,7 @@ next: false
 lastUpdated: false
 ---
 
-# Terms and Conditions
+# Terms and Conditions 
 
 **BETWEEN: SSC and Participating Science-Based Departments and Agencies.**
 
