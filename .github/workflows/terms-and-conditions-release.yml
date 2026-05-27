@@ -25,7 +25,7 @@ jobs:
       - name: Make tag name
         id: mk
         run: |
-          TAG="$(date -u +%Y.%m.%d)"
+          TAG="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
