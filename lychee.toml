@@ -1,19 +1,21 @@
-# lychee.toml
+# Base URL to use when resolving relative URLs in local files
+base_url = "docs"
 
-# 1. Ignore links to your future website (Regex)
-# This prevents errors for links that won't exist until deployment
+# Output format
+format = "compact"
+
+# Fallback extensions to apply when a URL does not specify one
+fallback_extensions = ["md", "mdx"]
+
+# URLs or patterns to exclude (supports regex)
 exclude = [
-  '^README',
-  'localhost',
+    "file:///",
+    '\.(pdf|zip|png|jpg)$',
+    "sharepoint.com"
 ]
 
-# 2. Ignore specific directories completely
-# This prevents lychee from even opening files in these folders
-exclude_path = [
-  "node_modules",
-  "ignored-folder-name",
-  "build",
-]
+# Proceed even if the server connection is considered insecure (invalid TLS)
+insecure = true
 
-# 3. Custom settings
-suggest = true
+# List of accepted status codes for valid links
+accept = [200]
