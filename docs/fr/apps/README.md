@@ -12,6 +12,6 @@ Azure App Service est idéal pour:
 
 La PFDS vous permet de provisionner Azure App Service pour vos applications. Ces applications sont accessibles aux autres chercheurs au sein de l'espace de travail.
 
-Apprennez à:
-* Provisionner App Service sur la PFDS: [Demander, configurer et supprimer des outils dans votre espace de travail](/fr/gerer-espaces-et-utilisateurs/Demande-outils)
+Apprenez à:
+* Provisionner App Service sur la PFDS: [Demander, configurer et supprimer des outils dans votre espace de travail](/fr/gerer-espaces-et-utilisateurs/Demande-outils) 
 * Héberger vos propres applications web sur la PFDS: [Héberger des applications Web sur la PFDS](/fr/webapps/WebApps)
