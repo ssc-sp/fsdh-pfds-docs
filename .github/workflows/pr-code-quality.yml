@@ -133,6 +133,41 @@ jobs:
             echo "has_changed_markdown=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Remove previous CSpell PR comments
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          comment_marker="<!-- cspell-summary-identifier -->"
+
+          echo "Looking for previous CSpell comments on PR #${PR_NUMBER}"
+
+          comment_ids="$(
+            gh api \
+              "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+              --paginate \
+              --jq ".[] | select(.user.type == \"Bot\") | select(.body | contains(\"${comment_marker}\")) | .id"
+          )"
+
+          if [ -z "${comment_ids}" ]; then
+            echo "No previous CSpell comments found."
+            exit 0
+          fi
+
+          echo "${comment_ids}" | while read -r comment_id; do
+            [ -z "${comment_id}" ] && continue
+
+            echo "Deleting CSpell comment ${comment_id}"
+
+            gh api \
+              --method DELETE \
+              "repos/${REPO}/issues/comments/${comment_id}"
+          done
+
       - name: Run CSpell on changed Markdown files
         id: cspell
         if: steps.changed_markdown.outputs.has_changed_markdown == 'true'
