@@ -1,6 +1,7 @@
 # Applications Web sur la Plateforme fédérale de données scientifiques
 
-Azure App Service est une plateforme entièrement gérée pour la création, le déploiement et la mise à l'échelle d'applications web. Elle offre un riche ensemble de fonctionnalités pour développer des applications web dans une variété de langages de programmation à l'aide de conteneurs Docker. Azure App Service sur la Plateforme fédérale de données scientifiques (PFDS) est idéal pour héberger des applications web de base ou des API à usage interne.
+Azure App Service est une plateforme entièrement gérée pour la création, le déploiement et la mise à l'échelle d'applications web. Elle offre un riche ensemble de fonctionnalités pour développer des applications web dans une variété de langages de programmation à l'aide de conteneurs Docker.
+Azure App Service sur la Plateforme fédérale de données scientifiques (PFDS) est idéal pour héberger des applications web de base ou des API à usage interne.
 
 Azure App Service est idéal pour:
 
