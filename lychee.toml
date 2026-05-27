@@ -1,0 +1,19 @@
+# lychee.toml
+
+# 1. Ignore links to your future website (Regex)
+# This prevents errors for links that won't exist until deployment
+exclude = [
+  '^README',
+  'localhost',
+]
+
+# 2. Ignore specific directories completely
+# This prevents lychee from even opening files in these folders
+exclude_path = [
+  "node_modules",
+  "ignored-folder-name",
+  "build",
+]
+
+# 3. Custom settings
+suggest = true
