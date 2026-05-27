@@ -7,7 +7,7 @@ on:
       - docs/en/Terms-And-Conditions.md
       - docs/fr/Conditions-generales.md
 
-permissions: read-all
+permissions: {}
 
 jobs:
   release:
