@@ -6,7 +6,7 @@ prev: /fr/
 
 Ces instructions vous guidera dans le de configuration de votre compte pour la Plateforme fédérale de données scientifiques (PFDS).
 
-> **Remarque :** Pour créer un compte, vous devez soit créer un espace de travail en utilisant le [Portail des services d'hébergement du GC](https://hosting-services-hebergement.canada.ca/s/gc-cloud-fa-catalogue), soit être ajouté à un espace de travail existant par un administrateur d'espace de travail.
+> **Remarque :** Pour créer un compte, vous devez soit créer un espace de travail en utilisant le [Portail des services d'hébergement du GC](https://hosting-services-hebergement.canada.ca/s/gc-cloud-fa-catalogue?language=fr), soit être ajouté à un espace de travail existant par un administrateur d'espace de travail.
 
 ## Connexion au département
 

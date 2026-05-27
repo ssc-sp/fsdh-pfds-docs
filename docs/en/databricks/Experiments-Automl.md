@@ -28,7 +28,7 @@ In summary, AutoML will train several models using different algorithms and hype
 
 The first step to using AutoML is to upload your training data to Databricks. You can do so by following [this guide](https://learn.microsoft.com/en-us/azure/databricks/ingestion/add-data/upload-data). You will also need a cluster with a ML runtime.
 
-Once you have your data uploaded, you can create a new experiment by clicking on the `Experiments` tab on the left side of the screen. If you are using the old UI, you need to select "Machine Learning" from the top left dropdown menu.
+Once you have your data uploaded, you can create a new experiment by clicking on the `Experiments` tab on the left side of the screen. If you are using the old UI, you need to select `Machine Learning` from the top left dropdown menu.
 
 Old UI:
 ![Alt text](./img/Experiments-OldUIExp.png)
@@ -134,6 +134,4 @@ From there, you can view your runs, their associated models, their logged parame
 Again, make sure to check out the [end-to-end ML example notebook](https://learn.microsoft.com/en-us/azure/databricks/mlflow/end-to-end-example) as well as the [MLFlow databricks API documentation](https://docs.databricks.com/api/azure/workspace/experiments) to learn more about how to run experiments from within notebooks.
 
 ## Learn more
-
-- [Databricks MLFlow documentation](https://learn.microsoft.com/en-us/azure/databricks/mlflow/)
-- [Notebook experiment example](https://learn.microsoft.com/en-us/azure/databricks/mlflow/end-to-end-example)
+For more information about MLFlow and AutoML, refer to [Databricks MLFlow Documentation](https://learn.microsoft.com/en-us/azure/databricks/mlflow/) and [Notebook experiment example](https://learn.microsoft.com/en-us/azure/databricks/mlflow/end-to-end-example)

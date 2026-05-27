@@ -116,4 +116,4 @@ Synchronisation du dossier `sample` de ma machine dans un dossier spécifique de
 
 ## En savoir plus
 
-Vous pouvez en savoir plus sur AzCopy, y compris des exemples de scénarios impliquant le stockage Azure mais aussi les buckets Amazon S3 ou le stockage dans le nuage de Google, dans la [documentation officielle] (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
+Vous pouvez en savoir plus sur AzCopy, y compris des exemples de scénarios impliquant le stockage Azure mais aussi les buckets Amazon S3 ou le stockage dans le nuage de Google, dans la [documentation officielle](https://learn.microsoft.com/fr-fr/azure/storage/common/storage-use-azcopy-v10).

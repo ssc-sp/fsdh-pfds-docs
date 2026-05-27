@@ -12,7 +12,7 @@ Avant de pouvoir héberger des applications web sur le DataHub, vous devrez cré
 
 Pour créer une image de votre application, nous recommandons d'utiliser les GitHub Actions pour construire et pousser l'image vers un registre de conteneurs. Pour commencer, créez un dossier appelé `.github` à l'intérieur de votre repo. Ensuite, ajoutez un dossier appelé `workflows` à l'intérieur du dossier `.github`. Vous pouvez maintenant créer un fichier `.yml` (par exemple, `build-image.yml`) à l'intérieur de ce dossier pour définir le flux de travail des GitHub Actions.
 
-Un exemple de workflow GitHub Actions pour construire et pousser une image Docker vers un registre de conteneurs est [disponible ici] (https://github.com/Sean-Stilwell/sample-dashapp/blob/master/.github/workflows/build-dash-app.yml). Vous devrez mettre à jour le nom de l'image pour qu'il corresponde à celui que vous souhaitez.
+Un exemple de workflow GitHub Actions pour construire et pousser une image Docker vers un registre de conteneurs est [disponible ici](https://github.com/Sean-Stilwell/sample-dashapp/blob/master/.github/workflows/build-dash-app.yml). Vous devrez mettre à jour le nom de l'image pour qu'il corresponde à celui que vous souhaitez.
 
 **Note:** N'envoyez pas d'informations sensibles, telles que votre jeton GitHub, à votre dépôt. Les actions GitHub peuvent récupérer de nombreux secrets automatiquement, comme le secret `GITHUB_TOKEN`. Vous pouvez également créer vos propres secrets dans les paramètres du dépôt et les utiliser dans vos flux de travail pour éviter d'exposer des informations sensibles.
 
@@ -32,14 +32,14 @@ Pour héberger une application web sur le DataHub, vous devrez créer un dépôt
 
 **Déployer l'application**
 
-Pour déployer votre application sur le DataHub, vous devez configurer l'App Service dans votre espace de travail. Vous pouvez le faire en naviguant vers l'App Service dans votre espace de travail et en cliquant sur "Configurer".
+Pour déployer votre application sur le DataHub, vous devez configurer l'App Service dans votre espace de travail. Vous pouvez le faire en naviguant vers l'App Service dans votre espace de travail et en cliquant sur `Configurer`.
 
 ![Accès au menu de configuration du service d'application](./img/configure.png)
 
 Dans l'écran de configuration, vous devrez fournir les informations suivantes :
 
-** URL du dépôt** : L'URL du dépôt Git pour votre application.
-**Confidentialité du référentiel** : Si le référentiel est public ou privé.
+* **URL du dépôt** : L'URL du dépôt Git pour votre application.
+* **Confidentialité du référentiel** : Si le référentiel est public ou privé.
 * **Path** : Le chemin vers le fichier `docker-compose.yml` dans votre référentiel.
 * (si privé) **Token** : Un jeton permettant d'accéder au référentiel.
 

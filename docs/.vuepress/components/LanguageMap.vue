@@ -115,7 +115,7 @@ export default {
         },
         {
           en: "/en/databricks/Git-Integration",
-          fr: "/fr/databricks/Intégration-de-Git",
+          fr: "/fr/databricks/Integration-de-Git",
         },
         {
           en: "/en/databricks/vscode_extension",
@@ -127,7 +127,7 @@ export default {
         },
         {
           en: "/en/databricks/Connecting-Google-API",
-          fr: "/fr/databricks/Connexion-à-l'API-Google",
+          fr: "/fr/databricks/Connexion-a-lAPI-Google",
         },
         {
           en: "/en/databricks/Dashboarding",
@@ -139,7 +139,7 @@ export default {
         },
         {
           en: "/en/databricks/Experiments-Automl",
-          fr: "/fr/databricks/Expériences-Automl",
+          fr: "/fr/databricks/Experiences-Automl",
         },
         {
           en: "/en/databricks/Workflows",
@@ -157,7 +157,7 @@ export default {
         },
         {
           en: "/en/postgresql/psql-databricks-comparison",
-          fr: "/fr/postgresql/Comparaison-des-bases-de-données-psql",
+          fr: "/fr/postgresql/Comparaison-des-bases-de-donnees-psql",
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },

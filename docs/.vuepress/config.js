@@ -181,7 +181,7 @@ export default defineUserConfig({
               collapsible: true,
               children: [
                 "/fr/stockage/Importer-le-stockage-AWS",
-                "/fr/stockage/Importer-Azure-Storage",
+                "/fr/stockage/Importer-le-stockage-Azure",
                 "/fr/stockage/Importer-le-stockage-GCP",
               ],
             },
@@ -195,7 +195,7 @@ export default defineUserConfig({
           children: [
             "/fr/databricks/Databricks-101",
             "/fr/databricks/Politiques-des-clusters",
-            "/fr/databricks/Expériences-Automl",
+            "/fr/databricks/Experiences-Automl",
             "/fr/databricks/Flux-de-travail",
             {
               text: "Tableau de bord",
@@ -209,10 +209,10 @@ export default defineUserConfig({
               text: "Extensions externes",
               collapsible: true,
               children: [
-                "/fr/databricks/Intégration-de-Git",
+                "/fr/databricks/Integration-de-Git",
                 "/fr/databricks/extension-vscode",
                 "/fr/databricks/Paquets-Conda",
-                "/fr/databricks/Connexion-à-l'API-Google",
+                "/fr/databricks/Connexion-a-lAPI-Google",
               ]
             },
           ],
@@ -223,7 +223,7 @@ export default defineUserConfig({
           children: [
             "/fr/postgresql/Postgres",
             "/fr/postgresql/Postgres-Ajouter-Utilisateur",
-            "/fr/postgresql/Comparaison-des-bases-de-données-psql",
+            "/fr/postgresql/Comparaison-des-bases-de-donnees-psql",
           ],
         },
         {
@@ -245,11 +245,11 @@ export default defineUserConfig({
           text: "Conseils aux utilisateurs",
           collapsible: true,
           children: [
-            "/fr/conseils/Controle-despace-de-travail",
-            "/fr/conseils/Gestion-de-code",
             "/fr/conseils/Gestion-des-comptes-et-controle-de-lacces-aux-espaces-de-travail",
             "/fr/conseils/Sauvegarde-et-recuperation",
+            "/fr/conseils/Gestion-de-code",
             "/fr/conseils/Fichiers-restreints",
+            "/fr/conseils/Controle-despace-de-travail",
           ],
         },
         "/fr/Conditions-generales",

@@ -6,7 +6,7 @@ prev: /en/
 
 This will guide you through the process of setting up your account for the Federal Science DataHub (FSDH).
 
-> **Note:** To create an account, you must either create a workspace using the [GC Hosting Services Portal](https://hosting-services-hebergement.canada.ca/s/gc-cloud-fa-catalogue) or be added to an existing workspace by a workspace administrator.
+> **Note:** To create an account, you must either create a workspace using the [GC Hosting Services Portal](https://hosting-services-hebergement.canada.ca/s/gc-cloud-fa-catalogue?language=en_US) or be added to an existing workspace by a workspace administrator.
 
 ## Departmental Login
 

@@ -28,19 +28,19 @@ draft: true
 
 ## Exemple de tableau de bord
 
-Voici un exemple de tableau de bord créé à l'aide de l'outil de tableau de bord intégré de Databricks pour l'analyse du [National Oceanic and Atmospheric Administration's International Comprehensive Ocean-Atmosphere DataSet] (https://icoads.noaa.gov/).
+Voici un exemple de tableau de bord créé à l'aide de l'outil de tableau de bord intégré de Databricks pour l'analyse du [National Oceanic and Atmospheric Administration's International Comprehensive Ocean-Atmosphere DataSet](https://icoads.noaa.gov/).
 
 ![Aperçu 1](./img/Dashboard1.png)
 ![Aperçu 2](./img/Dashboard2.png)
 ![Aperçu 3](./img/Dashboard3.png)
 
-Cet exemple de tableau de bord peut également être visualisé sous forme de [PDF exporté] (https://github.com/ssc-sp/datahub-docs/blob/main/UserGuide/Databricks/SampleDashboard.pdf).
+Cet exemple de tableau de bord peut également être visualisé sous forme de [PDF exporté](https://github.com/ssc-sp/datahub-docs/blob/main/UserGuide/Databricks/SampleDashboard.pdf).
 
 Dans le cadre de ce tutoriel, nous allons suivre le processus de création d'un bloc de ce tableau de bord. Tous les blocs suivent un processus similaire.
 
 ## 1. Préparer vos données
 
-Avant de pouvoir créer un tableau de bord, vos données doivent être stockées sous forme de tableau dans Databricks. Si vous ne l'avez pas encore fait, vous pouvez suivre les étapes de la [documentation Databricks] (https://docs.databricks.com/data/tables.html#create-a-table) pour créer une table à partir de vos données.
+Avant de pouvoir créer un tableau de bord, vos données doivent être stockées sous forme de tableau dans Databricks. Si vous ne l'avez pas encore fait, vous pouvez suivre les étapes de la [documentation Databricks](https://docs.databricks.com/data/tables.html#create-a-table) pour créer une table à partir de vos données.
 
 Vos données devraient être visibles dans l'onglet "Données" de votre espace de travail :
 ![Onglet Données](./img/DashboardTables.png)
@@ -67,7 +67,7 @@ Dans la barre de navigation, cliquez sur l'onglet "Requêtes", puis sur le bouto
 
 L'éditeur SQL s'ouvre alors. Vous pouvez y écrire votre requête SQL. Pour ce tutoriel, nous allons créer un diagramme à barres qui affiche le nombre d'observations pour chaque année. La requête est la suivante :
 
-``sql
+```sql
 SELECT YEAR(date) AS year, COUNT(sea_surface_temp) AS measurement_count
 FROM noaa_icoads
 WHERE YEAR(date) > YEAR(DATE("1849-01-01"))
@@ -105,4 +105,5 @@ Voici un autre exemple amusant de tableau de bord créé à l'aide de l'outil de
 
 Il s'agit d'un nuage de mots visualisant les mots les plus utilisés dans les tweets contenant le mot "ChatGPT" sur twitter un jour donné. Les données proviennent de [Kaggle datasets](https://www.kaggle.com/datasets/edomingo/chatgpt-1000-daily-tweets).
 
-## [Plus d'informations sur les tableaux de bord Databricks](https://learn.microsoft.com/fr-ca/azure/databricks/lakehouse/data-objects)
+## En Savoir Plus
+Pour plus d'informations sur les tableaux de bord, veuillez vous référer à la [Database Objects in Azure Databricks](https://learn.microsoft.com/fr-ca/azure/databricks/lakehouse/data-objects)

@@ -29,11 +29,11 @@ Users of FSDH are required to conform to the following criteria:
 
 1. Security classification: The FSDH workspaces are authorized for Unclassified use. “Unclassified” denotes non-sensitive data and information that carries no injury to personal, industry, or government interests if released to the public. It is each workspace lead’s responsibility to ensure all data and information in their workspace is unclassified before uploading it to the FSDH and while using it in the FSDH. Please refer to the following important information security guidelines: 
     - [Directive on Security Management - Appendix J: Standard on Security Categorization](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=32614)
-    - https://www.canada.ca/content/dam/dnd-mdn/documents/ml-fd/2023/11-09-working-with-sensitive-information.pdf 
+    - [Working With Sensitive Information](https://www.canada.ca/en/department-national-defence/maple-leaf/defence/2020/12/working-with-sensitive-information.html)
+    
+    The workspace lead should develop a security categorization report to ensure data or information stored in the workspace falls within the approved security classification. For guidance, please refer to [Directive on Security Management - Appendix J: Standard on Security Categorization](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614). The workspace lead is responsible for consulting departmental security, ATIP and privacy teams for all information or data posted.
 
-    The workspace lead should develop a security categorization report to ensure data or information stored in the workspace falls within the approved security classification. For guidance, please refer to https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614. The workspace lead is responsible for consulting departmental security, ATIP and privacy teams for all information or data posted.
-
-2. Individual security classification: To access the FSDH platform, participants (government and non-government) must hold a valid Government of Canada (GC) security classification of at least Reliability. The workspace lead is responsible for ensuring all individuals working in the workspace have a minimum valid GC Reliability status. For more information on this, please see: https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html
+2. Individual security classification: To access the FSDH platform, participants (government and non-government) must hold a valid Government of Canada (GC) security classification of at least Reliability. The workspace lead is responsible for ensuring all individuals working in the workspace have a minimum valid GC Reliability status. For more information on this, please see: [Levels of security](https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html)
 
 3. Roles and Responsibilities: Shared Services Canada (SSC) is the FSDH product owner, and Environment and Climate Change Canada (ECCC) is the FSDH business owner. SSC will develop and maintain the FSDH platform and associated infrastructure. Participating science-based departments and agencies (SBDAs) are responsible for complying with all applicable statutes, regulations, and policies concerning the security and management of GC information, records, resources, and other relevant policies, such as the [Policy on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603). Participating departments must also comply with the roles and responsibilities outlined in the Responsibility, Accountability, Consultation, and Information (RACI) Chart in Annex 1. 
 
@@ -89,11 +89,11 @@ SSC retains the right to disable or deactivate a workspace/account from the FSDH
 
 Applicable Policies 
 
-1.	Policy on Service and Digital: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603 
+1.	[Policy on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603)
 
-2.	Policy on Government Security: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16578
+2.	[Policy on Government Security](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16578)
 
-3.	Policy on Official Languages: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26160 
+3.	[Policy on Official Languages](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26160)
 
 ### Annex 1 Roles within FSDH 
 
@@ -129,8 +129,8 @@ The following are roles within FSDH, the responsibilities are outlined in Annex 
 | Data management | Data management activities such as data life cycle, data quality etc. | I,C | I,C | A,R |
 | Security management of Portal | Security management of the Portal is ensuring the FSDH portal meets all the security requirements, | I,C | A,R | I,C |
 | Security management of workspace | Security management of the workspace is the management of the data or information within the workspace. In addition it includes all security related activities in terms of applications, API etc. | I,C | I,C | A,R |
-| Workspace management | Workspace Leads or Administrators are responsible for: <br /> Developing access management procedures to control access to their workspace. <br /> Providing intended use guidance to workspace users.  <br />Monitoring workspace usage and sensitivity of information hosted in the workspace (ensuring that assigned workspace sensitivity level is adhered to at all times from a single or data aggregate perspective).  <br />Working with the departmental Cyber Security team in developing a workspace security categorization report, as well as access management processes, guidance, Database and Storage account access token, Key Vault management, and monitoring processes.  <br /> Ensuring integrity and availability of workspace source code based on departmental processes.  | I,C | I,C | A,R |
-| Storage Management/Database Management | Storage management or Database management includes all activities related to the app service or the database service. This also includes the management of database credentials. The workspace lead is responsible for the proper management and storage of the DB credentials and storage tokens. <br /> In addition, services packaged within the docker must follow the GC policies, standards, guidelines, and standards. The services deployed via docker must follow the security policies and must be for legitimate Government of Canada business purposes.  | I,C | I | A,R |
+| Workspace management | Workspace Leads or Administrators are responsible for: <br/> Developing access management procedures to control access to their workspace. <br/> Providing intended use guidance to workspace users.  <br/>Monitoring workspace usage and sensitivity of information hosted in the workspace (ensuring that assigned workspace sensitivity level is adhered to at all times from a single or data aggregate perspective).  <br/>Working with the departmental Cyber Security team in developing a workspace security categorization report, as well as access management processes, guidance, Database and Storage account access token, Key Vault management, and monitoring processes.  <br/> Ensuring integrity and availability of workspace source code based on departmental processes.  | I,C | I,C | A,R |
+| Storage Management/Database Management | Storage management or Database management includes all activities related to the app service or the database service. This also includes the management of database credentials. The workspace lead is responsible for the proper management and storage of the DB credentials and storage tokens. <br/> In addition, services packaged within the docker must follow the GC policies, standards, guidelines, and standards. The services deployed via docker must follow the security policies and must be for legitimate Government of Canada business purposes.  | I,C | I | A,R |
 
 ### Annex 3 Funding Model 
 
