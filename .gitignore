@@ -4,3 +4,6 @@ node_modules
 docs/.vuepress/.cache/
 docs/.vuepress/dist/
 docs/.vuepress/.temp/
+
+# Seems like something Cypress does. I don't know why.
+core.*

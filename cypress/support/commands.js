@@ -8,7 +8,30 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-Cypress.Commands.add('checkElements', () => {
+Cypress.Commands.add('checkHeadFoot', function() {
     cy.get('.vp-navbar')
     cy.get('.gc-footer')
+})
+
+Cypress.Commands.add('checkPage', function(url) {
+    cy.visit(url)
+    cy.checkHeadFoot()
+    cy.get('.vp-sidebar')
+    cy.get('gcds-lang-toggle').click()
+    cy.get('gcds-lang-toggle').click()
+    cy.url().should('include', url)
+})
+
+Cypress.Commands.add('nextPage', function() {
+    cy.location('pathname').then(function(pos) {
+      cy.get('.vp-sidebar')
+        .find('[class*="route-link"]:visible')
+        .filter('[href*="'+pos+'"]')
+        .first()
+        .parent()
+        .next()
+        .then(function($el) {
+            cy.wrap($el).click()
+        })
+    })
 })
