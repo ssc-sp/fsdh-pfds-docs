@@ -1,5 +1,5 @@
 # Base URL to use when resolving relative URLs in local files
-base_url = "docs"
+base_url = "/workspaces/fsdh-pfds-docs/docs"
 
 # Output format
 format = "compact"
@@ -13,6 +13,8 @@ exclude = [
     '\.(pdf|zip|png|jpg)$',
     "sharepoint.com"
 ]
+
+# verbose = "info"
 
 # Proceed even if the server connection is considered insecure (invalid TLS)
 insecure = true
