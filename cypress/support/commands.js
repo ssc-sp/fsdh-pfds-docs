@@ -13,25 +13,38 @@ Cypress.Commands.add('checkHeadFoot', function() {
     cy.get('.gc-footer')
 })
 
-Cypress.Commands.add('checkPage', function(url) {
-    cy.visit(url)
+Cypress.Commands.add('checkPage', function() {
     cy.checkHeadFoot()
     cy.get('.vp-sidebar')
-    cy.get('gcds-lang-toggle').click()
-    cy.get('gcds-lang-toggle').click()
-    cy.url().should('include', url)
+    cy.location('pathname').then(function(startLocation) {
+        //cy.get('gcds-lang-toggle').click()
+        //cy.get('gcds-lang-toggle').click()
+        cy.location('pathname').should('eq', startLocation)
+    })
 })
 
-Cypress.Commands.add('nextPage', function() {
-    cy.location('pathname').then(function(pos) {
-      cy.get('.vp-sidebar')
+Cypress.Commands.add('getPage', function() {
+    return cy.location('pathname').then(function(pos) {
+      return cy.get('.vp-sidebar')
         .find('[class*="route-link"]:visible')
         .filter('[href*="'+pos+'"]')
         .first()
-        .parent()
-        .next()
-        .then(function($el) {
-            cy.wrap($el).click()
-        })
+    })
+})
+
+Cypress.Commands.add(
+    'revealTab', 
+    {
+        prevSubject: true,
+    },
+    function(subject) {
+    cy.wrap(subject).then(function(elem) {
+        if (elem.is(':hidden')/* && !elem.is('[class*="vp-sidebar-items"]')*/) {
+            cy.wrap(elem).parent().revealTab()
+        }
+    }).then(function(elem) {
+        if (elem.is('[class*="collapsible"]') || elem.is('[class*="li"]')) {
+            cy.wrap(elem).click()
+        }
     })
 })
