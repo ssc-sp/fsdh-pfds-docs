@@ -1,4 +1,4 @@
-# Gestion des utilisateurs externes
+# Inviter un utilisateur externe
 
 Ce guide est une présentation de la façon d'inviter et de se connecter en tant qu'utilisateur externe.
 

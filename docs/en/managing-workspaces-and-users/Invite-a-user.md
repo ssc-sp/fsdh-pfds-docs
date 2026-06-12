@@ -1,4 +1,4 @@
-# Invite a user
+# Invite a GC user
 
 This guide will cover how to invite a user to your workspace.
 

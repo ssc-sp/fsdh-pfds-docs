@@ -1,4 +1,4 @@
-# External User Management
+# Invite an external user
 
 This guide is a walkthrough of how to invite and log in as an external user.
 

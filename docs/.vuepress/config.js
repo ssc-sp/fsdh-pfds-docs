@@ -61,9 +61,17 @@ export default defineUserConfig({
               link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx",
             },
             "/en/managing-workspaces-and-users/Preregistration",
+            {
+              "text": "User Management",
+              collapsible: true,
+              children: [
+                "/en/managing-workspaces-and-users/Invite-a-user",
+                "/en/managing-workspaces-and-users/Invite-an-external-user",
+                "/en/managing-workspaces-and-users/Change-a-user-role",
+
+              ],
+            },
             "/en/managing-workspaces-and-users/Request-tools",
-            "/en/managing-workspaces-and-users/Invite-a-user",
-            "/en/managing-workspaces-and-users/Change-a-user-role",
             "/en/managing-workspaces-and-users/CBR-management",
           ],
         },
@@ -165,9 +173,17 @@ export default defineUserConfig({
               link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx",
             },
             "/fr/gerer-espaces-et-utilisateurs/Preregistration",
+            {
+              "text": "Gestion des utilisateurs",
+              collapsible: true,
+              children: [
+                "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
+                "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur-externe",
+                "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
+
+              ],
+            },
             "/fr/gerer-espaces-et-utilisateurs/Demande-outils",
-            "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
-            "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
             "/fr/gerer-espaces-et-utilisateurs/Gestion-BOI",
           ],
         },

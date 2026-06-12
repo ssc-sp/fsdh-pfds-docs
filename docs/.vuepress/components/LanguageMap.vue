@@ -44,6 +44,10 @@ export default {
           fr: "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
         },
         {
+          en: "/en/managing-workspaces-and-users/Invite-an-external-user",
+          fr: "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur-externe",
+        },
+        {
           en: "/en/managing-workspaces-and-users/Change-a-user-role",
           fr: "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
         },
