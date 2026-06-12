@@ -34,8 +34,12 @@ h2 {
     border-bottom: none !important;
 }
 
-li {
+ul li {
     list-style: disc !important;
+}
+
+ol li {
+    list-style: decimal !important;
 }
 
 .vp-back-to-top-button {
