@@ -1,1 +1,0 @@
-import{c as e,l as t,p as n,s as r}from"./app-DBTf8n8T.js";var i=JSON.parse(`{"path":"/404.html","title":"","lang":"en-CA","frontmatter":{"layout":"NotFound"},"git":{},"filePathRelative":null}`),a={name:`404.html.vue`};function o(r,i,a,o,s,c){return n(),t(`div`,null,[...i[0]||=[e(`p`,null,`404 Not Found`,-1)]])}var s=r(a,[[`render`,o]]);export{i as _pageData,s as default};
