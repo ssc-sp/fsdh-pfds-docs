@@ -73,6 +73,7 @@ export default defineUserConfig({
             },
             "/en/managing-workspaces-and-users/Request-tools",
             "/en/managing-workspaces-and-users/CBR-management",
+            "/en/managing-workspaces-and-users/UC-PB-workspace-differences",
           ],
         },
         {
@@ -185,6 +186,7 @@ export default defineUserConfig({
             },
             "/fr/gerer-espaces-et-utilisateurs/Demande-outils",
             "/fr/gerer-espaces-et-utilisateurs/Gestion-BOI",
+            "/fr/gerer-espaces-et-utilisateurs/Differences-espaces-UC-PB",
           ],
         },
         {

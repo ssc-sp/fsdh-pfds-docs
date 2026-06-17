@@ -55,6 +55,10 @@ export default {
           en: "/en/managing-workspaces-and-users/CBR-management",
           fr: "/fr/gerer-espaces-et-utilisateurs/Gestion-BOI",
         },
+        {
+          en: "/en/managing-workspaces-and-users/UC-PB-workspace-differences",
+          fr: "/fr/gerer-espaces-et-utilisateurs/Differences-espaces-UC-PB",
+        },
         { en: "/en/migration/", fr: "/fr/migration/" },
         { en: "/en/migration/Overview", fr: "/fr/migration/Survol" },
         { en: "/en/migration/Storage", fr: "/fr/migration/Stockage" },
