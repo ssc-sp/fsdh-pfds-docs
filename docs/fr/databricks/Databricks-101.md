@@ -1,15 +1,15 @@
-# Commencer avec Databricks sur le DataHub scientifique fédéral
+# Commencer avec Databricks sur la PFDS
 
 Databricks est une plateforme unifiée d'analyse de données qui combine la puissance d'Apache Spark avec un environnement collaboratif pour la science des données et l'apprentissage automatique. Elle fournit un environnement cloud entièrement géré, évolutif et sécurisé pour le traitement des données, l'analyse et les charges de travail d'apprentissage automatique.
 
-Ce guide vous aidera à démarrer avec Databricks sur le DataHub scientifique fédéral. Il se concentre sur :
+Ce guide vous aidera à démarrer avec Databricks sur la Plateforme fédérale de données scientifiques. Il se concentre sur :
 * Provisionnement et accès aux Databricks à partir du DataHub
 * Gestion des clusters Databricks
 * Créer et gérer des carnets de notes
 
 ## Approvisionnement et accès aux banques de données à partir du DataHub
 
-Pour commencer à utiliser Databricks sur le DataHub scientifique fédéral, vous devez provisionner un espace de travail Databricks et y accéder depuis le portail DataHub.
+Pour commencer à utiliser Databricks sur la Plateforme fédérale de données scientifiques, vous devez provisionner un espace de travail Databricks et y accéder depuis le portail DataHub.
 
 ### Provisionnement d'un espace de travail Databricks
 
@@ -122,7 +122,7 @@ Vous pouvez exécuter des cellules individuelles ou l'ensemble du cahier. L'exé
 
 ## Conclusion
 
-Ce guide fournit une vue d'ensemble de la mise en route de Databricks sur le DataHub scientifique fédéral. Il couvre le provisionnement et l'accès à Databricks depuis le DataHub, la gestion des clusters Databricks, et la création et l'exécution de notebooks.
+Ce guide fournit une vue d'ensemble de la mise en route de Databricks sur la Plateforme fédérale de données scientifiques. Il couvre le provisionnement et l'accès à Databricks depuis le DataHub, la gestion des clusters Databricks, et la création et l'exécution de notebooks.
 
 Databricks fournit un environnement puissant pour le traitement des données, l'analyse et l'apprentissage automatique. En exploitant Databricks sur le DataHub, vous pouvez collaborer avec votre équipe, analyser des données et construire des modèles d'apprentissage automatique dans un environnement sécurisé et évolutif basé sur le cloud.
 
