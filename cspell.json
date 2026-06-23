@@ -99,6 +99,7 @@
     "msix",
     "noaa",
     "nomkl",
+    "notebooks",
     "numpy",
     "pyarrow",
     "pyfunc",

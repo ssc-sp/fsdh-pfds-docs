@@ -126,4 +126,4 @@ Ce guide fournit une vue d'ensemble de la mise en route de Databricks sur la Pla
 
 Databricks fournit un environnement puissant pour le traitement des données, l'analyse et l'apprentissage automatique. En exploitant Databricks sur le DataHub, vous pouvez collaborer avec votre équipe, analyser des données et construire des modèles d'apprentissage automatique dans un environnement sécurisé et évolutif basé sur le cloud.
 
-Pour des sujets plus avancés et des guides approfondis, vous pouvez explorer notre section Learn ou vous référer à la documentation officielle de Databricks.
+Pour des sujets plus avancés et des guides approfondis, vous pouvez explorer nos ressources ou vous référer à la documentation officielle de Databricks.
