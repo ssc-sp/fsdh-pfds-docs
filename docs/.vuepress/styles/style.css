@@ -72,3 +72,16 @@ ul {
 .vp-sidebar-children li {
     list-style: none !important;
 }
+
+.vp-hero-action-button {
+    text-decoration: none !important;
+    color: var(--gcds-button-secondary-default-text) !important;
+}
+
+.vp-hero-action-button:hover {
+    background-color: var(--gcds-button-secondary-hover-background) !important;
+}
+
+.vp-hero-action-button:focus {
+    background-color: var(--gcds-button-shared-focus-background) !important;
+}
