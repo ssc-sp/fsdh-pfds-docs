@@ -1,0 +1,45 @@
+name: Links
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 18 * * *"
+
+permissions:
+  issues: write # Required for the issue creation step
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Configuration is defined inline here. 
+          # The ">-" block tells YAML to join these lines with a single space.
+          args: >-
+            --insecure
+            --format compact
+            --accept 200
+            --base-url "/workspaces/fsdh-pfds-docs/docs"
+            --fallback-extensions md,mdx
+            --exclude "file:///"
+            --exclude "\.(pdf|zip|png|jpg)$"
+            --exclude "sharepoint.com"
+            --exclude "localhost:"
+            --exclude "127.0.0.1"
+            https://example.com/sitemap.xml
+          fail: false 
+
+      - name: Create Issue From File
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
