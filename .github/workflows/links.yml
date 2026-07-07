@@ -1,11 +1,10 @@
 name: Links
 
 on:
-  repository_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
-  schedule:
-    - cron: "00 18 * * *"
-
+  
 permissions:
   issues: write # Required for the issue creation step
 
