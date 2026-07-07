@@ -4,73 +4,31 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
-
-permissions: read-all
+  
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   linkChecker:
-    name: Link Checker
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Remove previous Lychee PR comments
-        if: github.event_name == 'pull_request'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-
-          comment_marker="<!-- lychee-summary-identifier -->"
-
-          echo "Looking for previous Lychee comments on PR #${PR_NUMBER}"
-
-          comment_ids="$(
-            gh api \
-              "repos/${REPO}/issues/${PR_NUMBER}/comments" \
-              --paginate \
-              --jq ".[] | select(.user.type == \"Bot\") | select(.body | contains(\"${comment_marker}\")) | .id"
-          )"
-
-          if [ -z "${comment_ids}" ]; then
-            echo "No previous Lychee comments found."
-            exit 0
-          fi
-
-          echo "${comment_ids}" | while read -r comment_id; do
-            [ -z "${comment_id}" ] && continue
-
-            echo "Deleting Lychee comment ${comment_id}"
-
-            gh api \
-              --method DELETE \
-              "repos/${REPO}/issues/comments/${comment_id}"
-          done
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@f613c4a64e50d792e0b31ec34bbcbba12263c6a6 # v2.3.0
+        uses: lycheeverse/lychee-action@v2
         with:
           # Targets "." to scan your real project files.
           # Switched to "--format detailed" and added "--exclude canada.ca".
+          # Note: '--base-url' is changed to '--base' to support newer lychee versions.
           args: >-
             --insecure
             --verbose
             --format detailed
             --accept 200
-            --base-url "/workspaces/fsdh-pfds-docs/docs"
+            --base "/workspaces/fsdh-pfds-docs/docs"
             --fallback-extensions md,mdx
             --exclude "file:///"
             --exclude "\.(pdf|zip|png|jpg)$"
@@ -79,88 +37,31 @@ jobs:
             --exclude "127.0.0.1"
             --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             .
-          fail: false
+          fail: false 
 
-      - name: Create or update Lychee PR comment
-        if: github.event_name == 'pull_request' && always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
-          LYCHEE_EXIT_CODE: ${{ steps.lychee.outputs.exit_code || '0' }}
+      - name: Format Comment Body
+        if: github.event_name == 'pull_request' && steps.lychee.outputs.exit_code != 0
         run: |
-          set -euo pipefail
-
-          comment_marker="<!-- lychee-summary-identifier -->"
-
-          existing_comment_id="$(
-            gh api \
-              "repos/${REPO}/issues/${PR_NUMBER}/comments" \
-              --paginate \
-              --jq ".[] | select(.user.type == \"Bot\") | select(.body | contains(\"${comment_marker}\")) | .id" \
-              | head -n 1
-          )"
-
-          if [ "${LYCHEE_EXIT_CODE}" = "0" ]; then
-            echo "Link checker passed."
-
-            if [ -n "${existing_comment_id}" ]; then
-              echo "Deleting stale Lychee comment ${existing_comment_id}"
-
-              gh api \
-                --method DELETE \
-                "repos/${REPO}/issues/comments/${existing_comment_id}"
-            fi
-
-            exit 0
-          fi
-
-          result="Fail ❌"
-          comment_body="$(mktemp)"
-
           {
-            echo "${comment_marker}"
             echo "# Link Checker summary"
             echo ""
             echo "| Check | Validation result |"
             echo "| --- | --- |"
-            echo "| LINK_CHECKER | ${result} |"
+            echo "| LINK_CHECKER | Fail ❌ |"
             echo ""
-            
-            if [ -f "./lychee/out.md" ]; then
-              echo "<details open>"
-              echo "<summary>Link Checker report</summary>"
-              echo ""
-              cat ./lychee/out.md
-              echo ""
-              echo "</details>"
-            else
-              echo "No link check report found."
-            fi
+            echo "<details open>"
+            echo "<summary>Link Checker report</summary>"
+            echo ""
+            cat ./lychee/out.md
+            echo ""
+            echo "</details>"
             echo ""
             echo "Powered by Lychee"
-          } > "${comment_body}"
+          } > ./lychee/comment.md
 
-          if [ -n "${existing_comment_id}" ]; then
-            echo "Updating existing Lychee comment ${existing_comment_id}"
-
-            jq -n --rawfile body "${comment_body}" '{body: $body}' \
-              | gh api \
-                  --method PATCH \
-                  "repos/${REPO}/issues/comments/${existing_comment_id}" \
-                  --input -
-          else
-            echo "Creating new Lychee comment"
-
-            jq -n --rawfile body "${comment_body}" '{body: $body}' \
-              | gh api \
-                  --method POST \
-                  "repos/${REPO}/issues/${PR_NUMBER}/comments" \
-                  --input -
-          fi
-
-      - name: Fail if Lychee found issues
-        if: steps.lychee.outputs.exit_code != '0'
-        run: |
-          echo "Lychee found broken links."
-          exit 1
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-path: ./lychee/comment.md
