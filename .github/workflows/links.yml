@@ -23,6 +23,7 @@ jobs:
           # Switched to "--format detailed" and added "--exclude canada.ca".
           args: >-
             --insecure
+            --verbose
             --format detailed
             --accept 200
             --base-url "/workspaces/fsdh-pfds-docs/docs"
