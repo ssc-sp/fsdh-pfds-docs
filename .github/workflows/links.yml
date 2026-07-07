@@ -32,7 +32,7 @@ jobs:
             --exclude "sharepoint.com"
             --exclude "localhost:"
             --exclude "127.0.0.1"
-            https://example.com/sitemap.xml
+            .
           fail: false 
 
       - name: Create Issue From File
