@@ -15,7 +15,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/theme-default": "2.0.0-rc.130",
+    "@vuepress/theme-default": "2.0.0-rc.131",
     "eslint": "10.6.0",
     "eslint-plugin-vue": "10.9.2",
     "globals": "17.7.0",
