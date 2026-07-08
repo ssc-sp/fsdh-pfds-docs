@@ -31,48 +31,66 @@ jobs:
             --max-redirects 15
             --base "/workspaces/fsdh-pfds-docs/docs"
             --fallback-extensions md,mdx
-            --exclude "file:///"
-            --exclude "\.(pdf|zip|png|jpg)$"
-            --exclude "localhost:"
-            --exclude "127.0.0.1"
-            --exclude "https://www\.canada\.ca/en/government/system/digital-government/government-canada-digital-standards\.html"
-            --exclude "https://www\.canada\.ca/en/shared-services/services/tools-to-equip-gc-workers/tools-science/federal-science-datahub\.html"
-            --exclude "https://www\.canada\.ca/en/department-national-defence/maple-leaf/defence/2020/12/working-with-sensitive-information\.html"
-            --exclude "https://www\.canada\.ca/en/government/system/digital-government/policies-standards/enterprise-it-service-common-configurations/portable-data\.html"
-            --exclude "https://www\.canada\.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security\.html"
-            --exclude "https://www\.canada\.ca/fr/gouvernement/systeme/gouvernement-numerique/politiques-normes/configurations-courantes-services-ti-integree/donnees-portatifs\.html"
-            --exclude "https://www\.canada\.ca/fr/ministere-defense-nationale/feuille-derable/defense/2020/12/travailler-avec-renseignements-nature-delicate\.html"
-            --exclude "https://www\.canada\.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats/protection-equipement-lieux-biens-renseignements/niveaux-securite\.html"
-            --exclude "https://www\.canada\.ca/fr/services-partages/services/outils-pour-personnes-travaillant-gc/outils-scientifique/plateforme-federale-donnees-scientifiques\.html"
-            --exclude "https://www\.tbs-sct\.canada\.ca/pol/doc-fra\.aspx\?id=32614"
+            --exclude https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html
+            --exclude https://www.canada.ca/en/shared-services/services/tools-to-equip-gc-workers/tools-science/federal-science-datahub.html
+            --exclude https://www.canada.ca/en/department-national-defence/maple-leaf/defence/2020/12/working-with-sensitive-information.html
+            --exclude https://www.canada.ca/en/government/system/digital-government/policies-standards/enterprise-it-service-common-configurations/portable-data.html
+            --exclude https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html
+            --exclude https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/politiques-normes/configurations-courantes-services-ti-integree/donnees-portatifs.html
+            --exclude https://www.canada.ca/fr/ministere-defense-nationale/feuille-derable/defense/2020/12/travailler-avec-renseignements-nature-delicate.html
+            --exclude https://www.canada.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats/protection-equipement-lieux-biens-renseignements/niveaux-securite.html
+            --exclude https://www.canada.ca/fr/services-partages/services/outils-pour-personnes-travaillant-gc/outils-scientifique/plateforme-federale-donnees-scientifiques.html
+            --exclude https://www.tbs-sct.canada.ca/pol/doc-fra.aspx
+            --exclude sharepoint.com
+            --exclude file:///
+            --exclude \.(pdf|zip|png|jpg)$
+            --exclude localhost
+            --exclude 127.0.0.1
             --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             .
           fail: false 
 
-      - name: Format Comment Body
-        if: github.event_name == 'pull_request' && steps.lychee.outputs.exit_code != 0
+      # Natively handle searching, posting, updating, and deleting comments using pre-installed 'gh' CLI
+      - name: Handle PR Comment
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          {
-            echo "# Link Checker summary"
-            echo ""
-            echo "| Check | Validation result |"
-            echo "| --- | --- |"
-            echo "| LINK_CHECKER | Fail ❌ |"
-            echo ""
-            echo "<details open>"
-            echo "<summary>Link Checker report (Errors only)</summary>"
-            echo ""
-            # Filter out 'Redirects in' blocks up to the next 'Errors in' section
-            awk '/^Redirects in/ {skip=1; next} /^Errors in/ {skip=0} !skip' ./lychee/out.md
-            echo ""
-            echo "</details>"
-            echo ""
-            echo "Powered by Lychee"
-          } > ./lychee/comment.md
+          # 1. Search for any existing comment containing 'Link Checker summary'
+          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments" \
+            --jq '.[] | select(.user.login=="github-actions[bot]" and (.body | contains("Link Checker summary"))) | .id' | head -n 1)
 
-      - name: Comment on PR
-        if: github.event_name == 'pull_request' && steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body-path: ./lychee/comment.md
+          # 2. Case: Links Failed
+          if [ "${{ steps.lychee.outputs.exit_code }}" -ne 0 ]; then
+            # Generate the markdown body file
+            {
+              echo "# Link Checker summary"
+              echo ""
+              echo "| Check | Validation result |"
+              echo "| --- | --- |"
+              echo "| LINK_CHECKER | Fail ❌ |"
+              echo ""
+              echo "<details open>"
+              echo "<summary>Link Checker report (Errors only)</summary>"
+              echo ""
+              awk '/^Redirects in/ {skip=1; next} /^Errors in/ {skip=0} !skip' ./lychee/out.md
+              echo ""
+              echo "</details>"
+              echo ""
+              echo "Powered by Lychee"
+            } > ./lychee/comment.md
+
+            # If comment already exists, overwrite it. Otherwise, post a new one.
+            if [ -n "$COMMENT_ID" ]; then
+              gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$COMMENT_ID" -F body=@./lychee/comment.md
+            else
+              gh pr comment ${{ github.event.pull_request.number }} --body-file ./lychee/comment.md
+            fi
+
+          # 3. Case: Links Passed
+          else
+            # If an old error comment exists, delete it entirely to clean up the PR timeline
+            if [ -n "$COMMENT_ID" ]; then
+              gh api -X DELETE "repos/${{ github.repository }}/issues/comments/$COMMENT_ID"
+            fi
+          fi
