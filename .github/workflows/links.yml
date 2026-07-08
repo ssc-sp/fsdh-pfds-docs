@@ -63,9 +63,15 @@ jobs:
           COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments" \
             --jq '.[] | select(.user.login=="github-actions[bot]" and (.body | contains("Link Checker summary"))) | .id' | head -n 1)
 
-          # 2. Case: Links Failed
+          # 2. Extract the Summary Table (with emojis) from the top of the lychee output file
+          awk '/Errors in/ || /^Redirects in/ {exit} {print}' ./lychee/out.md > ./lychee/summary_table.md
+
+          # 3. Format the comment depending on the exit code
           if [ "${{ steps.lychee.outputs.exit_code }}" -ne 0 ]; then
-            # Generate the markdown body file
+            # Extract only the actual 'Errors in' blocks (filtering out redirects)
+            awk '/^Redirects in/ {skip=1; next} /^Errors in/ {skip=0; found=1} found && !skip' ./lychee/out.md > ./lychee/errors_only.md
+
+            # FAILURE REPORT
             {
               echo "# Link Checker summary"
               echo ""
@@ -73,27 +79,38 @@ jobs:
               echo "| --- | --- |"
               echo "| LINK_CHECKER | Fail ❌ |"
               echo ""
-              echo "<details open>"
-              echo "<summary>Link Checker report (Errors only)</summary>"
+              cat ./lychee/summary_table.md
               echo ""
-              awk '/^Redirects in/ {skip=1; next} /^Errors in/ {skip=0} !skip' ./lychee/out.md
+              echo "<details open>"
+              echo "<summary>Detailed Error Report</summary>"
+              echo ""
+              cat ./lychee/errors_only.md
               echo ""
               echo "</details>"
               echo ""
               echo "Powered by Lychee"
             } > ./lychee/comment.md
-
-            # If comment already exists, overwrite it. Otherwise, post a new one.
-            if [ -n "$COMMENT_ID" ]; then
-              gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$COMMENT_ID" -F body=@./lychee/comment.md
-            else
-              gh pr comment ${{ github.event.pull_request.number }} --body-file ./lychee/comment.md
-            fi
-
-          # 3. Case: Links Passed
           else
-            # If an old error comment exists, delete it entirely to clean up the PR timeline
-            if [ -n "$COMMENT_ID" ]; then
-              gh api -X DELETE "repos/${{ github.repository }}/issues/comments/$COMMENT_ID"
-            fi
+            # SUCCESS REPORT
+            {
+              echo "# Link Checker summary"
+              echo ""
+              echo "| Check | Validation result |"
+              echo "| --- | --- |"
+              echo "| LINK_CHECKER | Pass ✅ |"
+              echo ""
+              cat ./lychee/summary_table.md
+              echo ""
+              echo "All checked links are healthy and active!"
+              echo ""
+              echo "Powered by Lychee"
+            } > ./lychee/comment.md
           fi
+
+          # 4. Always delete the old comment if it exists to prevent clutter and save space
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X DELETE "repos/${{ github.repository }}/issues/comments/$COMMENT_ID"
+          fi
+
+          # 5. Always post the fresh, updated comment to the PR
+          gh pr comment ${{ github.event.pull_request.number }} --body-file ./lychee/comment.md
