@@ -125,7 +125,31 @@ export default defineUserConfig({
         {
           text: "Web Applications",
           collapsible: true,
-          children: ["/en/apps/WebApps"],
+          children: [
+            "/en/apps/WebApps",
+            {
+              text: "Demo Apps",
+              collapsible: true,
+              children: [
+                {
+                  text: "Django (Python)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+                },
+                {
+                  text: "Dash (Python)",
+                  link: "https://github.com/Sean-Stilwell/sample-dashapp"
+                },
+                {
+                  text: "Shiny (R)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/shiny-app"
+                },
+                {
+                  text: "Streamlit (Python)",
+                  link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+                },
+              ]
+            }
+          ],
         },
         {
           text: "Migrating to Production",
@@ -229,7 +253,31 @@ export default defineUserConfig({
         {
           text: "Applications Web",
           collapsible: true,
-          children: ["/fr/apps/WebApps"],
+          children: [
+            "/fr/apps/WebApps",
+            {
+              text: "Exemples d'applications",
+              collapsible: true,
+              children: [
+                {
+                  text: "Django (Python)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+                },
+                {
+                  text: "Dash (Python)",
+                  link: "https://github.com/Sean-Stilwell/sample-dashapp"
+                },
+                {
+                  text: "Shiny (R)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/shiny-app"
+                },
+                {
+                  text: "Streamlit (Python)",
+                  link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+                },
+              ]
+            }
+          ],
         },
         {
           text: "Migration vers production",
