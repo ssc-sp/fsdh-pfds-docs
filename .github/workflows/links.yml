@@ -24,8 +24,9 @@ jobs:
           # Switched to "--format detailed" and added "--exclude canada.ca".
           # Note: '--base-url' is changed to '--base' to support newer lychee versions.
           args: >-
+            -vvv
             --insecure
-            --vvv
+            --verbose
             --format detailed
             --accept 200
             --base "/workspaces/fsdh-pfds-docs/docs"
