@@ -25,7 +25,7 @@ jobs:
           # Note: '--base-url' is changed to '--base' to support newer lychee versions.
           args: >-
             --insecure
-            --verbose
+            --vvv
             --format detailed
             --accept 200
             --base "/workspaces/fsdh-pfds-docs/docs"
