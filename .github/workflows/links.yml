@@ -43,7 +43,10 @@ jobs:
             --exclude https://www.tbs-sct.canada.ca/pol/doc-fra.aspx
             --exclude sharepoint.com
             --exclude file:///
-            --exclude \.(pdf|zip|png|jpg)$
+            --exclude \.pdf$
+            --exclude \.zip$
+            --exclude \.png$
+            --exclude \.jpg$
             --exclude localhost
             --exclude 127.0.0.1
             --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
