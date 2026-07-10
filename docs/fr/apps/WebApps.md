@@ -6,7 +6,7 @@ Le DataHub scientifique fédéral vous permet d'héberger des applications web s
 
 ## Conditions préalables
 
-**Image de votre demande**
+### Image de votre application
 
 Avant de pouvoir héberger des applications web sur le DataHub, vous devrez créer une image de votre application à l'aide de Docker. Docker est une plateforme permettant de développer, d'expédier et d'exécuter des applications dans des conteneurs. Les conteneurs permettent à un développeur d'emballer une application avec toutes les parties dont elle a besoin, telles que les bibliothèques et autres dépendances, et de l'expédier en un seul paquet. Ces conteneurs sont utilisés par le DataHub pour héberger vos applications web.
 
@@ -18,19 +18,19 @@ Un exemple de workflow GitHub Actions pour construire et pousser une image Docke
 
 Si vous n'êtes pas familier avec Docker ou GitHub Actions, vous pouvez contacter l'équipe de support de DataHub pour obtenir de l'aide dans la création d'une image Docker de votre application.
 
-**App Service dans votre espace de travail**
+### App Service dans votre espace de travail
 
 Pour héberger des applications web sur le DataHub, vous devez disposer d'un App Service dans votre espace de travail. Vous pouvez provisionner un App Service dans la boîte à outils de votre espace de travail.
 
 ## Déploiement de votre application
 
-**Créer un dépôt Git et un fichier Docker Compose**
+### Créer un dépôt Git et un fichier Docker Compose
 
 Pour héberger une application web sur le DataHub, vous devrez créer un dépôt Git pour votre application. Ce dépôt doit inclure le fichier `docker-compose.yml` utilisé pour déployer l'application sur le DataHub. Il peut optionnellement inclure le fichier Docker utilisé pour créer l'image de votre application.
 
 > **Note:** Votre repo peut être public ou privé, mais vous devrez fournir un jeton pour accéder au repo lors de la configuration dans une étape ultérieure.
 
-**Déployer l'application**
+### Déployer l'application
 
 Pour déployer votre application sur le DataHub, vous devez configurer l'App Service dans votre espace de travail. Vous pouvez le faire en naviguant vers l'App Service dans votre espace de travail et en cliquant sur `Configurer`.
 
@@ -47,7 +47,7 @@ Dans l'écran de configuration, vous devrez fournir les informations suivantes :
 
 Après avoir fourni ces informations, cliquez sur `Save` pour déployer votre application sur le DataHub.
 
-**Accéder à votre demande**
+### Accéder à votre demande
 
 Une fois que votre application est déployée sur le DataHub, vous pouvez démarrer le service pour accéder à votre application web. Vous pouvez le faire en naviguant vers l'App Service dans votre espace de travail et en cliquant sur `Start`.
 
@@ -56,6 +56,10 @@ Une fois le service démarré, vous pouvez accéder à votre application web en 
 [Accès à l'URL du proxy pour votre application web](./img/access.png)
 
 > **Note:** Après avoir démarré le service, l'application peut prendre quelques minutes pour être accessible via l'URL du proxy. Si vous rencontrez des problèmes, veuillez contacter l'équipe de support de DataHub pour obtenir de l'aide.
+
+## Démonstrations
+
+L'équipe de la PFDS a créé plusieurs application pour vous aider à commencer avec l'hebergement des applications sur la plateforme. Ces applications se trouvent sur la barre latérale.
 
 ## Obtenir de l'aide
 
