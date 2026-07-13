@@ -128,7 +128,7 @@ export default defineUserConfig({
           children: [
             "/en/apps/WebApps",
             {
-              text: "Building a Web App in Flask",
+              text: "Building a Web App With Flask",
               collapsible: true,
               children: [
                 "/en/apps/flask/1-Project-Setup.md",

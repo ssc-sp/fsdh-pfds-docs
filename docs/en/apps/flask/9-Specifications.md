@@ -20,7 +20,7 @@ This section serves as a technical reference guide compiling the core technologi
 * **Visualizations Rendered:**
   * **Demographics (Pie Chart):** Displays the population of male, female, and unknown seals in the area.
   * **Age Distribution (Bar Graph):** Displays the seal age groups.
-  * **Stomach Contents (Doughnut Chart):** Displays prey found in stomachs.
+  * **Stomach Contents (Donut Chart):** Displays prey found in stomachs.
 * **Memory Management:** Old charts are deleted to save memory:
   ```javascript
   if (ratioChartInstance) { ratioChartInstance.destroy(); }
@@ -66,10 +66,14 @@ This section serves as a technical reference guide compiling the core technologi
   const sealsData = {{ seals_data | tojson | safe }};
   ```
 * **Functional Architecture:** The frontend codebase is split into modular components for readability and maintenance:
-  * `global.js`: Declares global state variables for chart instances and coordinates iframe messaging.
-  * `chart.js`: Contains functions that handle canvas contexts, style datasets, and draw the visual charts.
-  * `ui.js`: Synchronizes UI text elements and handles event callbacks for map clicks and seal selections.
-  * `app.js`: Governs the searching, category filtering, and list rendering of the seal index.
+global.js
+> Declares global state variables for chart instances and coordinates iframe messaging.
+chart.js 
+> Contains functions that handle canvas contexts, style datasets, and draw the visual charts.
+ui.js
+> Synchronizes UI text elements and handles event callbacks for map clicks and seal selections.
+app.js
+  > Governs the searching, category filtering, and list rendering of the seal index.
 
 ### General Python
 * **Web Framework:** Flask serves as the web framework, managing file routing and using Jinja2 as its engine. 

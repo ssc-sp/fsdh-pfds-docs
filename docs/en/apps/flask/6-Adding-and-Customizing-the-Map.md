@@ -4,27 +4,33 @@ Now that we have processed our dataset, we need a way to display where these sea
 
 ## 1. What is Folium?
 Folium is a Python library that makes it easy to show data on an interactive [leaflet.js](https://leafletjs.com/) map. When Flask runs, Folium generates all the necessary HTML and JavaScript for the map behind the scenes, which we can drop straight into our `index.html` using:
+
 ```html
 {{ map_html | safe }}
 ```
 
 ## 2. Generating the Map in Python
-In `app.py`, we initialize the map using the coordinates of our dataset. If there are no seals found, we fall back to a default coordinate around Newfoundland and Labrador 
->(Note: It used to be some random coordinates, but now it's on Lisgar):
+In `app.py`, we initialize the map using the coordinates of our dataset. If there are no seals found, we fall back to a default coordinate around Newfoundland and Labrador.
+
+<gcds-details details-title="Note: It's on Lisgar now"> 
 
 ```python
 if seals:
-    avg_lat = sum(s['lat'] for s in seals) / len(seals)
+    # Initally placed with the assumption that tha lat and lon would be unique for all the seals in the area.
+    avg_lat = sum(s['lat'] for s in seals) / len(seals) 
     avg_lon = sum(s['lon'] for s in seals) / len(seals)
     m = folium.Map(location=[avg_lat, avg_lon], zoom_start=5, control_scale=True, world_copy_jump=True)
 else:
     m = folium.Map(location=[50.5, -56.5], zoom_start=5, control_scale=True, world_copy_jump=True)
 ```
+ 
+</gcds-details> 
 
 ## 3. Creating Dynamic, Clickable Markers
 Instead of standard map pins, we want custom round bubbles featuring our seal icon. To do this, we group our seals by NAFO zone and calculate the marker's size dynamically. Larger zones get larger bubbles!
 
-We use Folium's `DivIcon` to inject custom HTML directly onto the map canvas:
+
+<gcds-details details-title="We use Folium's `DivIcon` to inject custom HTML directly onto the map canvas:"> 
 
 ```python
 # Linear scaling based on the number of seals in the zone
@@ -57,6 +63,8 @@ icon_html = f"""
 </div>
 """
 ```
+
+</gcds-details> 
 
 ### The Iframe Communication Secret
 Notice the `onclick` attribute inside the marker's HTML:

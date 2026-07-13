@@ -4,7 +4,7 @@ Here we will be setting up things you will need to make a Flask based web applic
 
 The example project for this tutorial is the [Seal Checker 9000](https://poc.fsdh-dhsf.science.cloud-nuage.canada.ca/app/FEWSC/) 
 
-Although the tutorial includes most of the code but following along on [the repository for the project](https://github.com/HamSamm/Harp-Seal-Checker) is advised. 
+Although the tutorial includes most of the code but following along on [the repository for the project](https://github.com/HamSamm/Harp-Seal-Checker) is advised. If you just want a quick summary of what everything does, refer to [General Info](./9-Specifications.md)
 
 This assumes you already have (and are running) WSL (Windows Subsystem for Linux) and have VSC (Visual Studio Code). 
 
@@ -22,15 +22,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install python3 python3-pip python3-venv git
 ```
 
-**3:** Create the project folder
->Don't name this Your-Project-Name. Name it something relivant to your project. 
->
->If you made your github project already then refer to step 3.5 
-```
-mkdir ~/Your-Project-Name
-```
-
-**3.5:** Or ideally clone your github project. 
+**3:** Clone your empty github project. 
 ```
 git clone https://github.com/username/repository.git
 ```

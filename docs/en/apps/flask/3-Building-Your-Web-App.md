@@ -1,6 +1,6 @@
 # Building Your Web App
 
-Now that you know have your locally hosted website up and running, lets start adding features. This is where we will explain how to make everything you see on the Seal Checker 9000.
+Now that you have something running, lets start adding features. This is where we will explain how to make everything you see on the Seal Checker 9000.
  
 ### HTML Structure
 Lets get the general structure of the website down. Let's refer back to 
@@ -9,8 +9,9 @@ Lets get the general structure of the website down. Let's refer back to
 Lets break this down into it's html sections. In the following diagram we can see the divisions that will be used to make this website. I will show it translated into code after the image.
 ![Plans turned into divisions](./img/Building-Your-Web-App/01.png)
 
-Here is the html that this is translated into, Note that there are some titles indicating the section the division belongs to:
-``` html
+<gcds-details details-title="Here is the html that this is translated into, Note that there are some titles indicating the section the division belongs to:">
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +21,11 @@ Here is the html that this is translated into, Note that there are some titles i
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
     <div class="page-container">
-
         <!-- Title -->
         <div>
             <h1>Title</h1>
         </div>
-
         <!-- Map and Sidebar Section -->
         <div>
             <!-- Map -->
@@ -54,7 +52,6 @@ Here is the html that this is translated into, Note that there are some titles i
                 </div>
             </div>
         </div>
-
         <!-- Seal Index Section -->
         <div>
             <!-- Title -->
@@ -67,12 +64,10 @@ Here is the html that this is translated into, Note that there are some titles i
                     <h1>Filters</h1>
                 </div>
             </div>
-
             <!-- Bottom Left: List Index -->
             <div>
                 <h1>Index</h1>
             </div>
-
             <!-- Bottom Right: Life Snapshot Details -->
             <div>
                 <h1>Individual Data</h1>
@@ -83,6 +78,8 @@ Here is the html that this is translated into, Note that there are some titles i
 </html>
 ```
 
+</gcds-details>
+
 Now when running our web app this is what you see!
 
 ![Not so correct looking web app](./img/Building-Your-Web-App/02.png)
@@ -92,9 +89,9 @@ Now you may notice, this looks nothing like what we want. Everything just goes i
 ### CSS Structure 
 CSS! CSS will allow us to customize the way our web app looks. But before we do this, we have to go back and give our divisions classes. This is so we can specify which division we are talking about in the stylesheet.  
 
-This is the previous with classes added
+<gcds-details details-title="This is the same as the previous code but with classes added">
 
-``` html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,9 +164,11 @@ This is the previous with classes added
 </html>
 ```
 
-This is the CSS
+</gcds-details>
 
-``` css
+<gcds-details details-title="This is the CSS">
+
+```css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -346,6 +345,8 @@ body {
 }
 ```
 
+</gcds-details>
+
 (These Functions will be explained more in the [Displaying Data](./Displaying-Data.md) section)
 
 Great! Now what does our web app look like? (Zoomed out to see full page)
@@ -358,8 +359,9 @@ Now we are getting somewhere. Now that we have the general shape of our website 
 
 Lets add some of the changes to our web app so it isn't just a bunch of titles. 
 
-Here is the CSS added: 
-``` css
+<gcds-details details-title="Here is the CSS added:">
+
+```css
 .header-box a {
     color: #3498db;
     text-decoration: none;
@@ -371,8 +373,12 @@ Here is the CSS added:
     text-decoration: underline;
 }
 ```
-and these are the HTML changes:
-``` html
+
+</gcds-details>
+
+<gcds-details details-title="and these are the HTML changes:">
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -451,6 +457,8 @@ and these are the HTML changes:
 </body>
 </html>
 ```
+
+</gcds-details>
 
 Now we are cooking with gas
 

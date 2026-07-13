@@ -1,5 +1,5 @@
 # Setting Up Your Web App
-Lets make the structure of our Web App
+Here we will set up the file structure of our website and run a simple web application locally!
 ### Planning
 
 All websites come from an idea. It's time to visualize our own. Lets draw out roughly what we want the web application to look like. The outline for the Seal Checker 9000 was made in a note-taking software called Obsidian. Though you could really make it on anything. Keep in mind your design for your web application isn't final! You have the final say in what you want the web app
@@ -52,7 +52,7 @@ For our project. To run it locally this is what we will need
 
 >Note:
 >
->Flask uses Jinja2 as a default engine. You can follow [other tutorials](https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/) to get started on this section. It is often considered one of the easiest web frameworks to use so it's hard to get wrong when following any tutorial.  
+>Flask uses Jinja2 as a default engine. You can follow [other tutorials](https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/) to get started on this section. Again, Flask is one of the easiest web frameworks to use so it's hard to get wrong when following any tutorial.  
 
 index.html can be split into individual files. Noteably a style.css file and a scripts.js file. This is done for organization.
 
@@ -62,7 +62,8 @@ Now we are all set to start making the web app.
 
 From here we will make a simple page that says "Hello World!" on it. 
 
-Paste this code into your app.py
+<gcds-details details-title="Paste this code into your app.py">
+
 ``` python
 from flask import Flask, render_template
 
@@ -76,7 +77,10 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-Paste this code into your index.html
+</gcds-details>
+
+<gcds-details details-title="Paste this code into your index.html">
+
 ``` html
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +94,8 @@ Paste this code into your index.html
 </body>
 </html>
 ```
+
+</gcds-details>
 
 Then to run your webapp, first make sure you are in the right environment. This is what is should look like: 
 
@@ -111,7 +117,7 @@ Press CTRL+C to quit
 `Ctrl + Left Click` on the link (http://127.0.0.1:5000) to access the locally run server. Right now you should see:
 ![Web App that just says "Hello World"](./img/Setting-Up-Your-Web-App/05.png)
 
-Let's add a quick bit of CSS, add this to your style.css:
+<gcds-details details-title="Let's add a quick bit of CSS, add this to your style.css:">
 
 ```css
 h1 {
@@ -120,6 +126,8 @@ h1 {
     margin-top: 50px;
 }
 ```
+
+</gcds-details>
 
 After relaunching your page because you added a new file, it should look like:
 ![Web App that just says "Hello World"](./img/Setting-Up-Your-Web-App/06.png)
@@ -142,7 +150,7 @@ To learn more, here are some websites you can reference:
 
 [GeeksForGeeks (JS)](https://www.geeksforgeeks.org/javascript/javascript-tutorial/)
 #### Others Sites/Documentations 
-Here are other websites referenced to make the Seal Checker 9000 demo. 
+Here are some other websites referenced to make the Seal Checker 9000 demo. 
 
 Flask: [GeeksForGeeks (Flask)](https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/)
 

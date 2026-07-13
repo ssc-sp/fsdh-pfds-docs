@@ -2,11 +2,11 @@
 
 Now that we have the basic HTML structure and the data processed, it's time to make the web application look good and function in general.
 
-We will be using CSS, JS, and Python.
+We will be using CSS, JS, and Python. (Code blocks will not be minimized in this section)
 
 ## 1. [CSS Styling](https://www.w3schools.com/Css/): Making the Design Not Bad
 
-Our `style.css` file is our next stop
+Our `style.css` file is our next stops
 ### Base Styles
 
 ```css
@@ -200,7 +200,7 @@ body {
 *   The input and select elements are styled for a clean, consistent look, and `flex: 1` allows them to share space within the grid.
 
 [Take a screenshot of your web app (zoomed out if necessary) highlighting the grid structure of the index section and showing the styled filters and an initial list of seals. Ensure the map and sidebar are also visible to show the full layout.]
-![Web app showing full layout with styled index section and filters](./img/Building-Your-Web-App/04_full_layout_filters.png)
+![Web app showing full layout with styled index section and filters](./img/Displaying-Data/1.png)
 
 ## 2. JavaScript Interactivity: Making It Dynamic
 
@@ -219,6 +219,7 @@ The most crucial part of the JavaScript is the `sealsData` global variable, whic
 <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 ```
+
 *   `sealsData` is a JavaScript array of objects, where each object represents a single seal with all its parsed attributes (`id`, `nafo_zone`, `gender`, `age`, `prey_contents`, etc.).
 *   This array is the single source of truth for all client-side operations, eliminating the need for further server requests for filtering or chart updates once the page loads.
 *   The order of script imports is important: `global.js` (which declares global chart instances) comes before `chart.js` (which defines chart functions) and `ui.js`/`app.js` (which call those functions).
@@ -272,11 +273,11 @@ This file encapsulates all the functions responsible for drawing and updating th
 *   `plugins.legend.display: false` hides the default legend as the age bins are directly on the x-axis.
 
 #### `updateStomachChart(preyContents, totalPreyItems)` (Zone Level)
-*   Renders a `doughnut` chart showing the aggregated stomach content for all seals in a selected NAFO zone.
+*   Renders a `donut` chart showing the aggregated stomach content for all seals in a selected NAFO zone.
 *   **Custom HTML Legend:** This function dynamically generates an HTML legend (`stomach-legend-container`) *outside* the chart canvas.
     *   It sorts prey items by quantity for better readability.
     *   Each legend item displays the prey label and its count.
-    *   **Interactivity:** Clicking a legend item calls `stomachChartInstance.toggleDataVisibility(idx)` and `stomachChartInstance.update()`. This allows users to hide/show specific prey types on the doughnut chart directly from the custom legend, updating the opacity and text-decoration of the legend item to reflect its visibility state.
+    *   **Interactivity:** Clicking a legend item calls `stomachChartInstance.toggleDataVisibility(idx)` and `stomachChartInstance.update()`. This allows users to hide/show specific prey types on the donut chart directly from the custom legend, updating the opacity and text-decoration of the legend item to reflect its visibility state.
 *   A `stomach-note` provides additional context.
 
 #### `updateDetailStomachChart(preyContents, totalPreyItems)` (Individual Seal)
@@ -284,14 +285,13 @@ This file encapsulates all the functions responsible for drawing and updating th
 *   It also generates a custom HTML legend (`detail-stomach-legend-container`) with click-to-toggle visibility, but with slightly smaller styling suitable for its compact area.
 *   A `detail-stomach-note` provides specific details for the individual seal.
 
-```
-[Take a screenshot of the sidebar with the Demographic Profile, Age Distribution, and Stomach Content charts fully populated. If possible, show the custom legend for the stomach chart and indicate how clicking an item hides/shows it.]
-![Sidebar charts with custom legend](./img/Building-Your-Web-App/05_sidebar_charts.png)
-```
-```
-[Take a screenshot of the "Life Snapshot Details" panel in the bottom right, showing the Individual Stomach Content chart and its custom legend.]
-![Individual seal details with chart and legend](./img/Building-Your-Web-App/06_individual_chart.png)
-```
+<gcds-details details-title="Example of charts:">
+
+![Sidebar charts (Bottom Part)](./img/Displaying-Data/2.png)
+![Individual seal details with chart and legend](./img/Displaying-Data/3.png)
+
+</gcds-details>
+
 
 ### `ui.js`: UI Update and Data Aggregation Logic
 
@@ -348,10 +348,7 @@ function applyFilters() { /* ... reads filter values, filters sealsData, calls r
     2.  Filters the entire `sealsData` array based on the selected criteria (ID search, NAFO zone, gender, stomach content, and age range).
     3.  Calls `renderInterfaceFiltered()` with the resulting filtered list to update the displayed seal entries.
 
-```
-[Take a screenshot of the "Seal Index 10000" section, showing the filter grid with some selected options and the dynamically updated list of seals based on the filters. Highlight the "X seals match your filters" text.]
-![Seal Index with filters applied](./img/Building-Your-Web-App/07_index_filters.png)
-```
+![Seal Index with filters applied](./img/Displaying-Data/4.png)
 
 By combining these CSS and JavaScript techniques, the Seal Checker 9000 transforms static HTML into a dynamic, data-rich, and interactive web application, allowing users to explore complex biological data with ease.
 
@@ -395,8 +392,9 @@ const zoneSeals = sealsData.filter(s => s.nafo_zone === zoneCode);
 The filtered results are analyzed to update the interface widgets and charts.
 Demographics (Pie Chart): Tallies the occurrences of gender === 'M', gender === 'F', and unknown values (ui.js).
 Age Distribution (Bar Chart): Calculates numerical bins using `age_num` (global.js) and updates the dynamic chart values.
-Stomach Contents (Doughnut Chart): Iterates through each seal's prey_contents dictionary to sum prey species counts and build interactive visual guides.
+Stomach Contents (Donut Chart): Iterates through each seal's prey_contents dictionary to sum prey species counts and build interactive visual guides.
 
-![Sidebar displaying demographic and stomach profiles](./img/Processing-Data/populated-sidebar.png)
+![Sidebar displaying demographic and stomach profiles](./img/Displaying-Data/5.png)
+
 
 By completing this structural integration between a clean Python backend parser and interactive frontend scripts, the Seal Checker 9000 translates complex raw data into an accessible, responsive dashboard.

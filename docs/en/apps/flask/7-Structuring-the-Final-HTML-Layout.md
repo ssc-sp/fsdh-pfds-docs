@@ -10,7 +10,8 @@ Using Flask's Jinja2 template engine, we can cleanly inject our Folium map and e
 
 Create your `templates/index.html` and structure it using the CSS grid and flexbox classes we created in the styling section.
 
-Here is the HTML skeleton of our application:
+<gcds-details details-title="Here is the HTML skeleton of our application:"> 
+
 
 ```html
 <!DOCTYPE html>
@@ -156,6 +157,8 @@ Here is the HTML skeleton of our application:
 </body>
 </html>
 ```
+
+</gcds-details> 
 
 ***
 

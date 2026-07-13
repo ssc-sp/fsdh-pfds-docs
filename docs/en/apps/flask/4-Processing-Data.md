@@ -20,7 +20,8 @@ This is where you get your key. Remember, <u>unless someone has provided you wit
 
 **Step 2: Accessing the files**
 
-Now let's try to access these files from your web application. For this we will have to import the pandas library and read the SAS token from the environment variables. The following block of code is a function that imports a file based on the file path in the Azure Blob Storage Explorer.
+Now let's try to access these files from your web application. For this we will have to import the pandas library and read the SAS token from the environment variables. 
+<gcds-details details-title="The following block of code is a function that imports a file based on the file path in the Azure Blob Storage Explorer.">
 
 ``` python
 import os
@@ -60,11 +61,16 @@ def load_df_from_azure(blob_name, encoding='utf-8'):
         return None
 ```
 
-from here we can reference the files like this:
+</gcds-details>
+
+<gcds-details details-title="from here we can reference the files like this:">
 
 ``` python
 df = load_df_from_azure(NAFO_BLOB_NAME)
 ```
+
+</gcds-details>
+
 The next section will cover processing data using the pandas python library using this file.
 ***
 ### Extracting Data out of a [CSV File](https://www.geeksforgeeks.org/data-analysis/csv-file-format/) Using Panda
@@ -114,7 +120,9 @@ The main issue with having a file is that taking the data out of is a headache. 
 
 The first step of taking data out of these files is finding what you want. 
 
-The following function finds the column number of a type of data based on the column title. Though redundant it allows flexability in the files that are imported. So long as the lables are the same, the position of the columns don't matter. 
+
+<gcds-details details-title="The following function finds the column number of a type of data based on the column title. Though redundant it allows flexability in the files that are imported. So long as the lables are the same, the position of the columns don't matter.">
+
 ``` python
 def find_col(df, options): # Function that finds the column number of a specified column title
     for opt in options: # Goes through every possible name for the column, 
@@ -130,7 +138,11 @@ def find_col(df, options): # Function that finds the column number of a specifie
     return None # Fail 
 ```
 
-Using this, we prepare the NAFO Reference file. This file was manually typed out based on an image and a map and represents the coordinates of specific fishing zones. Since coordinates are precalculated inside this file, we can map each zone code directly to its lat/long coordinates.
+</gcds-details>
+
+Using this, we prepare the NAFO Reference file. This file was manually typed out based on an image and a map and represents the coordinates of specific fishing zones. 
+
+<gcds-details details-title="Since coordinates are precalculated inside this file, we can map each zone code directly to its lat/long coordinates.">
 
 ``` python
 def load_nafo_reference():
@@ -166,6 +178,8 @@ def load_nafo_reference():
         return {}
 ```
 
+</gcds-details>
+
 Now that we have an easily readable and accessable file, we can do all the processing! (Of course after getting the seal data).
 
 **Step 4: Processing Grouped Data with Pandas**
@@ -174,7 +188,7 @@ In our actual seal dataset, each row in the raw CSV does not represent a unique 
 
 This means a single seal (like `SEAL-10023`) might have 5 separate rows in the CSV: one row for 12 Capelin, one row for 2 Atlantic Cod, and so on. To build a profile for each individual seal, we must group these rows using Pandas.
 
-Here is the logic our parser uses:
+<gcds-details details-title="Here is the logic our parser uses:">
 
 ```python
 def parse_seals_csv():
@@ -194,7 +208,7 @@ def parse_seals_csv():
     df.columns = [c.strip() for c in df.columns]
 
     id_col = find_col(df, ['sealid'])
-    gen_col = find_col(df, ['gen'])
+    gen_col = find_col(df, ['sex'])
     age_col = find_col(df, ['age'])
     nafo_col = find_col(df, ['nafo'])
     prey_col = find_col(df, ['prey'])
@@ -214,8 +228,6 @@ def parse_seals_csv():
             raw_gen = group[gen_col].iloc[0]
             if not pd.isna(raw_gen) and str(raw_gen).strip():
                 gen = str(raw_gen).strip().upper()[0]
-                if gen not in ['M', 'F']:
-                    gen = 'U'
                     
         age_display = 'Unknown'
         age_num = None
@@ -292,6 +304,9 @@ def parse_seals_csv():
     return seals_list
 ```
 
+</gcds-details>
+
+
 #### Why are we grouping by ID?
 If we didn't group by ID, our Seal Index list would show the same seal multiple times (once for each prey item they ate). This is mainly due to the way the information was gathered so this step may or may not be relevant to you.
 
@@ -306,16 +321,20 @@ When assigning an identifier to each seal, we check if a valid `id_col` exists. 
 
 *Gender Formatting*
 
-Simplify the possible labels for gender into three possibilities: 'M', 'F', or 'U' (Unknown). This maps directly to our demographic chart filters:
+Simplify the possible labels for gender into three possibilities: 'M', 'F', or 'U' (Unknown). 
+
+<gcds-details details-title="This maps directly to our demographic chart filters:">
 
 ``` js
 // From ratioChart inside chart.js:
 labels: ['Male', 'Female', 'Unknown']
 ```
 
+</gcds-details>
+
 *Numerical and Categorical Ageing*
 
-The age_num field is converted to an integer to later calculate averages and dynamic grouping:
+<gcds-details details-title="The age_num field is converted to an integer to later calculate averages and dynamic grouping:">
 
 ```js
 // From global.js
@@ -323,6 +342,8 @@ for (let i = 0; i <= maxAge; i += 3) {
     bins.push({ label: `${i}-${i+2}`, min: i, max: i+2, count: 0 });
 }
 ```
+
+</gcds-details>
 
 If the age cannot be converted to a number, or contains non-numeric strings, it defaults to None in Python, which becomes a JavaScript null and is sorted into the "Unknown" bin, while `age_display` is formatted as `"Unknown"`.
 
@@ -336,16 +357,22 @@ The variable `total_items` tallies up the sum of all prey quantities found in th
 
 *Defining the Last Meal*
 
-The seal's primary or "Last Meal" is calculated as the prey item with the highest count in that record using:
+<gcds-details details-title="The seal's last meal is calculated as the prey item with the highest count in that record using the following:">
+
 ```python
 meal = max(prey_items, key=prey_items.get)
 ```
-If no prey items are found, or the records contain empty stomach keys (like `'empty'` or `'9998'`), the stomach is flagged as "Empty".
+
+</gcds-details>
+
+<gcds-details details-title="If no prey items are found, or the records contain empty stomach keys (like 'empty' or '9998'), the stomach is flagged as empty.">
 
 ``` example
 No prey found -> prey_items = {"Empty": 1} -> Last Meal = "Empty"
 Prey found    -> prey_items = {"Capelin": 12, "Cod": 2} -> Last Meal = "Capelin"
 ```
+
+</gcds-details>
 
 This structural normalization prevents crashes on the frontend and keeps our donut charts and search index lists running smoothly.
 ***
