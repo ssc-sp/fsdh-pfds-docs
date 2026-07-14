@@ -62,12 +62,12 @@ Now we are all set to start making the web app.
 
 From here we will make a simple page that says "Hello World!" on it. 
 
-<gcds-details details-title="Paste this code into your app.py">
+<gcds-details details-title="Use this code into your app.py">
 
 ``` python
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route('/')
 def home():
@@ -78,6 +78,14 @@ if __name__ == '__main__':
 ```
 
 </gcds-details>
+
+* `app = Flask(__name__)` 
+> Creates the flask class
+* `@app.route(/)`
+> Tells python what to run when someone visits your web app
+* `return render_template('index.html')`
+* `app.run(debug=True)` 
+
 
 <gcds-details details-title="Paste this code into your index.html">
 

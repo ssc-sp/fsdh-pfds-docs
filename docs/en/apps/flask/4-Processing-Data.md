@@ -140,6 +140,18 @@ def find_col(df, options): # Function that finds the column number of a specifie
 
 </gcds-details>
 
+>Eg. using find_col(df, ColName2) on this datasheet
+>|ColName1|ColName2|ColName3|
+>|---|---|---|
+>|Data1|Data2|Data3|
+>|Data1a|Data2a|Data3a|
+>|Data1b|Data2b|Data3b|
+>|Data1c|Data2c|Data3c|
+>|Data1d|Data2d|Data3d|
+>|Data1e|Data2e|Data3e|
+> 
+>It would return 1 (column numbering start at 0)
+
 Using this, we prepare the NAFO Reference file. This file was manually typed out based on an image and a map and represents the coordinates of specific fishing zones. 
 
 <gcds-details details-title="Since coordinates are precalculated inside this file, we can map each zone code directly to its lat/long coordinates.">
@@ -314,6 +326,18 @@ If we didn't group by ID, our Seal Index list would show the same seal multiple 
 
 >Note:
 >The data file referenced doesn't have formatting issues but these systems could be put in place for future file expansion.
+> Example of file: (7/18766 rows)
+>
+>|Species|SealID|Sex|Age|YearCollected|MonthCollected|DayCollected|CollectionArea|NAFO|PreyCode|Prey|PreyGenus|PreyFamily|PreySubFamily|NumberOfIndividuals|PartMeasured|OtolithErosionState (ES)|PartMeasurementValue (mm)|PreyLength|PreyWeight|Comments|
+>|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+>|Pagophilus groenlandicus|63789|M|25|2017|4|23|339|3KI|9998|Empty||||||||||||
+>|Pagophilus groenlandicus|63210|F|28|2017|4|25|339|3KI|320|Lancetfish, Scaled|Notolepis rissoi kroyeri|||1|1|7|1|3.79||||
+>|Pagophilus groenlandicus|63790|M|25|2017|4|25|339|3KI|9998|Empty||||||||||||
+>|Pagophilus groenlandicus|63791|M|1|2017|4|25|339|3KI|9998|Empty||||||||||||
+>|Pagophilus groenlandicus|63211|F|2|2017|4|25|339|3KI|150|Herring, Atlantic|Clupea harengus|||1|1|7|3|1.48||||
+>|Pagophilus groenlandicus|63211|F|2|2017|4|25|339|3KI|187|Capelin|Mallotus villosus|||1|1|7|2|2.07||||
+> 
+> From here you can easily tell we which columns we need. SealID,Sex,Age,NAFO,Prey, and NumberOfIndividuals
 
 *Name Formatting*
 

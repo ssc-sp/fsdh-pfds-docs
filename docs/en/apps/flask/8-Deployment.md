@@ -154,6 +154,13 @@ Once tested, you are ready to upload this container directly to your FSDH dashbo
 
 5. Click **Deploy**.
 
+6. Once you've confirmed it works, make sure to turn off debug mode. 
+
+``` python
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=False)
+```
+
 ### Known Issues
 
 Most of the steps so far have been written under the assumption that the base path isn't changed. At the time of writting the web hosting tool changes the base of the url to `/app/workspace-name`. This causes a few problems, it means whenever you referenced in your html file (files not stored on the fsdh), it won't be able to find it. 2 common problems that may occur due to this are the css and js files not running and having page switching not working. 

@@ -12,7 +12,6 @@ Create your `templates/index.html` and structure it using the CSS grid and flexb
 
 <gcds-details details-title="Here is the HTML skeleton of our application:"> 
 
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
