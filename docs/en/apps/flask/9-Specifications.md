@@ -829,8 +829,6 @@ This section serves as a technical reference guide compiling the core technologi
 
     > Governs the searching, category filtering, and list rendering of the seal index.
 
-
-
 ### General Python
 * **Web Framework:** Flask serves as the web framework, managing file routing and using Jinja2 as its engine. 
 * **Data Retrieval:** Data is taken from Azure Blob Storage using `azure-storage-blob` and `pandas`. SAS tokens are stored in environment variables to keep security credentials separated from the code:
@@ -860,7 +858,6 @@ This section serves as a technical reference guide compiling the core technologi
 ### Imaging 
 
 <gcds-details details-title="This is the yml file for the workflow.">
-
 
 ``` yml
 name: Build and Push Flask App Image to GHCR

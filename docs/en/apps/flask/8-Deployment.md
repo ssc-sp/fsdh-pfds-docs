@@ -223,6 +223,14 @@ if __name__ == '__main__':
 
 ### Known Issues
 
+Do note that whenever you have an issue, consult the logs, the console (f12), then the better logs (call someone who has access to them.) This generally gives you a good idea of what the issue is. 
+
+Also sometimes it just takes a while for your webstie to load. Processing files takes time.
+
+#### CSS and JS not loading
+![Image of the console error messages for this error](./img/Deployment/9.png)
+This error is the most obvious because your website would look something like this (Lacking any and all css/js)
+![Image of website suffering from this error](./img/Deployment/10.png)
 Most of the steps so far have been written under the assumption that the base path isn't changed. At the time of writting the web hosting tool changes the base of the url to `/app/workspace-name`. This causes a few problems, it means whenever you referenced in your html file (files not stored on the fsdh), it won't be able to find it. 2 common problems that may occur due to this are the css and js files not running and having page switching not working. 
 
 This is the workaround used in the Seal Checker 9000
@@ -239,4 +247,4 @@ class FSDHProxyPrefixFix:
 app.wsgi_app = FSDHProxyPrefixFix(app.wsgi_app)
 ```
 
-Around March 2027 this shouldn't be a problem anymore hence why this section has been moved to the end of section. 
+Around March 2027 this shouldn't be a problem anymore. 
