@@ -856,3 +856,49 @@ This section serves as a technical reference guide compiling the core technologi
 * **Purpose:** Docker containerizes the Flask web application, packaging code, system libraries, and requirements inside an container to ensure the app works reliably.
 * **Build Structure (`Dockerfile`):** Uses the image base `python:3.10-slim` and copys and installs the `requirements.txt`:
 * **Execution Parameters (`docker-compose.yml`):** Has all the commands you would've used to run the container.
+
+### Imaging 
+
+<gcds-details details-title="This is the yml file for the workflow.">
+
+
+``` yml
+name: Build and Push Flask App Image to GHCR
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # GHCR strictly requires lowercase package tags
+          tags: ghcr.io/hamsamm/harp-seal-checker:latest
+
+      - name: Logout of GitHub Container Registry
+        run: docker logout ghcr.io
+```
+
+</gcds-details>

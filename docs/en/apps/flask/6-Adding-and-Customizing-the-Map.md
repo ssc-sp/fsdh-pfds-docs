@@ -21,7 +21,7 @@ if seals:
     avg_lon = sum(s['lon'] for s in seals) / len(seals)
     m = folium.Map(location=[avg_lat, avg_lon], zoom_start=5, control_scale=True, world_copy_jump=True)
 else:
-    m = folium.Map(location=[50.5, -56.5], zoom_start=5, control_scale=True, world_copy_jump=True)
+    m = folium.Map(location=[45.416141, -75.698076], zoom_start=5, control_scale=True, world_copy_jump=True)
 ```
  
 </gcds-details> 
@@ -83,3 +83,35 @@ window.addEventListener('message', function(event) {
 });
 ```
 This is how clicking a bubble on the map instantly updates our demographic charts, index count, and diet details!
+
+But just having this map doesn't do much, we need our html file/template to take this map and display it. To do this we use  `_repr_html_` and then pass the result as a parameter as part of the [render_template](https://flask.palletsprojects.com/en/stable/api/#flask.render_template) method we imported from Flask so we a) run the html, and b) can access map_html and other important data/variables in index.html and every file connected to html (style.css and the .js files).
+
+``` python 
+    map_html = m._repr_html_()
+    return render_template('index.html', map_html=map_html, seals_data=seals)
+```
+
+>Note: 
+>
+>This is how you pass anything to your html. This includes images you have stored on the FSDH. Although these should just be stored as static files, if they have to be on the fsdh, you can pass them as variables. For example, here we are passing the seal icon into html so I can use is as a part of the css. 
+>``` 
+>python return render_template('index.html', map_html=map_html, seals_data=seals, icon_url=icon_url)
+>```
+>we then reference it in the html file to pass it to the css in the body block
+>``` html
+><body style="--seal-icon-url: url('{{ icon_url }}');">
+>```
+>then we reference it in the css file like so
+>``` css
+>*::-webkit-scrollbar-thumb {
+>    background-image: var(--seal-icon-url); /* <- Like this */
+>    background-size: 100% 100%;
+>    background-position: center;
+>    border-radius: 8px;
+>    background-clip: padding-box;
+>    background-color: #ccc;
+>    border: 2px solid transparent;
+>}
+>```
+> And now we made all our scroll bars on any chromium-based browser seals!
+>![Image showing all the scroll bars being seals now](./img/Adding-and-Customizing-the-Map/2.png)

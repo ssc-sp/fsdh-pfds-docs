@@ -107,7 +107,67 @@ Now, open your browser and go to `http://localhost:8080`. Your Flask app should 
 
 ***
 
-### Making your Docker Compose file
+### Step 6: Making the workflow for Imaging 
+
+In order to run this on the FSDH, we need to make a docker image (like we did in Step 5) but not locally. The way we do this is with github workflows. There are many workflows avaliable for free on github but it's easy to get lost in the proverbial sauce. 
+<gcds-details details-title="So here is the yml file for the workflow.">
+
+``` yml
+name: Build and Push Flask App Image to GHCR
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # GHCR strictly requires lowercase package tags
+          tags: ghcr.io/your-username/project-name:latest
+
+      - name: Logout of GitHub Container Registry
+        run: docker logout ghcr.io
+```
+
+</gcds-details>
+
+Make sure you put this file in the correct directory on github. 
+
+Github:
+
+![File Directory on Github (Project-Name/.github/workflows/docker-image.yml)](./img/Deployment/7.png)
+
+Visual Studio Code:
+
+![File Directory on Visual Studio Code](./img/Deployment/8.png)
+
+Now with that, we just need to make a docker compose file that references said image. 
+
+***
+
+### Step 7: Making your Docker Compose file
 
 You may have noticed if you've peeked into the configuation section of the web app that it asks for something called a docker compose file. This is what we will be writing right now. The docker composer file has all the commands you would've used to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/hamsamm/harp-seal-checker:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/FEWSC`).
 
@@ -117,7 +177,7 @@ This is the `docker-compose.yml` file for the Seal Checker 9000:
 services:
   web:
     build: .
-    image: ghcr.io/hamsamm/harp-seal-checker:latest
+    image: ghcr.io/your-username/project-name:latest
     ports:
       - "80:80"
     environment:
@@ -128,7 +188,7 @@ Make sure you put this file in the base of the directory (where requirements.txt
 
 ***
 
-### Step 6: Deploying on FSDH
+### Step 8: Deploying on FSDH
 
 Once tested, you are ready to upload this container directly to your FSDH dashboard:
 1. Push your code repository directly to GitHub.
