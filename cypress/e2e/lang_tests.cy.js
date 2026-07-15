@@ -1,21 +1,22 @@
-describe('French and english page links.', () => {
-  it('Check main page', function () {
-    cy.visit('/en/')
-    cy.checkPage()
-  })
-
-  it('Check sidebar accessible pages', function () {
-    cy.visit('/en/')
-
-    // Finds all internal links from the sidebar and checks them.
-    cy.get('[class="vp-sidebar-items"]').find('[class*="route-link"]').each(function($els) {
-        cy.visit($els.attr('href'));
+describe('Test the pages.', () => {
+  // Creates the test for all pages.
+  Cypress.expose('pages').forEach((page) => {
+    // Full test for all pages supplied.
+    it('check page: ' + page, function() {
+      // Verify the current page
+      cy.visit(page);
+      cy.checkPage();
+      // Store current path for comparisons.
+      cy.location('pathname').then(function(startLocation) {
+        // Change language.
+        cy.get('gcds-lang-toggle').click();
+        // Verify the path is different and that the page is valid.
+        cy.location('pathname').should('not.equal', startLocation);
         cy.checkPage();
-        // Unused code from when I was trying to actually click on the pages, keeping this here if I want to come back to it
-        // cy.get('[class="vp-sidebar-items"]').find('[class*="route-link"]').eq(index).revealTab().click().as('cur')
-        // cy.get('@cur').click().then(function(elem) {
-        //   cy.wrap(elem).checkPage()
-        // })
-    })
-  })
-})
+        // Verify that the page links back to the original.
+        cy.get('gcds-lang-toggle').click()
+        cy.location('pathname').should('eq', startLocation)
+      });
+    });
+  });
+});
