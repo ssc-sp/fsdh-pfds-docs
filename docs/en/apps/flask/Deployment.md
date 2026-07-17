@@ -75,34 +75,34 @@ if __name__ == '__main__':
 
 ***
 
-### Step 4: The FSDH SAS Secret (Security)
+### Step 4: The FSDH SAS URL
 
-When deploying on the FSDH workspace, you should **never** save your Storage Access Key (SAS Token) directly into your code files. If an FSDH token is accidentally published, it is a security incident that must be reported.
+When deploying on the FSDH workspace, you should **never** save your Container Token (SAS URL) directly into your code files. If an Container Token (SAS URL) is accidentally published, it is a security incident that must be reported.
 
-You can obtain a long-term SAS token by submitting a support request in the FSDH.
+You can obtain a long-term SAS URL by submitting a support request in the FSDH.
 
-We load this key from the server's background environment variables using Python's `os` module:
+We load this URL from the server's background environment variables using Python's `os` module:
 
 ```python
 AZURE_SAS_URI = os.environ.get("SAS")
 ```
 
-When you host your application on your FSDH workspace, the platform provides a settings interface where you can safely paste your storage SAS key under the environment name `SAS`. When your app launches, Python reads this variable without ever writing it into your files.
+When you host your application on your FSDH workspace, the platform provides a settings interface where you can safely paste your SAS URL under the environment name `SAS`. When your app launches, Python reads this variable without ever writing it into your files.
 
 ***
 
 ### Step 5: Testing Your Container Locally
 
-To test if your container recipe works before uploading it, you can run it inside your local terminal.
+To test if your Dockerfile or web app works locally, you can run it inside your terminal.
 
-**1: Build the container image** (replace `seal-app` with your project name):
+**1: Build the container image**:
 ```bash
-docker build -t seal-app .
+docker build -t project-name .
 ```
 
 **2: Run the container locally** (mapping port 80 inside the container to port 8080 on your web browser):
 ```bash
-docker run -p 8080:80 -e SAS="your_actual_azure_sas_token_here" seal-app
+docker run -p 8080:80 -e SAS="your_sas_url" project-name
 ```
 
 Now, open your browser and go to `http://localhost:8080`. Your Flask app should now running inside its own isolated virtual container!
@@ -171,7 +171,7 @@ Now with that, we just need to make a docker compose file that references said i
 
 ### Step 7: Making your Docker Compose file
 
-The docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/hamsamm/harp-seal-checker:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/FEWSC`).
+The docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/your-username/project-name:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/WORKSPACE-ABBREVIATION`).
 
 This is the `docker-compose.yml` file for the demo app:
 
@@ -179,12 +179,17 @@ This is the `docker-compose.yml` file for the demo app:
 services:
   web:
     build: .
-    image: ghcr.io/your-username/project-name:latest
+    image: ghcr.io/hamsamm/harp-seal-checker:latest
     ports:
       - "80:80"
     environment:
       - PROXY_PREFIX=/app/FEWSC
 ```
+>Note:
+>
+> To find the PROXY_PREFIX, look at the "Web Application Information" in the Web App Configuration tab. 
+> ![Then find "Proxy URL for development"](./img/Deployment/11.png)
+
 
 Place this file in the base of the directory (where requirements.txt is).
 
@@ -206,7 +211,7 @@ Once tested, you are ready to upload this container directly to your FSDH dashbo
 
 4. Add your system variables under environment settings:
    * **Key:** `SAS`
-   * **Value:** *[Your active Azure Storage SAS Token]*
+   * **Value:** *[Your active Azure Storage SAS URL]*
 
 ![Click Add Environment Variable](./img/Deployment/4.png)
 ![Fill in the pop up](./img/Deployment/5.png)
@@ -233,9 +238,9 @@ Also sometimes it just takes a while for your webstie to load. Processing files 
 ![Image of the console error messages for this error](./img/Deployment/9.png)
 This error is the most obvious because your website would look something like this (Lacking any and all css/js)
 ![Image of website suffering from this error](./img/Deployment/10.png)
-Most of the steps so far have been written under the assumption that the base path isn't changed. At the time of writting the web hosting tool changes the base of the url to `/app/workspace-name`. This causes a few problems, it means whenever you referenced in your html file (files not stored on the fsdh), it won't be able to find it. 2 common problems that may occur due to this are the css and js files not running and having page switching not working. 
+Most of the steps so far have been written under the assumption that the base path isn't changed. At the time of writting the web hosting tool changes the base of the url to `/app/WORKSPACE-ABBREVIATION`. This causes a few problems, it means whenever you referenced in your html file (files not stored on the fsdh), it won't be able to find it. 2 common problems that may occur due to this are the css and js files not running and having page switching not working. 
 
-This is the workaround used in the Seal Checker 9000
+This is the workaround used in the demo project
 ``` python
 class FSDHProxyPrefixFix:
     def __init__(self, wsgi_app):
