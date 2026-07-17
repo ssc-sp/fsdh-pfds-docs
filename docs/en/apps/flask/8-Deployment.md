@@ -1,6 +1,6 @@
 # Deployment
 
-When developing locally on your Ubuntu Terminal (WSL), the website runs directly on your machine. But to make your website accessible to other researchers on the FSDH platform, you need to bundle it into a package that can run reliably on any server.
+To make your website accessible to other researchers on the FSDH, you need to bundle it into a package that can run reliably on any server.
 
 To do this, we use [Docker](https://www.docker.com/).
 
@@ -8,7 +8,7 @@ To do this, we use [Docker](https://www.docker.com/).
 
 ### [Docker](https://www.docker.com/)
 
-Docker uses a single text file called a `Dockerfile` to copy files, install Python, install libraries, and run commands.
+Docker uses a text file called a `Dockerfile` to copy files, install Python, install libraries, and run commands.
 
 A `Dockerfile` tells Docker how to build a container that contains only the things required to run your application.
 
@@ -18,7 +18,7 @@ A `Dockerfile` tells Docker how to build a container that contains only the thin
 
 Before Docker can build your app, it needs to know what Python packages are required. If you haven't already, make sure you made a file in your project folder named `requirements.txt` and list your dependencies. 
 
-The `requirements.txt` file for the Seal Checker 9000:
+The `requirements.txt` file for the demo app are:
 
 ```text
 Flask>=3.0.0
@@ -34,7 +34,7 @@ azure-storage-blob>=12.0.0
 
 ### Step 2: Writing the Dockerfile
 
-In your project's root folder, create a new file named `Dockerfile` (with no file extension) and paste the following commands:
+In your project's root folder, create a new file named `Dockerfile` (with no file extension) and add the content. For the demo app, we use the following Dockerfile:
 
 ```dockerfile
 # 1. Start with an official, lightweight Python operating system image
@@ -63,9 +63,9 @@ CMD ["python", "app.py"]
 
 ### Step 3: Changing the Port in Your App
 
-If your app is configured to run on on Port 5000 (`localhost:5000`), make sure to change to a port that works for web servers. For the FSDH in the configure section of the web app tool, it lets us know that it will only run on ports 80 and 8080.
+Make sure to change to a port that works for web servers. For the FSDH, a web app will only run on ports 80 and 8080.
 
-Look at the bottom of your `app.py` script:
+In your application python script (such as `app.py`):
 
 ```python
 if __name__ == '__main__':
@@ -77,9 +77,11 @@ if __name__ == '__main__':
 
 ### Step 4: The FSDH SAS Secret (Security)
 
-When deploying on the FSDH workspace, you should **never** save your Storage Access Key (SAS Token) directly into your code files. If your code is public on GitHub, anyone can see your keys and modify your Azure workspace files.
+When deploying on the FSDH workspace, you should **never** save your Storage Access Key (SAS Token) directly into your code files. If an FSDH token is accidentally published, it is a security incident that must be reported.
 
-Instead, we load this key from the server's background environment variables using Python's `os` module:
+You can obtain a long-term SAS token by submitting a support request in the FSDH.
+
+We load this key from the server's background environment variables using Python's `os` module:
 
 ```python
 AZURE_SAS_URI = os.environ.get("SAS")
@@ -169,9 +171,9 @@ Now with that, we just need to make a docker compose file that references said i
 
 ### Step 7: Making your Docker Compose file
 
-You may have noticed if you've peeked into the configuation section of the web app that it asks for something called a docker compose file. This is what we will be writing right now. The docker composer file has all the commands you would've used to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/hamsamm/harp-seal-checker:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/FEWSC`).
+The docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/hamsamm/harp-seal-checker:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/FEWSC`).
 
-This is the `docker-compose.yml` file for the Seal Checker 9000:
+This is the `docker-compose.yml` file for the demo app:
 
 ``` yml
 services:
@@ -184,7 +186,7 @@ services:
       - PROXY_PREFIX=/app/FEWSC
 ```
 
-Make sure you put this file in the base of the directory (where requirements.txt is). There are also other things you can put in your docker compose file you can see in the additional information section of the web application configure section.
+Place this file in the base of the directory (where requirements.txt is).
 
 ***
 

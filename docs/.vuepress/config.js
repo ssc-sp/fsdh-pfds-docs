@@ -131,15 +131,12 @@ export default defineUserConfig({
               text: "Building a Web App With Flask",
               collapsible: true,
               children: [
-                "/en/apps/flask/1-Project-Setup.md",
-                "/en/apps/flask/2-Setting-Up-Your-Web-App.md",
-                "/en/apps/flask/3-Building-Your-Web-App.md",
                 "/en/apps/flask/4-Processing-Data.md",
                 "/en/apps/flask/5-Displaying-Data.md",
                 "/en/apps/flask/6-Adding-and-Customizing-the-Map.md",
                 "/en/apps/flask/7-Structuring-the-Final-HTML-Layout.md",
                 "/en/apps/flask/8-Deployment.md",
-                "/en/apps/flask/9-Specifications.md",
+                "https://github.com/HamSamm/Harp-Seal-Checker/",
               ]
             },
           ],
