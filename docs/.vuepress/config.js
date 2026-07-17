@@ -128,15 +128,37 @@ export default defineUserConfig({
           children: [
             "/en/apps/WebApps",
             {
-              text: "Building a Web App With Flask",
+              text: "Hosting a Flask Web App",
               collapsible: true,
               children: [
                 "/en/apps/flask/Accessing-Files.md",
                 "/en/apps/flask/Deployment.md",
+              ]
+            },
+            {
+              text: "Demo Apps",
+              collapsible: true,
+              children: [
+                {
+                  text: "Django (Python)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+                },
+                {
+                  text: "Dash (Python)",
+                  link: "https://github.com/Sean-Stilwell/sample-dashapp"
+                },
+                {
+                  text: "Shiny (R)",
+                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/shiny-app"
+                },
+                {
+                  text: "Streamlit (Python)",
+                  link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+                },
                 {
                   text:"Flask (Python)",
                   link:"https://github.com/HamSamm/Harp-Seal-Checker/",
-                }   
+                },
               ]
             },
           ],
