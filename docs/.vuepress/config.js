@@ -133,11 +133,15 @@ export default defineUserConfig({
               children: [
                 {
                   text: "Django (Python)",
-                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-django"
                 },
                 {
                   text: "Dash (Python)",
-                  link: "https://github.com/Sean-Stilwell/sample-dashapp"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
+                },
+                {
+                  text: "Flask (Python)",
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-flask"
                 },
                 {
                   text: "Shiny (R)",
@@ -145,7 +149,7 @@ export default defineUserConfig({
                 },
                 {
                   text: "Streamlit (Python)",
-                  link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-streamlit"
                 },
               ]
             }
@@ -261,11 +265,15 @@ export default defineUserConfig({
               children: [
                 {
                   text: "Django (Python)",
-                  link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-django"
                 },
                 {
                   text: "Dash (Python)",
-                  link: "https://github.com/Sean-Stilwell/sample-dashapp"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
+                },
+                {
+                  text: "Flask (Python)",
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-flask"
                 },
                 {
                   text: "Shiny (R)",
@@ -273,7 +281,7 @@ export default defineUserConfig({
                 },
                 {
                   text: "Streamlit (Python)",
-                  link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+                  link: "https://github.com/ssc-sp/fsdh-demo-app-streamlit"
                 },
               ]
             }
