@@ -133,6 +133,7 @@ export default defineUserConfig({
               children: [
                 "/en/apps/flask/Accessing-Files.md",
                 "/en/apps/flask/Deployment.md",
+                "/en/apps/flask/Uploading-Files.md",
               ]
             },
             {
