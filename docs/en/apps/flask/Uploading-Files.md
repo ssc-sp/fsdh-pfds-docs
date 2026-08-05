@@ -10,18 +10,18 @@ azure-storage-blob>=12.0.0
 
 ### Notes
 
-The SAS URL provides access to the files in your Azure Storage account. Instead of calling files directly with a hardcoded URL as we were before, we use a container-level SAS URL to list, read, write, and delete blobs. 
+The SAS URL provides access to the files in your Azure Storage account. Instead of just reading blobs directly with a SAS URL as we were before, we can now, write, edit, and delete blobs. 
 
-To access the storage, we use the SAS URL and append the target blob name. Since a SAS token contains query parameters, the application splits the URI at the `?` character to construct file-specific paths dynamically within its helper operations. Reference the methods described in [Acessing Files](./Accessing-Files.md).
+To access the storage, we use the SAS URL and add the target blob name. Reference the methods described in [Acessing Files](./Accessing-Files.md).
 
 ***
 
-### Saving Data to Azure
+### Saving Blobs to Azure
 To save data back to the storage, create a client then simply upload the blob.
 
 ``` python
 from azure.storage.blob import ContainerClient, BlobClient # Import 
-blob_client = BlobClient.from_blob_url(file_uri) # Create Client Blob from SAS URI from before 
+blob_client = BlobClient.from_blob_url(file_uri) # Create Client Blob from SAS URI from before shown of Accessing Files
 blob_client.upload_blob(file, overwrite=overwrite) # Upload file to the container
 ```
 
@@ -35,7 +35,7 @@ This is all you really need to implement. It allows you to create new files and 
 >
 >.[upload_blob](https://learn.microsoft.com/en-us/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python#azure-storage-blob-blobclient-upload-blob)
 
-In the Demo project, a DataFrame is turned into a CSV-formatted string then uploaded using the `BlobClient`. All files are saved in the root directory but this can by changed by appending the file name to `/folder-name/` like this: `/folder-name/file.ext`. This will either add the file to an existing folder or make a folder with that file in it if it doesn't already exist. 
+In the demo project, all files are saved in the root directory but this can by changed by appending the file name to `/folder-name/` like this: `/folder-name/file.ext`. This will either add the file to an existing folder or make a folder with that file in it if it doesn't already exist. 
 
 <gcds-details details-title="Referenced code from flask demo project.">
 
@@ -71,6 +71,8 @@ def save_df_to_azure(df, blob_name, index=False, overwrite=True, encoding='utf-8
 ```
 
 </gcds-details>
+
+***
 
 ### Deleting Blobs
 All you need to delete blobs is to set the SAS URL to the specific file you want to delete then use `.delete_blob()` as shown.  
