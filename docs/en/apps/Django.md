@@ -1,6 +1,6 @@
 # Hosting (Django) Web Apps on DataHub
 
-If your web app is a _Django_ web app, this guide is meant to assist you in a few further changes that you will have to make for your app to function properly on the FSDH.
+If your web app is a _Django_ web app, this guide is meant to assist you in a few further changes that you will have to make for your app to properly function on the FSDH.
 
 ## Toggle "URL rewrite" On
 
@@ -8,13 +8,13 @@ In the App Service section of your workspace, under "Quick settings" is a switch
 
 ## Add the FSDH to the `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS`
 
-In order for the FSDH to properly render your web pages, you need to inform the server which sites are allowed to host your app. It is likely that you already have environment variables to determine these, in which case you simply need to add `federal-science-datahub.canada.ca` and `fsdh-proj-<your workspace name>-webapp-poc.azurewebsites.net`==(not quite? find prod equivalent.)==. If you do not have environment variables for these, you can either create them or manually set them in your `settings.py`.
+In order for the FSDH to properly render your web pages, you need to inform the server which sites are allowed to host your app. It is likely that you already have environment variables to determine these, in which case you simply need to add `federal-science-datahub.canada.ca`, `plateforme-federale-donnees-scientifiques.canada.ca`, `prd.fsdh-dhsf.science.cloud-nuage.canada.ca` and `fsdh-proj-<your workspace name>-webapp-prd.azurewebsites.net`. If you do not have environment variables for these, you can either create them or manually set them in your `settings.py`.
 
 Here is an example of what setting these values inside of `settings.py` could look like. In this case, both are set by the same environment variable but that is in no way necessary.
 
 ```python
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","127.0.0.1").split(",")
-CSRF_TRUSTED_ORIGINS = (f'https://{i}' for i in ALLOWED_HOSTS) # This variable requires the origins to contain "https://" in the string.
+CSRF_TRUSTED_ORIGINS = (f'https://{i}' for i in ALLOWED_HOSTS) # CSRF_TRUSTED_ORIGINS requires the strings to contain "https://".
 ```
 
 ## Add the `FORCE_SCRIPT_NAME` in `settings.py`
@@ -40,4 +40,4 @@ urlpatterns = [
 
 ## Proper URL Retrieval
 
-It is possible that some links or references might not work, if that is the case make sure that you are using Django's URL replacement features and that they are not hardcoded. For example, in your HTML/CSS/JS you would use `"{% url 'home' %}"` instead of `"/"` or `"/home"`. In you Python code, you would use `django.urls.reverse("home")`. Do also make sure that you give your pages their respective names in the `urls.py`. Without this, these URLs won't contain the script name and will break.
+It is possible that some links or references might not work, if that is the case make sure that you are using Django's URL replacement features and that they are not hardcoded. For example, in your HTML/CSS/JS you would use `"{% url 'home' %}"` instead of `"/"` or `"/home"`. In you Python code, you would use `django.urls.reverse("home")`. Do also make sure that you give your pages their respective names in the `urls.py` as it is these names that Django looks for. Without this, these URLs won't contain the script name.
