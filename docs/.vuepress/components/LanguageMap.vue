@@ -104,6 +104,11 @@ export default {
           en: "/en/storage/Desktop-Uploader",
           fr: "/fr/stockage/Chargeur-de-bureau",
         },
+        {
+          en: "/en/storage/Uploading-Files",
+          fr: "/fr/stockage/Telechargement-des-fichiers",
+        },
+
         { en: "/en/databricks/", fr: "/fr/databricks/" },
         {
           en: "/en/databricks/Databricks-101",
@@ -161,6 +166,15 @@ export default {
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },
+        {
+          en: "/en/apps/flask/Accessing-Files",
+          fr: "/fr/apps/flask/Acceder-aux-fichiers",
+        },
+        {
+          en: "/en/apps/flask/Deployment",
+          fr: "/fr/apps/flask/Deploiement",
+        },
+
       ];
 
       const currentUrl = (this.$route?.path || this.$page.path).split(

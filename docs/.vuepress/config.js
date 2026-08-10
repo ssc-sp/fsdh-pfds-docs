@@ -83,6 +83,7 @@ export default defineUserConfig({
             },
             "/en/storage/Import-Storage.md",
             "/en/storage/Use-AzCopy.md",
+            "/en/storage/Uploading-Files.md",
           ],
         },
         {
@@ -125,7 +126,43 @@ export default defineUserConfig({
         {
           text: "Web Applications",
           collapsible: true,
-          children: ["/en/apps/WebApps"],
+          children: [
+            "/en/apps/WebApps",
+            {
+              text: "Hosting a Flask Web App",
+              collapsible: true,
+              children: [
+                "/en/apps/flask/Accessing-Files.md",
+                "/en/apps/flask/Deployment.md",
+              ]
+            },
+            // {
+            //   text: "Demo Apps",
+            //   collapsible: true,
+            //   children: [
+            //     {
+            //       text: "Django (Python)",
+            //       link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+            //     },
+            //     {
+            //       text: "Dash (Python)",
+            //       link: "https://github.com/Sean-Stilwell/sample-dashapp"
+            //     },
+            //     {
+            //       text: "Shiny (R)",
+            //       link: "https://github.com/ssc-sp/datahub-demos/tree/main/shiny-app"
+            //     },
+            //     {
+            //       text: "Streamlit (Python)",
+            //       link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+            //     },
+            //     {
+            //       text:"Flask (Python)",
+            //       link:"https://github.com/HamSamm/Harp-Seal-Checker/",
+            //     },
+            //   ]
+            // },
+          ],
         },
         {
           text: "Migrating to Production",
