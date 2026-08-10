@@ -82,6 +82,7 @@ export default defineUserConfig({
               ],
             },
             "/en/storage/Import-Storage.md",
+            "/en/storage/Storage-PowerBI.md",
             "/en/storage/Use-AzCopy.md",
           ],
         },
@@ -119,6 +120,7 @@ export default defineUserConfig({
           children: [
             "/en/postgresql/Postgres",
             "/en/postgresql/Postgres-Add-User",
+            "/en/postgresql/Postgres-PowerBI",
             "/en/postgresql/psql-databricks-comparison",
           ],
         },
@@ -214,6 +216,7 @@ export default defineUserConfig({
               ],
             },
             "/fr/stockage/Importer-le-stockage",
+            "/fr/stockage/Stockage-PowerBI",
             "/fr/stockage/Utiliser-AzCopy",
           ],
         },
@@ -251,6 +254,7 @@ export default defineUserConfig({
           children: [
             "/fr/postgresql/Postgres",
             "/fr/postgresql/Postgres-Ajouter-Utilisateur",
+            "/fr/postgresql/Postgres-PowerBI",
             "/fr/postgresql/Comparaison-des-bases-de-donnees-psql",
           ],
         },
