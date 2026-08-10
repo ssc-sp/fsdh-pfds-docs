@@ -1,4 +1,4 @@
-# Hébergement d'applications Web (Django) sur la PFDS
+# Configuration Django pour la PFDS
 
 Si votre application web est une application _Django_, ce guide existe pour vous assister dans quelques changements de plus qui seront requis pour que votre application fonctionne bien sur la PFDS.
 

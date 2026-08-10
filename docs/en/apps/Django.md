@@ -1,4 +1,4 @@
-# Hosting (Django) Web Apps on DataHub
+# Django Configuration for FSDH
 
 If your web app is a _Django_ web app, this guide is meant to assist you in a few further changes that you will have to make for your app to properly function on the FSDH.
 
