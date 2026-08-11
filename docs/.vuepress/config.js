@@ -228,6 +228,14 @@ const sidebar = {
       children: [
         "/fr/apps/WebApps",
         {
+          text: "Héberger une appli web Flask",
+          collapsible: true,
+          children: [
+            "/fr/apps/flask/Acceder-aux-fichiers.md",
+            "/fr/apps/flask/Deploiement.md",
+          ]
+        },
+        {
           text: "Exemples d'applications",
           collapsible: true,
           children: [
