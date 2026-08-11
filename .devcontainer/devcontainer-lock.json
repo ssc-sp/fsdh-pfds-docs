@@ -4,7 +4,14 @@
       "version": "1.1.0",
       "resolved": "ghcr.io/devcontainers-community/npm-features/prettier@sha256:41aca434d43373d78b276d3cd89ecdce960e0b618ff0ee59f2ecee0810dbabe9",
       "integrity": "sha256:41aca434d43373d78b276d3cd89ecdce960e0b618ff0ee59f2ecee0810dbabe9",
-      "dependsOn": ["ghcr.io/devcontainers/features/node"]
+      "dependsOn": [
+        "ghcr.io/devcontainers/features/node"
+      ]
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "1.7.1",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:8c0de46939b61958041700ee89e3493f3b2e4131a06dc46b4d9423427d06e5f6",
+      "integrity": "sha256:8c0de46939b61958041700ee89e3493f3b2e4131a06dc46b4d9423427d06e5f6"
     },
     "ghcr.io/devcontainers/features/node:2": {
       "version": "2.0.0",
