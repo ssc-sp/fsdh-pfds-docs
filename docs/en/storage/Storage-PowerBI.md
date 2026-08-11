@@ -2,7 +2,7 @@
 
 You can connect to your FSDH storage from Power BI by following these steps.
 
-To do this, you must obtain an SAS token for your data. You should also have the name of your storage account ready, you can find this on the FSDH Storage Explorer beside the "Current Container" heading.
+To do this, you must obtain an SAS token for your data. You should also have the name of your storage account ready, which can be found on the FSDH Storage Explorer beside the "Current Container" heading.
 
 1. In Power BI, click "Get data from another source".
 ![The Power BI landing page with the button "Get data from another source" highlighted in yellow.](./img/1-get-data.png)
