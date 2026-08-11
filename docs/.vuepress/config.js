@@ -90,11 +90,16 @@ const sidebar = {
           children: [
             {
               text: "Django (Python)",
-              link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-django"
             },
+            "/en/apps/Django",
             {
               text: "Dash (Python)",
-              link: "https://github.com/Sean-Stilwell/sample-dashapp"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
+            },
+            {
+              text: "Flask (Python)",
+              link: "https://github.com/ssc-sp/fsdh-demo-app-flask"
             },
             {
               text: "Shiny (R)",
@@ -102,7 +107,7 @@ const sidebar = {
             },
             {
               text: "Streamlit (Python)",
-              link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-streamlit"
             },
           ]
         }
@@ -220,9 +225,14 @@ const sidebar = {
               text: "Django (Python)",
               link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
             },
+            "/fr/apps/Django",
             {
               text: "Dash (Python)",
               link: "https://github.com/Sean-Stilwell/sample-dashapp"
+            },
+            {
+              text: "Flask (Python)",
+              link: "https://github.com/ssc-sp/fsdh-demo-app-flask"
             },
             {
               text: "Shiny (R)",

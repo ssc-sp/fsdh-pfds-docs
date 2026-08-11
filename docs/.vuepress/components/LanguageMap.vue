@@ -161,6 +161,7 @@ export default {
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },
+        { en: "/en/apps/Django", fr: "/fr/apps/Django" },
       ];
 
       const currentUrl = (this.$route?.path || this.$page.path).split(
