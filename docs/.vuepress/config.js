@@ -137,6 +137,7 @@ export default defineUserConfig({
                   text: "Django (Python)",
                   link: "https://github.com/ssc-sp/fsdh-demo-app-django"
                 },
+                "/en/apps/Django",
                 {
                   text: "Dash (Python)",
                   link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
@@ -271,6 +272,7 @@ export default defineUserConfig({
                   text: "Django (Python)",
                   link: "https://github.com/ssc-sp/fsdh-demo-app-django"
                 },
+                "/fr/apps/Django",
                 {
                   text: "Dash (Python)",
                   link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
