@@ -166,6 +166,10 @@ const sidebar = {
           "text": "Apporter votre propre stockage",
           collapsible: true,
           children: [
+            "/fr/postgresql/Postgres",
+            "/fr/postgresql/Postgres-Ajouter-Utilisateur",
+            "/fr/postgresql/Postgres-PowerBI",
+            "/fr/postgresql/Comparaison-des-bases-de-donnees-psql",
             "/fr/stockage/Importer-le-stockage-AWS",
             "/fr/stockage/Importer-le-stockage-Azure",
             "/fr/stockage/Importer-le-stockage-GCP",
@@ -223,12 +227,12 @@ const sidebar = {
           children: [
             {
               text: "Django (Python)",
-              link: "https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-django"
             },
             "/fr/apps/Django",
             {
               text: "Dash (Python)",
-              link: "https://github.com/Sean-Stilwell/sample-dashapp"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
             },
             {
               text: "Flask (Python)",
@@ -240,7 +244,7 @@ const sidebar = {
             },
             {
               text: "Streamlit (Python)",
-              link: "https://github.com/Sean-Stilwell/example-app-image-comparison"
+              link: "https://github.com/ssc-sp/fsdh-demo-app-streamlit"
             },
           ]
         }

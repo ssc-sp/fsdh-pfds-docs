@@ -161,6 +161,8 @@ export default {
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },
+        { en: "/en/storage/Storage-PowerBI", fr: "/fr/stockage/Stockage-PowerBI" },
+        { en: "/en/postgresql/Postgres-PowerBI", fr: "/fr/postgresql/Postgres-PowerBI" },
         { en: "/en/apps/Django", fr: "/fr/apps/Django" },
       ];
 
