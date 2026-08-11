@@ -40,6 +40,7 @@ const sidebar = {
         },
         "/en/storage/Import-Storage",
         "/en/storage/Use-AzCopy",
+        "/en/storage/Uploading-Files.md",
       ],
     },
     {
@@ -84,6 +85,14 @@ const sidebar = {
       collapsible: true,
       children: [
         "/en/apps/WebApps",
+        {
+          text: "Hosting a Flask Web App",
+          collapsible: true,
+          children: [
+            "/en/apps/flask/Accessing-Files.md",
+            "/en/apps/flask/Deployment.md",
+          ]
+        },
         {
           text: "Demo Apps",
           collapsible: true,
@@ -173,6 +182,7 @@ const sidebar = {
         },
         "/fr/stockage/Importer-le-stockage",
         "/fr/stockage/Utiliser-AzCopy",
+        "/fr/stockage/Telechargement-des-fichiers",
       ],
     },
     {
