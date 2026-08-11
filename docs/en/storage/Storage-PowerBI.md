@@ -14,7 +14,7 @@ To do this, you must obtain an SAS token for your data. You should also have the
 ![The "Azure Blob Storage" popup is open. The field to input the account name or URL is highlighted in yellow.](./img/3-input-name.png)
 
 4. Select to use a SAS token, copy your SAS token into the field.
-![The "Azure Blob Storage" popup is open. The sidebar button for Shared access signature is selected and highlighted in yellow. The field to input the token is also highlighted in yellow.](./img/4-sas-token.png)
+![The "Azure Blob Storage" popup is open. The sidebar button for shared access signature (SAS) is selected and highlighted in yellow. The field to input the token is also highlighted in yellow.](./img/4-sas-token.png)
 
 5. You can then import your data. By default, this imports a list of blobs in your container, but you can customize the queries accordingly. Some sample queries are provided below.
 ![A preview of the data stored in the Blob Storage container is shown and is ready to load.](./img/5-import-data.png)
