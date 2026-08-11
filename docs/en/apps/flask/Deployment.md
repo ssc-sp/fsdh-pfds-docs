@@ -1,6 +1,6 @@
 # Deployment
 
-To make your website accessible to other users on the FSDH, you need to bundle it into a package that can run reliably on any server.
+To make your site accessible to other users on the FSDH, you need to bundle it into a package that can run reliably on any server.
 
 To do this, we use [Docker](https://www.docker.com/).
 
@@ -154,14 +154,14 @@ jobs:
 
 </gcds-details>
 
-Make sure you put this file in the correct folder: `.github/workflows/<action-name>.yml`. This means in either Visual Studio Code or Github, you must put the file in a folder nammed `workflows`, then put that `workflows` folder into a folder named `.github` which is located in the root.
+Make sure you put this file in the correct folder: `.github/workflows/<action-name>.yml`. This means in either Visual Studio Code or GitHub, you must put the file in a folder nammed `workflows`, then put that `workflows` folder into a folder named `.github` which is located in the root.
 
-Now with that, we just need to make a docker compose file that references this image.
+Now with that, we just need to make a Docker compose file that references this image.
 
 
 ## Step 7: Making your Docker Compose file
 
-The docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/your-username/project-name:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/WORKSPACE-ABBREVIATION`).
+The Docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/your-username/project-name:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/WORKSPACE-ABBREVIATION`).
 
 This is the `docker-compose.yml` file for the demo app:
 
@@ -221,13 +221,13 @@ if __name__ == '__main__':
 
 If you have an issue, consult the logs on the FSDH and the console (F12 on your web app). You can also submit a support request to the FSDH team as they have access to more detailed logs. This generally gives you a good idea of what the issue is.
 
-Sometimes it takes a while for the demo website to load as processing files takes time.
+Sometimes it takes a while for the demo site to load as processing files takes time.
 
 ### CSS and JS not loading
 ![Image of the console error messages for this error](./img/Deployment/9.png)
-This error is the most obvious because your website would look something like this (Lacking any and all css/js)
+This error is the most obvious because your site would look something like this (Lacking any and all css/js)
 ![Image of website suffering from this error](./img/Deployment/10.png)
-The web hosting tool changes the base of the url to `/app/WORKSPACE-ABBREVIATION`. This causes a few difficulties, as files you referenced in your `.html` file (not stored on the FSDH) can't be found. 2 common problems that may occur due to this are the `.css` and `.js` files not running and having page switching not working.
+The web hosting tool changes the base of the URL to `/app/WORKSPACE-ABBREVIATION`. This causes a few difficulties, as files you referenced in your `.html` file (not stored on the FSDH) can't be found. 2 common problems that may occur due to this are the `.css` and `.js` files not running and having page switching not working.
 
 This is the workaround used in the demo project
 ``` python

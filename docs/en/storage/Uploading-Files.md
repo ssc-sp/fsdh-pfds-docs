@@ -48,7 +48,7 @@ This is all you need to implement. It allows you to create new files and overwri
 >
 >.[upload_blob](https://learn.microsoft.com/en-us/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python#azure-storage-blob-blobclient-upload-blob)
 
-In the demo project, all files are saved in the root directory but this can by changed by appending the file name to `/folder-name/` like this: `/folder-name/file.ext`. This will either add the file to an existing folder or make a folder with that file in it if it doesn't already exist.
+In the demo project, all files are saved in the root directory but this can by changed by appending the filename to `/folder-name/` like this: `/folder-name/file.ext`. This will either add the file to an existing folder or make a folder with that file in it if it doesn't already exist.
 
 <gcds-details details-title="Referenced code from flask demo project.">
 
