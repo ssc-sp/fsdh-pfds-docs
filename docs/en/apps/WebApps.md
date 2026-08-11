@@ -2,7 +2,7 @@
 
 The Federal Science DataHub allows you to host web applications on the platform. This guide will walk you through the process of developing, building, and deploying web applications on the DataHub.
 
-> **Note:** This feature is intended for internal, experimental use by your workspace users only. Web apps are only accessible to your DataHub workspace users and only within the GC network.
+> **Note:** This feature is intended for internal, non-production use by your workspace users only. Web apps are only accessible to your DataHub workspace users.
 
 ## Prerequisites
 
@@ -56,17 +56,6 @@ Once the service is started, you can access your web application by clicking the
 ![Accessing the proxy URL for your web application](./img/access.png)
 
 > **Note:** After starting the service, it may take a few minutes for the application to be accessible via the proxy URL. If you encounter any issues, please reach out to the DataHub support team for assistance.
-
-## Demo Applications
-
-The DataHub team has created a few demo applications to help you get started with hosting web applications on the platform. These repositories include the Dockerfile used to create the image and the Docker Compose file used to deploy the application on the DataHub.
-
-These applications are available on GitHub:
-
-* [Django (Python)](https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app)
-* [Dash (Python)](https://github.com/Sean-Stilwell/sample-dashapp)
-
-These applications are designed to be easily deployable on the DataHub using Docker Compose.
 
 ## Getting Support
 

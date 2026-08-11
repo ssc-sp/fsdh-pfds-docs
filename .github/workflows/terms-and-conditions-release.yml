@@ -2,56 +2,88 @@ name: Update to the Terms and Conditions
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - docs/en/Terms-And-Conditions.md
       - docs/fr/Conditions-generales.md
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   release:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - name: Check out
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
 
       - name: Make tag name
         id: mk
         run: |
-          TAG="$(date -u +%Y.%m.%d)"
+          TAG="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3
-        with:
-          tag_name: ${{ steps.mk.outputs.tag }}
-          name: FSDH Terms & Conditions - Updated ${{ steps.mk.outputs.tag }}
-          body: |
-            Automated release triggered by file changes in commit ${{ github.sha }}.
-
-            **Commit message:** ${{ github.event.head_commit.message }}
-          files: |
-            docs/en/Terms-And-Conditions.md
-            docs/fr/Conditions-generales.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.mk.outputs.tag }}
+          RELEASE_TITLE: FSDH Terms & Conditions - Updated ${{ steps.mk.outputs.tag }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+
+          cat > release-notes.md <<EOF
+          Automated release triggered by file changes in commit ${COMMIT_SHA}.
+
+          **Commit message:** ${COMMIT_MESSAGE}
+          EOF
+
+          gh release create "${RELEASE_TAG}" \
+            "docs/en/Terms-And-Conditions.md" \
+            "docs/fr/Conditions-generales.md" \
+            --title "${RELEASE_TITLE}" \
+            --notes-file release-notes.md \
+            --target "${COMMIT_SHA}"
+
   update-last-updated:
     runs-on: ubuntu-latest
+    environment: notary
     steps:
+      - name: Create App token
+        id: create_token
+        uses: ssc-sp/.github/.github/actions/create-app-token@5243107b571cb5da3943444e00414d14580e27df # main
+        with:
+          app-id: ${{ vars.TERMS_CONDITIONS_NOTARY_ID }}
+          private-key: ${{ secrets.TERMS_CONDITIONS_NOTARY_KEY }}
+          owner: ${{ github.repository_owner }}
+
       - name: Check out
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          token: ${{ steps.create_token.outputs.token }}
+          persist-credentials: true
 
       - name: Update LAST_UPDATED.md
         run: |
-          echo "$(date -u +'%Y-%m-%d')" > LAST_UPDATED.md
+          date -u +'%Y-%m-%d' > LAST_UPDATED.md
 
-      - name: Commit and push LAST_UPDATED.md
+      - name: Commit and push updated LAST_UPDATED.md
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
+
+          git config user.name "Terms and Conditions App"
+          git config user.email "${VARS_TERMS_CONDITIONS_NOTARY_ID}[bot]@users.noreply.github.com"
+
           git add LAST_UPDATED.md
           git commit -m "Update LAST_UPDATED.md to date of release"
+
           git push
+        env:
+          VARS_TERMS_CONDITIONS_NOTARY_ID: ${{ vars.TERMS_CONDITIONS_NOTARY_ID }}

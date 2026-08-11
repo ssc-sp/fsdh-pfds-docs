@@ -23,7 +23,7 @@ Dans les Databricks Workflows, vous créez des _jobs_. Les _jobs_ sont une liste
 Les tâches sont les éléments constitutifs des emplois. Elles peuvent être de l'un des types suivants :
 
 - **Notebook** : Une tâche de bloc-notes exécute un bloc-notes dans votre espace de travail. Vous pouvez passer des paramètres à la tâche notebook, et le notebook peut renvoyer un résultat qui peut être utilisé par d'autres tâches.
-- Script Python** : cette tâche permet d'exécuter un script Python dans votre espace de travail en utilisant les paramètres de votre choix.
+- **Script Python** : cette tâche permet d'exécuter un script Python dans votre espace de travail en utilisant les paramètres de votre choix.
 - **Roue Python** : cette tâche vous permettra d'installer des paquets Python sur un cluster sélectionné, au cas où les méthodes d'installation normales ne seraient pas optimales.
 - **Spark SQL** : Une tâche Spark SQL exécute une requête SQL sur un cluster Spark. Vous pouvez passer des paramètres à la requête SQL, et la requête peut renvoyer un résultat qui peut être utilisé par d'autres tâches.
 - **Tableaux vivants delta** : Cette tâche vous permettra d'exécuter un pipeline de tables dynamiques delta. Les tables dynamiques delta sont un pipeline de flux de données spécial, sur lequel vous pouvez en savoir plus [ici](https://www.databricks.com/product/delta-live-tables).
@@ -33,7 +33,7 @@ Les tâches sont les éléments constitutifs des emplois. Elles peuvent être de
 
 ## **Créer un emploi**
 
-Pour créer un travail, assurez-vous d'être en mode "Data Science & Engineering", puis cliquez sur l'icône "Workflows" dans l'onglet de navigation à gauche, et enfin sur "Create Job" :
+Pour créer un travail, assurez-vous d'être en mode "Data Science & Engineering", puis cliquez sur l'icône `Workflows` dans l'onglet de navigation à gauche, et enfin sur `Create Job`:
 
 ![Alt text](./img/Workflow-TabWorkflow.png)
 
@@ -55,7 +55,7 @@ Une fois que vous avez terminé la conception de votre travail, vous pouvez le t
 
 ![Alt text](./img/Workflow-RunWorkflow.png)
 
-Cela déclenchera votre travail et, à partir de l'écran "runs", vous pourrez contrôler chaque exécution de votre travail ainsi que chaque tâche de vos exécutions.
+Cela déclenchera votre travail et, à partir de l'écran "Exécutions", vous pourrez contrôler chaque exécution de votre travail ainsi que chaque tâche de vos exécutions.
 
 ## **Surveiller un travail**
 
@@ -69,18 +69,18 @@ Dans le tableau du bas, vous pouvez voir et inspecter toutes les exécutions pr�
 
 ## **Configuration des emplois et planification**
 
-Lorsqu'un travail est ouvert, à partir de l'onglet "runs" ou de l'onglet "tasks", vous pouvez ouvrir le panneau latéral droit, qui met à votre disposition de nombreuses configurations :
+Lorsqu'un travail est ouvert, à partir de l'onglet "Exécutions" ou de l'onglet "tasks", vous pouvez ouvrir le panneau latéral droit, qui met à votre disposition de nombreuses configurations :
 
 ![Alt text](./img/Workflow-ConfigWorkflow.png)
 
 À partir de ce panneau, vous pouvez
 
-- Voir les détails du travail**, tels que l'ID du travail, le créateur du travail, l'utilisateur sous lequel il est exécuté et les balises du travail.
-- Configurer Git** : cela vous permet de créer des tâches à l'aide de scripts et de carnets de notes à partir de dépôts distants.
+- **Voir les détails du travail**, tels que l'ID du travail, le créateur du travail, l'utilisateur sous lequel il est exécuté et les balises du travail.
+- **Configurer Git** : cela vous permet de créer des tâches à l'aide de scripts et de carnets de notes à partir de dépôts distants.
 - **Travaux planifiés** : vous pouvez sélectionner des déclencheurs manuels (le travail ne sera exécuté que lorsqu'il sera déclenché à partir de l'interface utilisateur), des déclencheurs planifiés (le travail sera exécuté lorsqu'il sera déclenché à partir de l'interface utilisateur et selon le calendrier fourni) ou des déclencheurs continus (le travail sera déclenché chaque fois que le travail précédent a rencontré une erreur ou a réussi).
 - **Voir les détails de calcul** : vous pouvez voir tous les clusters impliqués dans le travail.
   Vous pouvez également les consulter, voir leurs détails, échanger le cluster utilisé, etc.
-- Notifications** : définir des notifications (par courrier électronique ou par d'autres fournisseurs) lorsqu'un travail rencontre un problème, réussit ou démarre.
+- **Notifications** : définir des notifications (par courrier électronique ou par d'autres fournisseurs) lorsqu'un travail rencontre un problème, réussit ou démarre.
 - **Permissions** : permet de sélectionner les personnes qui peuvent visualiser, exécuter et gérer vos travaux.
 - **Maximum d'exécutions simultanées** : ce paramètre vous permet de définir le nombre maximum d'exécutions qui peuvent être effectuées en même temps. Par défaut, il est fixé à 1.
 
@@ -99,4 +99,5 @@ Un menu apparaît qui vous permet de planifier l'exécution de ce carnet en tant
 
 ![Alt text](./img/Workflow-NbJobWorkflow.png)
 
-## **[En savoir plus sur Databricks Workflows](https://docs.databricks.com/workflows/index.html)**
+## En Savoir Plus
+Pour plus d'informations sur la Flux de travail, veuillez vous référer à "[Lakeflow Jobs Documentation](https://docs.databricks.com/workflows/index.html)"

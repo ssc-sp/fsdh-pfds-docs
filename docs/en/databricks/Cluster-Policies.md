@@ -9,11 +9,13 @@
 
 ## Overview
 
-As part of the Federal Science Datahub, we provide custom Databricks cluster policies that are designed to help you get the most out of your Databricks clusters by having predefined cluster configurations. We currently offer 3 cluster policies on top of Databrick's personal compute policy. These are "Datahub Small Cluster", "Datahub Regular Cluster" and "Datahub Large Cluster". While workers and drivers configurations are predefined, the choice of [databricks runtime](https://docs.databricks.com/runtime/index.html) is completely up to you. We will go through each of these cluster policies in detail below.
+As part of the Federal Science Datahub, we provide custom Databricks cluster policies that are designed to help you get the most out of your Databricks clusters by having predefined cluster configurations. We currently offer 3 cluster policies on top of Databricks personal compute policy.
+These are "Datahub Small Cluster", "Datahub Regular Cluster" and "Datahub Large Cluster". While workers and drivers configurations are predefined, the choice of [databricks runtime](https://docs.databricks.com/runtime/index.html) is completely up to you. We will go through each of these cluster policies in detail below.
 
 ### **Personal Compute**
 
-This is the default cluster policy that is provided by Databricks. It is designed for personal use and is not recommended for production use. It is a good choice if you are just getting started with Databricks and want to get a feel for how it works. It is also a good choice if you are working with small datasets and do not need a lot of compute power. Do note that this cluster is a single-node/single-worker cluster and as such no parallelization will be done. By default, it uses the latest machine learning runtime, meaning machine learning toolings are available within this cluster. The cluster configuration is as follows:
+This is the default cluster policy that is provided by Databricks. It is designed for personal use and is not recommended for production use. It is a good choice if you are just getting started with Databricks and want to get a feel for how it works. It is also a good choice if you are working with small datasets and do not need a lot of compute power.
+Do note that this cluster is a single-node/single-worker cluster and as such no parallelization will be done. By default, it uses the latest machine learning runtime, meaning machine learning toolings are available within this cluster. The cluster configuration is as follows:
 
 - **Node type:** Standard_DS3_v2 (4 CPU, 14 GB memory)
 

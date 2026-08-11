@@ -8,13 +8,20 @@
     "docs:build": "vuepress build docs",
     "docs:clean-dev": "vuepress dev docs --clean-cache",
     "docs:dev": "vuepress dev docs",
-    "docs:update-package": "npx vp-update"
+    "docs:update-package": "npx vp-update",
+    "docs:lint": "npx eslint",
+    "docs:lint-fix": "npx eslint --fix"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/theme-default": "2.0.0-rc.130",
-    "sass-embedded": "1.99.0",
-    "vue": "3.5.34",
+    "@vuepress/theme-default": "2.0.0-rc.131",
+    "eslint": "10.6.0",
+    "eslint-plugin-vue": "10.9.2",
+    "globals": "17.7.0",
+    "sass-embedded": "1.100.0",
+    "typescript-eslint": "8.62.1",
+    "vue": "3.5.39",
     "vuepress": "2.0.0-rc.30"
   },
   "dependencies": {

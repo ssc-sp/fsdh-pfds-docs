@@ -21,9 +21,9 @@ Le DataHub scientifique fédéral permet de provisionner une base de données Po
 ## Comment utiliser votre base de données PostgreSQL
 
 1. Naviguez vers l'espace de travail dans lequel vous souhaitez utiliser la base de données PostgreSQL.
-2. Naviguez jusqu'à l'onglet "Base de données SQL" dans la catégorie "Outils de l'espace de travail". Cette page vous fournit les informations nécessaires pour vous connecter à votre base de données.
+2. Naviguez jusqu'à l'onglet `Base de données SQL` dans la catégorie `Outils de l'espace de travail`. Cette page vous fournit les informations nécessaires pour vous connecter à votre base de données.
 3. **Avant d'essayer d'utiliser la base de données**, vous devez ajouter votre adresse IP aux règles du pare-feu.
-    * Naviguez jusqu'au bas de la page et cliquez sur "Ajouter l'adresse IP actuelle" pour ajouter votre adresse IP locale aux règles du pare-feu.
+    * Naviguez jusqu'au bas de la page et cliquez sur `Ajouter l'adresse IP actuelle` pour ajouter votre adresse IP locale aux règles du pare-feu.
     * Si vous changez de réseau ou basculez votre RPV, vous devrez ajouter votre nouvelle adresse IP aux règles du pare-feu.
     * Pour permettre à Databricks d'accéder à la base de données, vous devrez ajouter l'adresse `0.0.0.0` aux règles du pare-feu.
     **NOTE:** L'application des modifications peut prendre jusqu'à 15 minutes.
