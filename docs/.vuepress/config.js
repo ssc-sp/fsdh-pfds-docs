@@ -40,7 +40,7 @@ const sidebar = {
         },
         "/en/storage/Import-Storage",
         "/en/storage/Use-AzCopy",
-        "/en/storage/Uploading-Files.md",
+        "/en/storage/Uploading-Files",
       ],
     },
     {
@@ -89,8 +89,8 @@ const sidebar = {
           text: "Hosting a Flask Web App",
           collapsible: true,
           children: [
-            "/en/apps/flask/Accessing-Files.md",
-            "/en/apps/flask/Deployment.md",
+            "/en/apps/flask/Accessing-Files",
+            "/en/apps/flask/Deployment",
           ]
         },
         {
@@ -231,8 +231,8 @@ const sidebar = {
           text: "Héberger une appli web Flask",
           collapsible: true,
           children: [
-            "/fr/apps/flask/Acceder-aux-fichiers.md",
-            "/fr/apps/flask/Deploiement.md",
+            "/fr/apps/flask/Acceder-aux-fichiers",
+            "/fr/apps/flask/Deploiement",
           ]
         },
         {
