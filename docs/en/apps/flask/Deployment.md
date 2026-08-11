@@ -14,7 +14,7 @@ A `Dockerfile` tells Docker how to build a container that contains only the thin
 
 ### Step 1: Declaring our Library Requirements
 
-Before Docker can build your app, it needs to know what Python packages are required. If you haven't already, make sure you made a file in your project folder named `requirements.txt` and list your dependencies. 
+Before Docker can build your app, it needs to know what Python packages are required. If you haven't already, make sure you made a file in your project folder named `requirements.txt` and list your dependencies.
 
 The `requirements.txt` file for the demo app are:
 
@@ -154,9 +154,9 @@ jobs:
 
 </gcds-details>
 
-Make sure you put this file in the correct folder: `.github/workflows/<action-name>.yml`. This means in either Visual Studio Code or Github, you must put the file in a folder nammed `workflows`, then put that `workflows` folder into a folder named `.github` which is located in the root. 
+Make sure you put this file in the correct folder: `.github/workflows/<action-name>.yml`. This means in either Visual Studio Code or Github, you must put the file in a folder nammed `workflows`, then put that `workflows` folder into a folder named `.github` which is located in the root.
 
-Now with that, we just need to make a docker compose file that references this image. 
+Now with that, we just need to make a docker compose file that references this image.
 
 
 ### Step 7: Making your Docker Compose file
@@ -177,7 +177,7 @@ services:
 ```
 >Note:
 >
-> To find the PROXY_PREFIX, look at the "Web Application Information" in the Web App Configuration tab. 
+> To find the PROXY_PREFIX, look at the "Web Application Information" in the Web App Configuration tab.
 > ![Then find "Proxy URL for development"](./img/Deployment/11.png)
 
 
@@ -210,7 +210,7 @@ Once tested, you are ready to upload this container directly to your FSDH dashbo
 
 5. Click **Deploy**.
 
-6. Once you've confirmed it works, make sure to turn off debug mode. 
+6. Once you've confirmed it works, make sure to turn off debug mode.
 
 ``` python
 if __name__ == '__main__':
@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
 ### Known Issues
 
-If you have an issue, consult the logs on the FSDH and the console (F12 on your web app). You can also submit a support request to the FSDH team as they have access to more detailed logs. This generally gives you a good idea of what the issue is. 
+If you have an issue, consult the logs on the FSDH and the console (F12 on your web app). You can also submit a support request to the FSDH team as they have access to more detailed logs. This generally gives you a good idea of what the issue is.
 
 Sometimes it takes a while for the demo website to load as processing files takes time.
 
@@ -227,7 +227,7 @@ Sometimes it takes a while for the demo website to load as processing files take
 ![Image of the console error messages for this error](./img/Deployment/9.png)
 This error is the most obvious because your website would look something like this (Lacking any and all css/js)
 ![Image of website suffering from this error](./img/Deployment/10.png)
-The web hosting tool changes the base of the url to `/app/WORKSPACE-ABBREVIATION`. This causes a few difficulties, as files you referenced in your `.html` file (not stored on the FSDH) can't be found. 2 common problems that may occur due to this are the `.css` and `.js` files not running and having page switching not working. 
+The web hosting tool changes the base of the url to `/app/WORKSPACE-ABBREVIATION`. This causes a few difficulties, as files you referenced in your `.html` file (not stored on the FSDH) can't be found. 2 common problems that may occur due to this are the `.css` and `.js` files not running and having page switching not working.
 
 This is the workaround used in the demo project
 ``` python

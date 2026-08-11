@@ -24,7 +24,7 @@ This is where you get your SAS URL. Remember, unless the FSDH team has provided 
 
 **Step 2: Accessing the files**
 
-Now let's try to access these files from the web application. For this we will read the SAS URL from the environment variables and import the pandas library. 
+Now let's try to access these files from the web application. For this we will read the SAS URL from the environment variables and import the pandas library.
 
 <gcds-details details-title="The following block of code is a function that imports a file based on the file path in the Azure Blob Storage Explorer.">
 
@@ -92,7 +92,7 @@ def load_df_from_azure(blob_name, encoding='utf-8'):
         return None
 ```
 
-> To clarify, 
+> To clarify,
 > ``` python
 >SEALS_BLOB_NAME = "FSDHstatic/OPENDATA_HarpDietData2017-2021_EN.csv"
 >NAFO_BLOB_NAME = "FSDHstatic/NAFO-Subdivision-General-Coordinates.csv"
@@ -118,4 +118,4 @@ df = load_df_from_azure(NAFO_BLOB_NAME)
 ### Summary 
 * **Generate an SAS URL:** Navigate to the AZCOPY tab in the FSDH Storage Explorer workspace to generate a 30-minute Shared Access Signature (SAS) URL, or ask for a long term URL by submitting a support request to the FSDH team.
 * **Define File Paths:** Identify the relative directory paths of the target files within the storage container (e.g., `FSDHstatic/filename.csv`).
-* **Retrieve the Data:** Use Python and the `pandas` library to insert the target file's relative path into the SAS URL and load the CSV data directly into a DataFrame using `pandas.read_csv()`. 
+* **Retrieve the Data:** Use Python and the `pandas` library to insert the target file's relative path into the SAS URL and load the CSV data directly into a DataFrame using `pandas.read_csv()`.
