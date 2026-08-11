@@ -5,14 +5,14 @@ To make your website accessible to other users on the FSDH, you need to bundle i
 To do this, we use [Docker](https://www.docker.com/).
 
 
-### [Docker](https://www.docker.com/)
+## [Docker](https://www.docker.com/)
 
 Docker uses a text file called a `Dockerfile` to copy files, install Python, install libraries, and run commands.
 
 A `Dockerfile` tells Docker how to build a container that contains only the things required to run your application.
 
 
-### Step 1: Declaring our Library Requirements
+## Step 1: Declaring our Library Requirements
 
 Before Docker can build your app, it needs to know what Python packages are required. If you haven't already, make sure you made a file in your project folder named `requirements.txt` and list your dependencies.
 
@@ -30,7 +30,7 @@ azure-storage-blob>=12.0.0
 
 
 
-### Step 2: Writing the Dockerfile
+## Step 2: Writing the Dockerfile
 
 In your project's root folder, create a new file named `Dockerfile` (with no file extension) and add the content. For the demo app, we use the following Dockerfile:
 
@@ -59,7 +59,7 @@ CMD ["python", "app.py"]
 
 
 
-### Step 3: Changing the Port in Your App
+## Step 3: Changing the Port in Your App
 
 Make sure to change to a port that works for web servers. For the FSDH, a web app will only run on ports 80 and 8080.
 
@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
 
 
-### Step 4: The FSDH SAS URL
+## Step 4: The FSDH SAS URL
 
 When deploying on the FSDH workspace, you should **never** save your Container Token (SAS URL) directly into your code files. If an Container Token (SAS URL) is accidentally published, it is a security incident that must be reported.
 
@@ -89,7 +89,7 @@ When you host your application on your FSDH workspace, the platform provides a s
 
 
 
-### Step 5: Testing Your Container Locally
+## Step 5: Testing Your Container Locally
 
 To test if your Dockerfile or web app works locally, you can run it inside your terminal.
 
@@ -107,7 +107,7 @@ Now, open your browser and go to `http://localhost:8080`. Your Flask app should 
 
 
 
-### Step 6: Workflow to create and push Docker images
+## Step 6: Workflow to create and push Docker images
 
 In order to run this on the FSDH, we need to put our Docker image on a container registry. There are many workflows available for free on GitHub or you can manually push an image to a container registry. In this demo, we use a GitHub Action to automatically push the image to the GitHub Container Registry.
 
@@ -159,7 +159,7 @@ Make sure you put this file in the correct folder: `.github/workflows/<action-na
 Now with that, we just need to make a docker compose file that references this image.
 
 
-### Step 7: Making your Docker Compose file
+## Step 7: Making your Docker Compose file
 
 The docker composer file has all the commands you would normally use to run the container. We give it where to start (`build .`), what to build (`image: ghcr.io/your-username/project-name:latest`), what port to host it on (`ports: - "80:80"`), and the environment for the files (`environment: - PROXY_PREFIX=/app/WORKSPACE-ABBREVIATION`).
 
@@ -184,7 +184,7 @@ services:
 Place this file in the base of the directory (where requirements.txt is).
 
 
-### Step 8: Deploying on FSDH
+## Step 8: Deploying on FSDH
 
 Once tested, you are ready to upload this container directly to your FSDH dashboard:
 1. Push your code repository directly to GitHub.
@@ -217,13 +217,13 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
 ```
 
-### Known Issues
+## Known Issues
 
 If you have an issue, consult the logs on the FSDH and the console (F12 on your web app). You can also submit a support request to the FSDH team as they have access to more detailed logs. This generally gives you a good idea of what the issue is.
 
 Sometimes it takes a while for the demo website to load as processing files takes time.
 
-#### CSS and JS not loading
+### CSS and JS not loading
 ![Image of the console error messages for this error](./img/Deployment/9.png)
 This error is the most obvious because your website would look something like this (Lacking any and all css/js)
 ![Image of website suffering from this error](./img/Deployment/10.png)

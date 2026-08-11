@@ -12,17 +12,16 @@ Then install it and all your requirements in general before running.
 pip install -r requirements.txt
 ```
 
-### Notes
-
+## Notes
 The SAS URL provides access to the files in your Azure Storage account. Instead of just reading blobs directly with a SAS URL as we were before, we can now, write, edit, and delete blobs.
 
 To access the storage, we use the SAS URL and add the target blob name. Reference the methods described in [Acessing Files](/en/apps/flask/Accessing-Files.md).
 
-### Reading/Accessign Blobs from Azure
+## Reading/Accessign Blobs from Azure
 
 To access the storage, we use the SAS URL and add the target blob name. Reference the methods described in [Acessing Files](/en/apps/flask/Accessing-Files.md).
 
-### Reading/Accessing Blobs from Azure
+## Reading/Accessing Blobs from Azure
 
 To read files using the SAS URL, reference [Acessing Files](/en/apps/flask/Accessing-Files.md). A general summary is:
 
@@ -30,7 +29,7 @@ To read files using the SAS URL, reference [Acessing Files](/en/apps/flask/Acces
 * **Define File Paths:** Find the relative directory paths of the target files within the storage container (e.g., `FSDHstatic/filename.csv`).
 * **Retrieve the Data:** Use Python and the `pandas` library to insert the target file's relative path into the SAS URL and load the CSV data directly into a DataFrame using `pandas.read_csv()`.
 
-### Saving Blobs to Azure
+## Saving Blobs to Azure
 To save data back to the storage, create a client then simply upload the blob.
 
 ``` python
@@ -88,7 +87,7 @@ def save_df_to_azure(df, blob_name, index=False, overwrite=True, encoding='utf-8
 
 
 
-### Deleting Blobs
+## Deleting Blobs
 All you need to delete blobs is to set the SAS URL to the specific file you want to delete then use `.delete_blob()` as shown.
 
 ```python

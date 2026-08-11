@@ -2,7 +2,7 @@
 
 To access your data from the FSDH, you can use Azure Blob Storage, PostgreSQL, and other tools. Here we will be using **Azure Blob Storage**.
 
-### Referencing a File From the FSDH Storage with an SAS URL
+## Referencing a File From the FSDH Storage with an SAS URL
 
 **Step 1: Getting a Shared Access Signature (SAS) URL**
 
@@ -115,7 +115,7 @@ df = load_df_from_azure(NAFO_BLOB_NAME)
 
 </gcds-details>
 
-### Summary 
+## Summary 
 * **Generate an SAS URL:** Navigate to the AZCOPY tab in the FSDH Storage Explorer workspace to generate a 30-minute Shared Access Signature (SAS) URL, or ask for a long term URL by submitting a support request to the FSDH team.
 * **Define File Paths:** Identify the relative directory paths of the target files within the storage container (e.g., `FSDHstatic/filename.csv`).
 * **Retrieve the Data:** Use Python and the `pandas` library to insert the target file's relative path into the SAS URL and load the CSV data directly into a DataFrame using `pandas.read_csv()`.
