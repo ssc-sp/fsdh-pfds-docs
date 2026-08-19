@@ -99,6 +99,10 @@ export default {
           en: "/en/storage/Import-Storage",
           fr: "/fr/stockage/Importer-le-stockage",
         },
+        {
+          en: "/en/storage/Storage-Tiers",
+          fr: "/fr/stockage/Niveaux-de-stockage",
+        },
         { en: "/en/storage/Use-AzCopy", fr: "/fr/stockage/Utiliser-AzCopy" },
         {
           en: "/en/storage/Desktop-Uploader",
