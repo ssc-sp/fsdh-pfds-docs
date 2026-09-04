@@ -1,0 +1,1 @@
+# Accéder au stockage en Python

@@ -42,6 +42,7 @@ const sidebar = {
         "/en/storage/Import-Storage",
         "/en/storage/Storage-PowerBI",
         "/en/storage/Use-AzCopy",
+        "/en/storage/Uploading-Files",
       ],
     },
     {
@@ -87,6 +88,14 @@ const sidebar = {
       collapsible: true,
       children: [
         "/en/apps/WebApps",
+        {
+          text: "Hosting a Flask Web App",
+          collapsible: true,
+          children: [
+            "/en/apps/flask/Accessing-Files",
+            "/en/apps/flask/Deployment",
+          ]
+        },
         {
           text: "Demo Apps",
           collapsible: true,
@@ -178,6 +187,7 @@ const sidebar = {
         "/fr/stockage/Importer-le-stockage",
         "/fr/stockage/Stockage-PowerBI",
         "/fr/stockage/Utiliser-AzCopy",
+        "/fr/stockage/Telechargement-des-fichiers",
       ],
     },
     {
@@ -223,6 +233,14 @@ const sidebar = {
       collapsible: true,
       children: [
         "/fr/apps/WebApps",
+        {
+          text: "Héberger une appli web Flask",
+          collapsible: true,
+          children: [
+            "/fr/apps/flask/Acceder-aux-fichiers",
+            "/fr/apps/flask/Deploiement",
+          ]
+        },
         {
           text: "Exemples d'applications",
           collapsible: true,

@@ -108,6 +108,10 @@ export default {
           en: "/en/storage/Desktop-Uploader",
           fr: "/fr/stockage/Chargeur-de-bureau",
         },
+        {
+          en: "/en/storage/Uploading-Files",
+          fr: "/fr/stockage/Telechargement-des-fichiers",
+        },
         { en: "/en/databricks/", fr: "/fr/databricks/" },
         {
           en: "/en/databricks/Databricks-101",
@@ -162,6 +166,14 @@ export default {
         {
           en: "/en/postgresql/psql-databricks-comparison",
           fr: "/fr/postgresql/Comparaison-des-bases-de-donnees-psql",
+        },
+        {
+          en: "/en/apps/flask/Accessing-Files",
+          fr: "/fr/apps/flask/Acceder-aux-fichiers",
+        },
+        {
+          en: "/en/apps/flask/Deployment",
+          fr: "/fr/apps/flask/Deploiement",
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },
