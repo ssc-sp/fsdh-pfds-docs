@@ -1,0 +1,116 @@
+name: Links
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Targets "." to scan your real project files.
+          # Note: '--base-url' is changed to '--base' to support newer lychee versions.
+          args: >-
+            -vvv
+            --insecure
+            --verbose
+            --format detailed
+            --accept 200..=308
+            --max-redirects 15
+            --base "/workspaces/fsdh-pfds-docs/docs"
+            --fallback-extensions md,mdx
+            --exclude https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html
+            --exclude https://www.canada.ca/en/shared-services/services/tools-to-equip-gc-workers/tools-science/federal-science-datahub.html
+            --exclude https://www.canada.ca/en/department-national-defence/maple-leaf/defence/2020/12/working-with-sensitive-information.html
+            --exclude https://www.canada.ca/en/government/system/digital-government/policies-standards/enterprise-it-service-common-configurations/portable-data.html
+            --exclude https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/safeguarding-equipment-sites-assets-information/levels-security.html
+            --exclude https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/politiques-normes/configurations-courantes-services-ti-integree/donnees-portatifs.html
+            --exclude https://www.canada.ca/fr/ministere-defense-nationale/feuille-derable/defense/2020/12/travailler-avec-renseignements-nature-delicate.html
+            --exclude https://www.canada.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats/protection-equipement-lieux-biens-renseignements/niveaux-securite.html
+            --exclude https://www.canada.ca/fr/services-partages/services/outils-pour-personnes-travaillant-gc/outils-scientifique/plateforme-federale-donnees-scientifiques.html
+            --exclude https://www.tbs-sct.canada.ca/pol/doc-fra.aspx
+            --exclude sharepoint.com
+            --exclude file:///
+            --exclude \.pdf$
+            --exclude \.zip$
+            --exclude \.png$
+            --exclude \.jpg$
+            --exclude localhost
+            --exclude 127.0.0.1
+            --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            .
+          fail: false 
+
+      # Natively handle searching, posting, updating, and deleting comments using pre-installed 'gh' CLI
+      - name: Handle PR Comment
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 1. Search for any existing comment containing 'Link Checker summary'
+          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments" \
+            --jq '.[] | select(.user.login=="github-actions[bot]" and (.body | contains("Link Checker summary"))) | .id' | head -n 1)
+
+          # 2. Extract the Summary Table (with emojis) from the top of the lychee output file
+          awk '/Errors in/ || /^Redirects in/ {exit} {print}' ./lychee/out.md > ./lychee/summary_table.md
+
+          # 3. Format the comment depending on the exit code
+          if [ "${{ steps.lychee.outputs.exit_code }}" -ne 0 ]; then
+            # Extract only the actual 'Errors in' blocks (filtering out redirects)
+            awk '/^Redirects in/ {skip=1; next} /^Errors in/ {skip=0; found=1} found && !skip' ./lychee/out.md > ./lychee/errors_only.md
+
+            # FAILURE REPORT
+            {
+              echo "# Link Checker summary"
+              echo ""
+              echo "| Check | Validation result |"
+              echo "| --- | --- |"
+              echo "| LINK_CHECKER | Fail ❌ |"
+              echo ""
+              cat ./lychee/summary_table.md
+              echo ""
+              echo "<details open>"
+              echo "<summary>Detailed Error Report</summary>"
+              echo ""
+              cat ./lychee/errors_only.md
+              echo ""
+              echo "</details>"
+              echo ""
+              echo "Powered by Lychee"
+            } > ./lychee/comment.md
+          else
+            # SUCCESS REPORT
+            {
+              echo "# Link Checker summary"
+              echo ""
+              echo "| Check | Validation result |"
+              echo "| --- | --- |"
+              echo "| LINK_CHECKER | Pass ✅ |"
+              echo ""
+              cat ./lychee/summary_table.md
+              echo ""
+              echo "All checked links are healthy and active!"
+              echo ""
+              echo "Powered by Lychee"
+            } > ./lychee/comment.md
+          fi
+
+          # 4. Always delete the old comment if it exists to prevent clutter and save space
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X DELETE "repos/${{ github.repository }}/issues/comments/$COMMENT_ID"
+          fi
+
+          # 5. Always post the fresh, updated comment to the PR
+          gh pr comment ${{ github.event.pull_request.number }} --body-file ./lychee/comment.md
