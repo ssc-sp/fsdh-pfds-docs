@@ -57,17 +57,6 @@ Une fois le service démarré, vous pouvez accéder à votre application web en 
 
 > **Note:** Après avoir démarré le service, l'application peut prendre quelques minutes pour être accessible via l'URL du proxy. Si vous rencontrez des problèmes, veuillez contacter l'équipe de support de DataHub pour obtenir de l'aide.
 
-## Applications de démonstration
-
-L'équipe DataHub a créé quelques applications de démonstration pour vous aider à démarrer l'hébergement d'applications web sur la plateforme. Ces dépôts comprennent le fichier Docker utilisé pour créer l'image et le fichier Docker Compose utilisé pour déployer l'application sur DataHub.
-
-Ces applications sont disponibles sur GitHub :
-
-* [Django (Python)](https://github.com/ssc-sp/datahub-demos/tree/main/docker/django-app)
-* [Dash (Python)](https://github.com/Sean-Stilwell/sample-dashapp)
-
-Ces applications sont conçues pour être facilement déployées sur le DataHub à l'aide de Docker Compose.
-
 ## Obtenir de l'aide
 
 Si vous n'êtes pas familier avec Docker Compose ou si vous avez besoin d'aide pour déployer votre application web sur le DataHub, veuillez contacter l'équipe d'assistance du DataHub pour obtenir de l'aide. Nous sommes là pour vous aider à démarrer l'hébergement d'applications web sur la plateforme.

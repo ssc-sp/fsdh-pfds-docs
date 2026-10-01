@@ -107,6 +107,10 @@ export default {
           en: "/en/storage/Import-Storage",
           fr: "/fr/stockage/Importer-le-stockage",
         },
+        {
+          en: "/en/storage/Storage-Tiers",
+          fr: "/fr/stockage/Niveaux-de-stockage",
+        },
         { en: "/en/storage/Use-AzCopy", fr: "/fr/stockage/Utiliser-AzCopy" },
         {
           en: "/en/storage/Desktop-Uploader",
@@ -169,6 +173,9 @@ export default {
         },
         { en: "/en/apps/", fr: "/fr/apps/" },
         { en: "/en/apps/WebApps", fr: "/fr/apps/WebApps" },
+        { en: "/en/storage/Storage-PowerBI", fr: "/fr/stockage/Stockage-PowerBI" },
+        { en: "/en/postgresql/Postgres-PowerBI", fr: "/fr/postgresql/Postgres-PowerBI" },
+        { en: "/en/apps/Django", fr: "/fr/apps/Django" },
       ];
 
       const currentUrl = (this.$route?.path || this.$page.path).split(
