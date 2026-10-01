@@ -9,30 +9,27 @@ const sidebar = {
       text: "Managing Workspaces and Users",
       collapsible: true,
       children: [
-            {
-              text: "Getting a workspace (only available on the GC network)",
-              link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/Getting-a-workspace.aspx",
-            },
-            {
-              text: "Estimate costs (only available on the GC network)",
-              link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx",
-            },
-            "/en/managing-workspaces-and-users/Preregistration",
-            {
-              "text": "User Management",
-              collapsible: true,
-              children: [
-                "/en/managing-workspaces-and-users/Invite-a-user",
-                "/en/managing-workspaces-and-users/Invite-an-external-user",
-                "/en/managing-workspaces-and-users/Change-a-user-role",
-
-              ],
-            },
-            "/en/managing-workspaces-and-users/Request-tools",
-            "/en/managing-workspaces-and-users/CBR-management",
-            "/en/managing-workspaces-and-users/UC-PB-workspace-differences",
+        {
+          text: "Getting a workspace (only available on the GC network)",
+          link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/Getting-a-workspace.aspx",
+        },
+        {
+          text: "Estimate costs (only available on the GC network)",
+          link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/Usage-costs-and-examples.aspx",
+        },
+        "/en/managing-workspaces-and-users/Preregistration",
+        {
+          "text": "User Management",
+          collapsible: true,
+          children: [
+            "/en/managing-workspaces-and-users/Invite-a-user",
+            "/en/managing-workspaces-and-users/Invite-an-external-user",
+            "/en/managing-workspaces-and-users/Change-a-user-role",
           ],
         },
+        "/en/managing-workspaces-and-users/Request-tools",
+        "/en/managing-workspaces-and-users/CBR-management",
+        "/en/managing-workspaces-and-users/UC-PB-workspace-differences",
       ],
     },
     {
@@ -111,27 +108,6 @@ const sidebar = {
               text: "Dash (Python)",
               link: "https://github.com/ssc-sp/fsdh-demo-app-dash"
             },
-            "/fr/gerer-espaces-et-utilisateurs/Preregistration",
-            {
-              "text": "Gestion des utilisateurs",
-              collapsible: true,
-              children: [
-                "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
-                "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur-externe",
-                "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
-
-              ],
-            },
-            "/fr/gerer-espaces-et-utilisateurs/Demande-outils",
-            "/fr/gerer-espaces-et-utilisateurs/Gestion-BOI",
-            "/fr/gerer-espaces-et-utilisateurs/Differences-espaces-UC-PB",
-          ],
-        },
-        {
-          text: "Stockage",
-          collapsible: true,
-          children: [
-            "/fr/stockage/Datahub-AzureStorage",
             {
               text: "Flask (Python)",
               link: "https://github.com/ssc-sp/fsdh-demo-app-flask"
@@ -186,10 +162,18 @@ const sidebar = {
           link: "https://gcxgce.sharepoint.com/teams/10002160/SitePages/fr/Usage-costs-and-examples.aspx",
         },
         "/fr/gerer-espaces-et-utilisateurs/Preregistration",
+        {
+          "text": "Gestion des utilisateurs",
+          collapsible: true,
+          children: [
+            "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
+            "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur-externe",
+            "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
+          ],
+        },
         "/fr/gerer-espaces-et-utilisateurs/Demande-outils",
-        "/fr/gerer-espaces-et-utilisateurs/Invitez-un-utilisateur",
-        "/fr/gerer-espaces-et-utilisateurs/Change-les-roles-dutilisateur",
         "/fr/gerer-espaces-et-utilisateurs/Gestion-BOI",
+        "/fr/gerer-espaces-et-utilisateurs/Differences-espaces-UC-PB",
       ],
     },
     {
